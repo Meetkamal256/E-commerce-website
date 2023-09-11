@@ -8,8 +8,12 @@
 }
 
 :root{
-    --dark-grey: #1a1a1a;
-    --dark-cyan: #088178;
+    --lavender: #E3E6F3;
+    --Dark-grey: #1a1a1a;
+    --Dark-cyan: #088178;
+    --Fairway-mist: #cdebbc;
+    --Azureish-White: #d1e8f4;
+    --piggy-pink: #fddde4;
 }
 
 h1{
@@ -55,7 +59,7 @@ p{
     align-items: center;
     justify-content: space-between;
     padding: 20px 80px;
-    background-color: #e3e6f3 ;
+    background-color: var(--lavender);
     box-shadow: 0px 5px 15px rgba(0,0,0,0.06);
     position: sticky;
     top: 0;
@@ -76,13 +80,13 @@ p{
 
 #navbar a{
     text-decoration: none;
-    color: var(--dark-grey);
+    color: var(--Dark-grey);
     transition: 0.3s ease;
 }
 
 #navbar a:hover, 
 #navbar a.active{
-    color: var(--dark-cyan);
+    color: var(--Dark-cyan);
 }
 
 #navbar a.active::after,
@@ -90,7 +94,7 @@ p{
     content: "";
     width: 40%;
     height: 2px;
-    background-color: var(--dark-cyan);
+    background-color: var(--Dark-cyan);
     position: absolute;
     bottom: -4px;
     left: 20px;
@@ -103,7 +107,7 @@ p{
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top 25% right 0%;
-    height: 90vh;
+    height: 100vh;
     width: 100%;
     padding: 0 80px;
     display: flex;
@@ -118,7 +122,7 @@ p{
 }
 
 #hero h1{
-    color: var(--dark-cyan);
+    color: var(--Dark-cyan);
 }
 
 #hero button{
@@ -126,12 +130,67 @@ p{
     background: url(img/button.png);
     background-color: transparent;
     padding: 14px 80px 14px 65px;
-    color: var(--dark-cyan);
+    color: var(--Dark-cyan);
     font-weight: 700;
     font-size: 15px;
     cursor: pointer;
 }
 
+/* Feature section */
+
+#feature{
+    padding: 40px 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+#feature .fe-box{
+    width: 180px;
+    text-align: center;
+    padding: 25px 15px;
+    box-shadow: 20px 20px 34px rgba(0,0,0,0.05);
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    margin: 15px 0px;
+}
+
+#feature .fe-box:hover{
+    box-shadow: 10px 10px 54px lightgray;
+}
+
+#feature .fe-box img{
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+#feature .fe-box h6{
+    display: inline-block;
+    color: var(--Dark-cyan);
+    background-color: var(--piggy-pink);
+    padding: 9px 8px 6px 8px;
+}
+
+#feature .fe-box:nth-child(2) h6{
+    background-color: var(--Fairway-mist);
+}
+
+#feature .fe-box:nth-child(3) h6{
+    background-color: #d1e8f2;
+}
+
+#feature .fe-box:nth-child(4) h6{
+    background-color: #cdd4f8;
+}
+
+#feature .fe-box:nth-child(5) h6{
+    background-color: #f6dbf6;
+}
+
+#feature .fe-box:nth-child(6) h6{
+    background-color: #fff2e5;
+}
 
 
 
