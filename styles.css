@@ -322,9 +322,65 @@ p{
     color: #fff;
 }
 
+/* sm-banner section */
+
+#sm-banner{
+    display: flex;
+    padding: 40px 80px;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+
+#sm-banner .banner-box{
+    background-image: url(img/banner/b17.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    min-width: 580px;
+    height: 50vh;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+#sm-banner h5{
+    color: #fff;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+#sm-banner h2{
+    color: #fff;
+    font-size: 30px;
+    font-weight: 800;
+}
+
+#sm-banner p{
+    color: #fff;
+    font-weight: 500;
+}
 
 
+#sm-banner button{
+    background: transparent;
+    color: #fff;
+    padding: 7px 12px;
+    border: 1px solid #E3E6F3;
+    cursor: pointer;
+    font-size: 15px;
+}
 
+#sm-banner .banner-box2{
+    background-image: url(img/banner/b10.jpg);
+    background-color: red;
+}
 
+#sm-banner .banner-box:hover button{
+    background-color: var(--Dark-cyan);
+    color: #fff;
+    border: 1px solid var(--Azureish-White);
+}
 
 
