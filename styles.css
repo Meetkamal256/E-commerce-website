@@ -7,6 +7,8 @@
     font-family: 'League Spartan', sans-serif;
 }
 
+
+
 :root{
     --lavender: #E3E6F3;
     --Dark-grey: #1a1a1a;
@@ -15,6 +17,8 @@
     --Azureish-White: #d1e8f4;
     --piggy-pink: #fddde4;
     --deep-carmine-pink: #ef3636;
+    --light-gray: #818ea0;
+    --dark-yellow: #ffbd27;
 }
 
 h1{
@@ -383,4 +387,179 @@ p{
     border: 1px solid var(--Azureish-White);
 }
 
+/* banner3 section */
 
+#banner3{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 0 80px;
+}
+
+#banner3 .banner-box{
+    background-image: url(img/banner/b7.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    min-width: 30%;
+    height: 30vh;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin-bottom: 20px;
+
+}
+
+#banner3 .banner-box h2{
+    color: #fff;
+    font-weight: 900;
+    font-size: 22px;
+    padding-bottom: 15px;
+    text-transform: uppercase;
+}
+
+#banner3 h3{
+    color: var(--deep-carmine-pink);
+    font-weight: 800;
+    font-size: 15px;
+   
+}
+
+#banner3 .banner-box2{
+    background-image: url(img/banner/b4.jpg);
+}
+
+#banner3 .banner-box3{
+    background-image: url(img/banner/b18.jpg);
+}
+
+/* Newsletter section */
+
+#newsletter{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: url(img/banner/b14.png);
+    background-repeat: no-repeat;
+    background-position: 20% 30%; 
+    background-color: #041e42;
+    padding: 40px 80px;
+    margin: 40px 0px;
+}
+
+#newsletter h4{
+    font-size: 22px;
+    color: #fff;
+}
+
+#newsletter p{
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--light-gray);
+}
+
+
+#newsletter p span{ 
+   color: #ffbd27;
+}
+
+#newsletter .form{
+    display: flex;
+    width: 40%;
+    align-items: center;
+    justify-content: center;
+}
+
+#newsletter input{
+    height: 3.125rem;
+    width: 100%;
+    padding: 0 1.125rem;
+    font-size: 14px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    outline: none;
+    border-top-right-radius: 0 ;
+    border-bottom-right-radius: 0;
+}
+
+#newsletter button{
+    background-color: var(--Dark-cyan);
+    color: #ffff;
+    border: 0;
+    padding: 18px 25px;
+    white-space: nowrap;
+    font-size: 15px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+/* footer section */
+
+footer{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 40px 0px;
+    padding: 40px 80px;
+}
+
+footer .col{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+
+footer .logo{
+    margin-bottom: 30px;
+}
+
+footer h4{
+    color: var(--Dark-grey);
+    padding-bottom: 20px;
+}
+
+footer p{
+    font-size: 13px;
+    margin: 0 0 8px 0;
+}
+
+
+
+footer a{
+    text-decoration: none;
+    font-size: 13px;
+    margin: 0 0 8px 0;
+    color: #222;
+}
+   
+footer .follow{
+    margin-top: 20px;
+}
+
+footer .follow i{
+    color: var(--light-gray);
+    padding-right: 4px;
+    cursor: pointer;
+}
+
+footer .install .row img{
+    border: 1px solid var(--Dark-cyan);
+    border-radius: 6px;
+}
+
+footer .install img{
+    margin: 10px 0 15px 0;
+}
+
+footer .copyright{
+    text-align: center;
+    width: 100%;
+}
+
+footer .follow i:hover, footer a:hover{
+    color: var(--Dark-cyan);
+}
