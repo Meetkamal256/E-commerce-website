@@ -5,26 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>E-commerce website</title>
     <link rel="stylesheet" href="styles.css" />
-    <script
-      src="https://kit.fontawesome.com/dacccb715c.js"
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://kit.fontawesome.com/dacccb715c.js"
+      crossorigin="anonymous"></script>
   </head>
   <body>
     <section id="header">
       <a href="#"><img src="img/logo.png" alt="" /></a>
-      <div id="navbar">
-        <ul>
+      <div>
+        <ul id="navbar">
           <li><a href="index.html" class="active">Home</a></li>
           <li><a href="shop.html">Shop</a></li>
           <li><a href="blog.html">Blog</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="contact.html">Contact</a></li>
           <li>
-            <a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
+            <a href="cart.html" id="lg-cart"><i class="fa-solid fa-cart-shopping"></i></a>
           </li>
+          <a href="#"><i class="fas fa-times" id="close"></i></a>
         </ul>
       </div>
+      <div id="mobile">
+        <a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a>  
+        <i class="fas fa-outdent" id="menu-open"></i>
+      </div>
+    
     </section>
     
     <section id="hero">
@@ -431,6 +435,7 @@
             <p> &copy Copyright 2023</p>
         </div>
     </footer>
- 
+    <script src="script.js"></script>
+  
   </body>
 </html>
