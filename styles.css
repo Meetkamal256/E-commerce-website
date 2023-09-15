@@ -7,8 +7,6 @@
     font-family: 'League Spartan', sans-serif;
 }
 
-
-
 :root{
     --lavender: #E3E6F3;
     --Dark-grey: #1a1a1a;
@@ -75,7 +73,7 @@ p{
     top: 0;
     right: 0;
     z-index: 999;
-    max-width: 100%;
+    width: 100%;
 }
 
 #navbar{
@@ -580,6 +578,197 @@ footer .follow i:hover, footer a:hover{
     color: var(--Dark-cyan);
 }
 
+/* Shop page */
+
+#page-header{
+    background: url(img/banner/b1.jpg);
+    width: 100%;
+    height: 40vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding: 14px;
+}
+
+#page-header h2,
+#page-header p{
+    color: #fff;
+} 
+
+#pagination{
+    padding: 40px 80px;
+    text-align: center;
+}
+
+#pagination a{
+    background-color: var(--Dark-cyan);
+    color: #fff;
+    padding: 15px 25px;
+    border-radius: 5px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+#pagination i{
+    font-size: 16px;
+    font-weight: 600;
+}
+
+/* single product */
+
+#prodetails{
+    padding: 40px 80px;
+    margin-top: 20px;
+    display: flex;
+}
+
+#prodetails .single-pro-image{
+    width: 40%;
+    margin-right: 50px;
+}
+
+.small-img-group{
+    display: flex;
+    justify-content: space-between;
+}
+
+.small-img-col{
+    flex-basis: 24%;
+    cursor: pointer;
+}
+
+#prodetails .single-pro-details{
+    flex-basis: 50%;
+    padding-top: 30px;
+}
+
+#prodetails .single-pro-details h4{
+    padding: 40px 0px 20px 0px;
+}
+
+#prodetails .single-pro-details h2{
+    font-size: 25px;
+}
+
+#prodetails .single-pro-details select{
+    display: block;
+    padding: 5px 10px;
+    margin-bottom: 10px;
+}
+
+#prodetails .single-pro-details input{
+    width: 50px;
+    height: 45px;
+    font-size: 16px;
+    text-align: center;
+    margin-right: 10px;
+}
+
+#prodetails .single-pro-details input:focus{
+    outline: none;
+}
+
+#prodetails .single-pro-details button{
+    background-color: var(--Dark-cyan);
+    padding: 15px 30px;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    border-radius: 7px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+#prodetails .single-pro-details button:hover{
+    background-color: rgb(87, 129, 16);
+}
+
+#prodetails .single-pro-details span{
+    line-height: 1.5;
+}
+
+/* Blog page */
+
+#page-header.blog-header{
+    background-image: url(img/banner/b19.jpg);
+}
+
+#blog{
+    padding: 150px 150px 0px 150px
+}
+
+#blog .blog-box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    position: relative;
+    padding-bottom: 90px;
+   
+}
+
+#blog .blog-img{
+    width: 50%;
+    margin-right: 40px;
+}
+
+#blog .blog-img img{
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+#blog .blog-details{
+    width: 50%;
+}
+
+#blog .blog-details a{
+    text-decoration: none;
+    font-size: 11px;
+    color: black;
+    font-weight: 700;
+    text-transform: uppercase;
+    position: relative;
+    transition: 0.3s ease;
+}
+
+#blog .blog-details a::after{
+    content: "";
+    width: 50px;
+    height: 1px;
+    background-color: #000;
+    position: absolute;
+    top: 4px;
+    right: -60px;
+}
+
+#blog .blog-details a:hover{
+    color: var(--Dark-cyan);
+}
+
+#blog .blog-details a:hover::after{
+    background-color: var(--Dark-cyan);
+}
+
+#blog .blog-box h1{
+    position: absolute;
+    top: -40px;
+    left: 0;
+    font-size: 70px;
+    font-weight: 700;
+    color: lightgrey;
+    z-index: -1;
+}
+
+
+
+
+
+
+
+
+
 /* Responsive Styles */
 
 
@@ -738,7 +927,7 @@ footer .follow i:hover, footer a:hover{
     #sm-banner .banner-box2 {
        margin-top: 20px;
     }
-
+    
     #banner3 .banner-box {
         width: 100%;
     }
@@ -753,6 +942,48 @@ footer .follow i:hover, footer a:hover{
 
     footer .copyright {
         text-align: start;
+    }
+
+    /* single product page */
+
+    #prodetails {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #prodetails .single-pro-image {
+        width: 100%;
+        margin-right: 0;
+    }
+
+    #prodetails {
+        padding: 40px 20px;
+        margin-top: 0px;
+    }
+    
+    #prodetails .single-pro-details {
+        flex-basis: 100%;
+    }
+
+    /* blog page */
+
+    #blog {
+        padding: 100px 20px 0px 20px;
+    }
+
+    #blog .blog-box {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start
+    }
+
+    #blog .blog-img {
+        width: 100%;
+        margin-right: 40px;
+    }
+
+    #blog .blog-details {
+        width: 100%;
     }
 }
 
