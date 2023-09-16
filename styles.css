@@ -21,6 +21,7 @@
 
 body{
     width: 100%;
+    height: 100vh;
 }
 
 h1{
@@ -73,14 +74,14 @@ p{
     top: 0;
     right: 0;
     z-index: 999;
-    width: 100%;
 }
 
 #navbar{
     display: flex;
     align-items: center;
     justify-content: center;
-}
+     width: 100%;
+} 
 
 #navbar li{
     list-style: none;
@@ -761,6 +762,303 @@ footer .follow i:hover, footer a:hover{
     z-index: -1;
 }
 
+/* About page */
+
+#page-header.about-header{
+    background-image: url(img/about/banner.png);
+    background-position: center;
+    background-size: cover;
+}
+
+#about{
+    display: flex;
+    align-items: center;
+    padding: 40px 80px;
+}
+
+#about img{
+    width: 50%;
+    height: auto;
+}
+
+#about div{
+    padding-left: 40px;
+}
+
+#about p{
+    line-height: 1.5;
+}
+
+
+#choose{
+    padding: 40px 60px;
+}
+
+#choose h2{
+    text-align: center;
+}
+
+.options-1, .options-2{
+    display: flex;
+    align-items: center;   
+}
+
+.options-1 .free-shipping {
+    padding-right: 80px; /* Adjust the margin as needed to control the space */
+}
+
+
+
+#choose img{
+    background-color: #ccc;
+    border-radius: 50%;
+}
+
+/* Contact page */
+
+#contact-details{
+    padding: 40px 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#contact-details .details{
+    width: 40%;
+}
+
+#contact-details .details span,
+#form-details form {
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+#contact-details .details h2,
+#form-details form h2 {
+    font-size: 26px;
+    line-height: 1.2;
+    padding: 20px 0;
+}
+
+#contact-details .details li{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+}
+
+#contact-details .details li i{
+    font-size: 14px;
+    padding-right: 22px;
+}
+
+#contact-details .details p{
+    margin: 0;
+    font-size: 14px;
+}
+
+#contact-details .details .map{
+    width: 55%;
+    height: 400px;
+}
+ 
+#contact-details .details .map iframe{
+    width: 100%;
+    height: 100%;
+}
+
+#form-details{
+     display: flex;
+    justify-content: space-between;
+    margin: 40px;
+    padding: 80px;
+    border: 1px solid lightgray;
+}  
+
+#form-details form{
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+#form-details form input,
+#form-details form textarea{
+    width: 100%;
+    padding: 12px 15px;
+    outline: none;
+    margin-bottom: 20px;
+    border: 1px solid lightgray;
+}
+
+#form-details form button{
+    background-color: var(--Dark-cyan);
+    padding: 15px 30px;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 15px;
+}
+
+#form-details .people div{
+    display: flex;
+    margin-bottom: 20px;
+    align-items: flex-start;
+
+}
+
+#form-details .people img{
+    width: 65px;
+    height: 65px;
+    object-fit: cover;
+    margin-right: 15px;
+}
+
+#form-details .people p{
+    margin: 0;
+    font-size: 13px;
+    line-height: 25px;
+}
+
+#form-details .people p span{
+    display: block;
+    font-size: 16px;
+    color: #000;
+    font-weight: 600;
+}
+
+/* Cart page */
+
+#cart{
+    padding: 40px 80px;
+  
+}
+
+#cart table{
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    white-space: nowrap;
+}
+
+#cart table img{
+    width: 70px;
+}
+
+#cart table td:nth-child(1){
+    width: 100px;
+    text-align: center;
+}
+
+#cart table td:nth-child(2){
+    width: 150px;
+}
+
+#cart table td:nth-child(3){
+    width: 250px;
+}
+
+#cart table td:nth-child(4),
+#cart table td:nth-child(5),
+#cart table td:nth-child(6){
+    width: 150px;
+    text-align: center;
+}
+
+#cart table td:nth-child(5) input{
+    width: 70px;
+    padding: 10px 5px 10px 15px; 
+}
+
+#cart table thead tr {
+    border: 1px solid #e2e9e1;
+    border-left: none;
+    border-right: none;
+}
+
+
+#cart table thead td{
+    text-transform: uppercase;
+    font-size: 13px;
+    padding: 18px 0;
+}
+
+#cart table tbody tr td{
+    padding-top: 15px;
+}
+
+#cart table thead tr td{
+    font-size: 13px;
+}
+
+#cart-add{
+    padding: 40px 80px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+#coupon{
+    width: 50%;
+    margin-bottom: 30px;
+}
+
+#coupon h3,
+#subtotal h3{
+    padding-bottom: 15px;
+}
+
+#coupon input{
+    width: 60%;
+    padding: 10px 20px;
+    margin-right: 10px;
+    border: 1px solid lightgray;
+    outline: none;
+}
+
+#coupon button,
+#subtotal button{ 
+    background-color: var(--Dark-cyan);
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    font-size: 15px;
+    border-radius: 5px;
+}
+
+#subtotal{
+    width: 50%;
+    margin-bottom: 30px;
+    border: 1px solid lightgray;
+    padding: 30px;
+}
+
+#subtotal table{
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+#subtotal table td{
+    width: 50%;
+    border: 1px solid lightgray;
+    padding: 10px;
+    font-size: 13px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -871,6 +1169,43 @@ footer .follow i:hover, footer a:hover{
         width: 70%;
     }
 
+    /* Contact page */
+    
+    #contact-details {
+        padding: 40px 80px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+    }
+    
+    #contact-details .details {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    
+    #form-details {
+        display: flex;
+        justify-content: space-between;
+        margin: 40px;
+        padding: 40px;
+        border: 1px solid lightgray;
+    }
+    
+    #contact-details .details .map{
+        width: 55%;
+        height: 400px;
+    }
+     
+    #contact-details .details .map iframe{
+        max-width: 100%;
+        height: 100%;
+    }
+    
+    #form-details form {
+        width: 50%;
+    }    
+
 }
 
 @media(max-width: 477px){
@@ -878,7 +1213,7 @@ footer .follow i:hover, footer a:hover{
         padding: 10px 30px;
     
     }
-
+    
     #hero {
      
         background-position: 55%;
@@ -886,7 +1221,7 @@ footer .follow i:hover, footer a:hover{
         width: 100%;
         padding: 0 20px;
     }
-
+    
     h1 {
         font-size: 40px;
         line-height: 64px;
@@ -897,7 +1232,7 @@ footer .follow i:hover, footer a:hover{
         font-size: 32px;
        
     }
-
+    
     #feature {
         padding: 20px;
         justify-content: space-between;
@@ -907,15 +1242,15 @@ footer .follow i:hover, footer a:hover{
         width: 155px;
         margin: 0 0 15px 0;
     }
-
+    
     #product1 .pro {
         width: 100%;
     }
-
+    
     #banner {
         height: 40vh;
     }
-
+    
     #sm-banner {
         padding: 40px;
     }
@@ -935,27 +1270,27 @@ footer .follow i:hover, footer a:hover{
     #newsletter {
         padding: 40px 20px;
     }
-
+    
     #newsletter .form {
         width: 100%;
     }
-
+    
     footer .copyright {
         text-align: start;
     }
-
+    
     /* single product page */
-
+    
     #prodetails {
         display: flex;
         flex-direction: column;
     }
-
+    
     #prodetails .single-pro-image {
         width: 100%;
         margin-right: 0;
     }
-
+    
     #prodetails {
         padding: 40px 20px;
         margin-top: 0px;
@@ -964,26 +1299,64 @@ footer .follow i:hover, footer a:hover{
     #prodetails .single-pro-details {
         flex-basis: 100%;
     }
-
+    
     /* blog page */
-
+    
     #blog {
         padding: 100px 20px 0px 20px;
     }
-
+    
     #blog .blog-box {
         display: flex;
         flex-direction: column;
         align-items: flex-start
     }
-
+    
     #blog .blog-img {
         width: 100%;
         margin-right: 40px;
     }
-
+    
     #blog .blog-details {
         width: 100%;
+    }
+    
+    /* About page */
+    
+    #about {
+        display: flex;
+        flex-direction: column;
+        padding: 40px 20px;
+    }
+    
+    #about img {
+        width: 100%;
+        height: auto;
+    }
+    
+    #choose {
+        padding: 40px 40px;
+    }
+    
+    .options-1, .options-2 {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    /* Contact page */
+    
+    #contact-details {
+        padding: 40px;
+        flex-direction: column;
+    }
+    
+    #form-details {
+        flex-direction: column;
+    }
+    
+    #form-details form {
+        width: 100%;
+        margin-bottom: 20px;
     }
 }
 
