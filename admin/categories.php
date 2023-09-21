@@ -23,7 +23,7 @@
           <li class="active">Dashboard</li>
         </ol>
       </section>
-
+      
       <!-- Main content -->
       <section class="content">
         <!-- Small boxes (Stat box) -->
@@ -31,12 +31,12 @@
           <div class="col-sm-3">
           </div>
           <div class="col-sm-6">
-            <form role="form">
+            <form role="form" method="POST" action="cathandler.php">
               <h1>Categories</h1>
               <div class="box-body">
                 <div class="form-group">
                   <label for="category">Categories</label>
-                  <input type="text" class="form-control" id="text" placeholder="Enter Category">
+                  <input type="text" class="form-control" id="text" placeholder="Enter Category" name="name">
                 </div>
               </div>
               <!-- /.box-body -->

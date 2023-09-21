@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (mysqli_query($conn, $sql)) {
         echo "Record inserted successfully<br>";
     } else {
-        echo "Error: " . mysqli_error($conn). '<br>';
+        echo "Error: " . mysqli_error($conn). '<br>';   
     }
 }
 
