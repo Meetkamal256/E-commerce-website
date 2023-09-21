@@ -9,29 +9,28 @@
       crossorigin="anonymous"></script>
   </head>
   <body>
-    <section id="header">
+  <section id="header">
       <a href="#"><img src="img/logo.png" alt="" /></a>
       <div>
         <ul id="navbar">
-          <li><a href="index.html" class="active">Home</a></li>
-          <li><a href="shop.html">Shop</a></li>
-          <li><a href="blog.html">Blog</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="contact.html">Contact</a></li>
-          <li><a href="account.html">Account</a></li>
+          <li><a href="index.php" class="active">Home</a></li>
+          <li><a href="shop.php">Shop</a></li>
+          <li><a href="blog.php">Blog</a></li>
+          <li><a href="about.php">About</a></li>
+          <li><a href="contact.php">Contact</a></li>
+          <li><a href="account.php">Account</a></li>
           <li>
-            <a href="cart.html" id="lg-cart"><i class="fa-solid fa-cart-shopping"></i></a>
+            <a href="cart.php" id="lg-cart"><i class="fa-solid fa-cart-shopping"></i></a>
           </li>
           <a href="#"><i class="fas fa-times" id="close"></i></a>
         </ul>
       </div>
       <div id="mobile">
-        <a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a>  
+        <a href="cart.php"><i class="fa-solid fa-cart-shopping"></i></a>  
         <i class="fas fa-outdent" id="menu-open"></i>
       </div>
-    
-    </section>
-    
+    </section>  
+     
     <section id="hero">
         <h4>Trade in offers</h4>
         <h2>Super value deals</h2>
@@ -384,58 +383,7 @@
         </div>
     </section>
     
-    <footer>
-        <div class="col">
-            <a href="#"><img class="logo" src="img/logo.png" alt=""></a>
-            <h4>Contact</h4>
-            <p> <strong>Address: </strong> 562 Wellington Road Street 32 San Francisco </p>
-            <p><strong>Phone:</strong> +012222 365/(+91) 0123456789</p>
-            <p><strong>Hours:</strong> 10:00 - 18:00 Mon - Sat</p>
-            <div class="follow">
-                <h4>Follow Us</h4>
-                <div class="icons">
-                    <i class="fa fa-facebook"></i>
-                    <i class="fa fa-twitter"></i>
-                    <i class="fa fa-instagram"></i>
-                    <i class="fa fa-pinterest"></i>
-                    <i class="fa fa-youtube"></i>
-                </div>
-            </div>
-        </div>
-        
-        <div class="col">
-            <h4>About</h4>
-            <a href="#">About Us</a>
-            <a href="#">Delivery Information</a>
-            <a href="#">Terms and Conditions</a>
-            <a href="#">Privacy Policy</a>
-            <a href="#">Contact Us</a>
-        </div>
-        
-        <div class="col">
-            <h4>My Account</h4>
-            <a href="#">Sign In</a>
-            <a href="#">View Cart</a>
-            <a href="#">My Wishlist</a>
-            <a href="#">Track My Order</a>
-            <a href="#">Help</a>
-        </div>
-        
-        <div class="col install">
-            <h4>Install</h4>
-            <p>From App Store or Google Store</p>
-            <div class="row">
-                <img src="img/pay/app.jpg" alt="">
-                <img src="img/pay/play.jpg" alt="">
-            </div>
-            <p>Secured Payment Gateway</p>
-            <img src="img/pay/pay.png" alt="">
-        </div>
-        
-        <div class="copyright">
-            <p> &copy Copyright 2023</p>
-        </div>
-    </footer>
+    <?php include("partials/footer.php"); ?>
     <script src="script.js"></script>
   
   </body>
