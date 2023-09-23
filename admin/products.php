@@ -53,8 +53,14 @@
                 <div class="form-group">
                     <label for="category">Category</label>
                     <select id="category" name="category">
-                        <option>Shirt</option>
-                        <option>Pants</option>
+                      <?php
+                      include("../partials/connect.php");
+                      $cat = "SELECT * from categories";
+                      $results = mysqli_query($conn, $cat);
+                      while($row=mysqli_fetch_assoc($results)){
+                        echo "<option value=".$row['id'].">".$row['name']."</option>";
+                      }
+                      ?>
                     </select>
                 </div>
               </div>
