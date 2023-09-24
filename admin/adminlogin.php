@@ -1,4 +1,5 @@
 <?php
+session_start();
 include("./admin-partials/head.php");
 
 if(isset($_POST['login'])){
@@ -9,6 +10,9 @@ if(isset($_POST['login'])){
     $sql = "SELECT * from admin where username='$email' AND password='$password'";
     $results = mysqli_query($conn, $sql);
     $final = mysqli_fetch_assoc($results); 
+    
+    $_SESSION['email'] = $final['username'];
+    $_SESSION['password'] = $final['password'];
     
     // Check if a record was found and compare the email and password
     if($email = $final['username'] && $password === $final['password']){

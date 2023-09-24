@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html>
-<?php include("admin-partials/head.php"); ?>
+<?php
+  include("admin-partials/head.php");
+  include("admin-partials/session.php");
+?>
 
 <body class="hold-transition skin-blue sidebar-mini">
   <div class="wrapper">
-    
+
     <?php include("admin-partials/header.php");
     include("admin-partials/aside.php");
     ?>
     <!-- Left side column. contains the logo and sidebar -->
-    
+
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
       <!-- Content Header (Page header) -->
@@ -23,7 +26,7 @@
           <li class="active">Dashboard</li>
         </ol>
       </section>
-      
+
       <!-- Main content -->
       <section class="content">
         <!-- Small boxes (Stat box) -->
@@ -32,7 +35,7 @@
           </div>
           <div class="col-sm-6">
             <form role="form" action="producthandler.php" method="post" enctype="multipart/form-data">
-                <h1>Products</h1>
+              <h1>Products</h1>
               <div class="box-body">
                 <div class="form-group">
                   <label for="name">Name</label>
@@ -48,24 +51,24 @@
                 </div>
                 <div class="form-group">
                   <label for="description">Description</label>
-                 <textarea id="description" class="form-control" rows="10" placeholder="Enter Description" name="description"></textarea>
+                  <textarea id="description" class="form-control" rows="10" placeholder="Enter Description" name="description"></textarea>
                 </div>
                 <div class="form-group">
-                    <label for="category">Category</label>
-                    <select id="category" name="category">
-                      <?php
-                      include("../partials/connect.php");
-                      $cat = "SELECT * from categories";
-                      $results = mysqli_query($conn, $cat);
-                      while($row=mysqli_fetch_assoc($results)){
-                        echo "<option value=".$row['id'].">".$row['name']."</option>";
-                      }
-                      ?>
-                    </select>
+                  <label for="category">Category</label>
+                  <select id="category" name="category">
+                    <?php
+                    include("../partials/connect.php");
+                    $cat = "SELECT * from categories";
+                    $results = mysqli_query($conn, $cat);
+                    while ($row = mysqli_fetch_assoc($results)) {
+                      echo "<option value=" . $row['id'] . ">" . $row['name'] . "</option>";
+                    }
+                    ?>
+                  </select>
                 </div>
               </div>
               <!-- /.box-body -->
-              
+
               <div class="box-footer">
                 <button type="submit" class="btn btn-primary">Submit</button>
               </div>
@@ -74,7 +77,7 @@
           <div class="col-sm-3">
           </div>
         </div>
-      
+
       </section>
       <!-- /.content -->
     </div>
