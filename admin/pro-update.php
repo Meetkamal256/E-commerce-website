@@ -7,12 +7,12 @@
 
 <body class="hold-transition skin-blue sidebar-mini">
   <div class="wrapper">
-
+    
     <?php include("admin-partials/header.php");
     include("admin-partials/aside.php");
     ?>
     <!-- Left side column. contains the logo and sidebar -->
-
+    
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
       <!-- Content Header (Page header) -->
@@ -26,7 +26,7 @@
           <li class="active">Dashboard</li>
         </ol>
       </section>
-
+      
       <!-- Main content -->
       <section class="content">
         <!-- Small boxes (Stat box) -->
@@ -34,30 +34,36 @@
           <div class="col-sm-3">
           </div>
           <div class="col-sm-6">
-            <form role="form" action="producthandler.php" method="post" enctype="multipart/form-data">
+            <?php
+               $newId = $_GET['up_id'];
+               include("../partials/connect.php"); 
+               $sql = "SELECT * from products WHERE id ='$newId'";
+               $results = mysqli_query($conn, $sql);
+               $final = mysqli_fetch_assoc($results)
+            ?>
+            <form role="form" action="pro-updatehandler.php" method="post" enctype="multipart/form-data">
               <h1>Products</h1>
               <div class="box-body">
                 <div class="form-group">
                   <label for="name">Name</label>
-                  <input type="text" class="form-control" id="name" placeholder="Enter Product Name" name="name">
+                  <input type="text" class="form-control" id="name" placeholder="Enter Product Name" name="name" value="<?php echo $final['name'] ?>">
                 </div>
                 <div class="form-group">
                   <label for="price">Price</label>
-                  <input type="text" class="form-control" id="price" placeholder="Price" name="price">
+                  <input type="text" class="form-control" id="price" placeholder="Price" name="price" value="<?php echo $final['price'] ?>">
                 </div>
                 <div class="form-group">
                   <label for="picture">File input</label>
-                  <input type="file" id="picture" name="file">
+                  <input type="file" id="picture" name="file" value="<?php echo $final['picture'] ?>">
                 </div>
                 <div class="form-group">
                   <label for="description">Description</label>
-                  <textarea id="description" class="form-control" rows="10" placeholder="Enter Description" name="description"></textarea>
+                  <textarea id="description" class="form-control" rows="10" placeholder="Enter Description" name="description" value="<?php echo $final['description'] ?>"></textarea>
                 </div>
                 <div class="form-group">
                   <label for="category">Category</label>
-                  <select id="category" name="category">
+                  <select id="category" name="category" value="<?php echo $final['category'] ?>">
                     <?php
-                    include("../partials/connect.php");
                     $cat = "SELECT * from categories";
                     $results = mysqli_query($conn, $cat);
                     while ($row = mysqli_fetch_assoc($results)) {
@@ -70,14 +76,15 @@
               <!-- /.box-body -->
               
               <div class="box-footer">
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <input type="hidden" name="form_id" value="<?php echo $final['id'] ?>">
+                <button type="submit" class="btn btn-primary" name="update">Update</button>
               </div>
             </form>
           </div>
           <div class="col-sm-3">
           </div>
         </div>
-
+      
       </section>
       <!-- /.content -->
     </div>
