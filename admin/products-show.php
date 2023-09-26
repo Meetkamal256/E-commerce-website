@@ -46,6 +46,9 @@
           
           <a href="pro-update.php?up_id=<?php echo $final['id'] ?>">
             <button>Update</button>
+        </a>
+        <a href="pro-delete.php?del_id=<?php echo $final['id'] ?>">
+            <button style="color: red;">Delete</button>
         </a><hr>
         <?php }
           ?>
