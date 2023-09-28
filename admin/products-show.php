@@ -32,7 +32,9 @@
         <!-- Small boxes (Stat box) -->
         <div class="row">
           <div class="col-sm-9">
-
+            <a href="products.php">
+                <button style="color: green">Add New</button>
+            </a>
           <?php
           include('../partials/connect.php');
           

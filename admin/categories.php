@@ -40,13 +40,13 @@ include("admin-partials/head.php");
               <div class="box-body">
                 <div class="form-group">
                   <label for="category">Categories</label>
-                  <input type="text" class="form-control" id="text" placeholder="Enter Category" name="name">
+                  <input type="text" class="form-control" id="text" placeholder="Enter Category" name="cat_title">
                 </div>
               </div>
               <!-- /.box-body -->
               
               <div class="box-footer">
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <input type="submit" class="btn btn-primary" name="insert_cat" value="Insert Category">
               </div>
             </form>
           </div>

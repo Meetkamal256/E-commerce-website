@@ -26,12 +26,17 @@
                 <ul class="sidebar-menu" data-widget="tree">
                     <li class="header">MAIN NAVIGATION</li>
                     <li>
+                        <a href="adminindex.php">
+                            <i class="fa fa-th"></i> <span>Home</span>
+                        </a>
+                    </li>
+                    <li>
                         <a href="categories.php">
                             <i class="fa fa-th"></i> <span>Category</span>
                         </a>
                     </li>
                     <li>
-                        <a href="products.php">
+                        <a href="products-show.php">
                             <i class="fa fa-th"></i> <span>Products</span>
                         </a>
                     </li>

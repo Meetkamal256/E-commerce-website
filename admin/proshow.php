@@ -46,7 +46,7 @@
           <h3>Name: <?php echo $final['name'] ?></h3><hr><br>
           <h3>Price: <?php echo $final['price'] ?></h3><hr><br>
           <h3>Description: <?php echo $final['description'] ?></h3><hr><br>
-          <img src="<?php echo $final['picture']?>" alt="No file" style="height: 300px; width: 300px background: cover;">
+          <img src="../<?php echo $final['picture']?>" alt="No file" style="height: 300px; width: 300px background: cover;">
           </div>
       
           <div class="col-sm-3">

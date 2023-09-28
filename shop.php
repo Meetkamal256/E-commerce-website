@@ -38,7 +38,7 @@
     
     <section id="product1">
         <div class="pro-container">
-            <div class="pro" onclick="window.location.href='sproduct.php'">
+            <div class="pro" onclick="window.location.href='product-details.php'">
                 <img src="img/products/f1.jpg" alt="">
                 <div class="des">
                     <span>Adidas</span>

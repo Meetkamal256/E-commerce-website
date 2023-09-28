@@ -125,10 +125,10 @@ p{
 /* Home page section */
 
 #hero{
-    background-image: url(img/hero4.png);
+    background-image: url(img/hero3.png);
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: top 25% right 0%;
+    /* background-position: top 25% right 0%; */
     height: 100vh;
     width: 100%;
     padding: 0 80px;
@@ -141,10 +141,19 @@ p{
 #hero h4{
     margin-bottom: 15px;
     font-weight: 400;
+    color: lightgrey;
+}
+
+#hero h2{
+    color: lightgrey;
 }
 
 #hero h1{
-    color: var(--Dark-cyan);
+    color: lightgrey;
+}
+
+#hero p{
+    color: lightgrey;
 }
 
 #hero button{
@@ -152,7 +161,7 @@ p{
     background: url(img/button.png);
     background-color: transparent;
     padding: 14px 80px 14px 65px;
-    color: var(--Dark-cyan);
+    color: lightgrey;
     font-weight: 700;
     font-size: 15px;
     cursor: pointer;
@@ -228,6 +237,12 @@ p{
     flex-wrap: wrap;
     padding: 20px;
 }
+
+#product1 h2, p{
+    color: black;
+}
+
+
 
 #product1 .pro{
     width: 23%;

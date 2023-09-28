@@ -29,9 +29,20 @@
             
             <!-- Main content -->
             <section class="content">
-                <!-- Small boxes (Stat box) -->
-                
-                <h1>Hello</h1>
+                <div class="row">
+                    <div class="col-sm-9">
+                        <a href="products.php">
+                            <button style="color: green">Add Products</button>
+                        </a><hr>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-9">
+                        <a href="categories.php">
+                            <button style="color: green">Add Categories</button>
+                        </a><hr>
+                    </div>
+                </div>
             </section>
             <!-- /.content -->
         </div>
