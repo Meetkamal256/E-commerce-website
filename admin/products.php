@@ -67,6 +67,12 @@
                   <label for="product_image3" class="form-label">Product Image 3</label>
                   <input type="file" id="product_image3" name="product_image3" class="form-control">
                 </div>
+                 
+                 <!-- Product image 4 -->
+                 <div class="form-group">
+                  <label for="product_image4" class="form-label">Product Image 4</label>
+                  <input type="file" id="product_image4" name="product_image4" class="form-control">
+                </div>
                 
                 <!-- Product description -->
                 <div class="form-group">

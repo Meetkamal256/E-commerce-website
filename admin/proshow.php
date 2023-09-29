@@ -3,6 +3,9 @@
 <?php
   include("admin-partials/head.php");
   include("admin-partials/session.php");
+  error_reporting(E_ALL);
+  ini_set('display_errors', 1);
+
 ?>
 
 <body class="hold-transition skin-blue sidebar-mini">
@@ -37,16 +40,19 @@
           include('../partials/connect.php');
           
           $id= $_GET['pro_id'];
-          $sql = "SELECT * from products WHERE id='$id'";
+          $sql = "SELECT * from products WHERE product_id='$id'";
           $results = mysqli_query($conn, $sql);
           
           $final = mysqli_fetch_assoc($results);
           ?>
           
-          <h3>Name: <?php echo $final['name'] ?></h3><hr><br>
-          <h3>Price: <?php echo $final['price'] ?></h3><hr><br>
-          <h3>Description: <?php echo $final['description'] ?></h3><hr><br>
-          <img src="../<?php echo $final['picture']?>" alt="No file" style="height: 300px; width: 300px background: cover;">
+          <h3>Name: <?php echo $final['product_title'] ?></h3><hr><br>
+          <h3>Price: <?php echo $final['product_price'] ?></h3><hr><br>
+          <h3>Description: <?php echo $final['product_description'] ?></h3><hr><br>
+          <img src="../product_images/<?php echo $final['product_image1']?>" alt="No File" style="height:300px; width: 300px">
+          <img src="../product_images/<?php echo $final['product_image2']?>" alt="No File" style="height:300px; width: 300px">
+          <img src="../product_images/<?php echo $final['product_image3']?>" alt="No File" style="height:300px; width: 300px">
+          <img src="../product_images/<?php echo $final['product_image4']?>" alt="No File" style="height:300px; width: 300px">
           </div>
       
           <div class="col-sm-3">
@@ -57,6 +63,6 @@
       <!-- /.content -->
     </div>
     <!-- /.content-wrapper -->
-    <?php include("admin-partials/footer"); ?>
+    <?php include("./admin-partials/footer.php"); ?>
 </body>
 </html>

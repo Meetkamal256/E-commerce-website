@@ -67,7 +67,7 @@
                     $cat = "SELECT * from categories";
                     $results = mysqli_query($conn, $cat);
                     while ($row = mysqli_fetch_assoc($results)) {
-                      echo "<option value=" . $row['id'] . ">" . $row['name'] . "</option>";
+                      echo "<option value=" . $row['category_id'] . ">" . $row['category_title'] . "</option>";
                     }
                     ?>
                   </select>
@@ -76,7 +76,7 @@
               <!-- /.box-body -->
               
               <div class="box-footer">
-                <input type="hidden" name="form_id" value="<?php echo $final['id'] ?>">
+                <input type="hidden" name="form_id" value="<?php echo $final['product_id'] ?>">
                 <button type="submit" class="btn btn-primary" name="update">Update</button>
               </div>
             </form>

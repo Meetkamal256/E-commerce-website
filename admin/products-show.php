@@ -7,12 +7,12 @@
 
 <body class="hold-transition skin-blue sidebar-mini">
   <div class="wrapper">
-
+    
     <?php include("admin-partials/header.php");
     include("admin-partials/aside.php");
     ?>
     <!-- Left side column. contains the logo and sidebar -->
-
+    
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
       <!-- Content Header (Page header) -->
@@ -42,14 +42,12 @@
           $results = mysqli_query($conn, $sql);
           while($final = mysqli_fetch_assoc($results)){ ?>
           
-          <a href="proshow.php?pro_id=<?php echo $final['id'] ?>">
-           <h3><?php echo $final['id'] ?>: <?php echo $final['name'] ?></h3>
-          </a>
-          
-          <a href="pro-update.php?up_id=<?php echo $final['id'] ?>">
+          <a href="proshow.php?pro_id=<?php echo $final['product_id'] ?>">
+           <h3><?php echo $final['product_id'] ?>: <?php echo $final['product_title'] ?></h3>
+          <a href="pro-update.php?up_id=<?php echo $final['product_id'] ?>">
             <button>Update</button>
         </a>
-        <a href="pro-delete.php?del_id=<?php echo $final['id'] ?>">
+        <a href="pro-delete.php?del_id=<?php echo $final['product_id'] ?>">
             <button style="color: red;">Delete</button>
         </a><hr>
         <?php }

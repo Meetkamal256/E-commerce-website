@@ -23,7 +23,7 @@ if (isset($_POST['insert_cat'])) {
     }
 }
 }
-header("location: products-show.php");
+// header("location: products-show.php");
 
 // Close the database connection
 mysqli_close($conn);
