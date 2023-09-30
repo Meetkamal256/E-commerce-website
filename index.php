@@ -1,36 +1,43 @@
+<?php
+include("partials/connect.php");
+include("functions/common_functions.php");
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>E-commerce website</title>
     <link rel="stylesheet" href="styles.css" />
-    <script src="https://kit.fontawesome.com/dacccb715c.js"
-      crossorigin="anonymous"></script>
-  </head>
-  <body>
-  <section id="header">
-      <a href="#"><img src="img/logo.png" alt="" /></a>
-      <div>
-        <ul id="navbar">
-          <li><a href="index.php" class="active">Home</a></li>
-          <li><a href="shop.php">Shop</a></li>
-          <li><a href="blog.php">Blog</a></li>
-          <li><a href="about.php">About</a></li>
-          <li><a href="contact.php">Contact</a></li>
-          <li><a href="account.php">Account</a></li>
-          <li>
-            <a href="cart.php" id="lg-cart"><i class="fa-solid fa-cart-shopping"></i></a>
-          </li>
-          <a href="#"><i class="fas fa-times" id="close"></i></a>
-        </ul>
-      </div>
-      <div id="mobile">
-        <a href="cart.php"><i class="fa-solid fa-cart-shopping"></i></a>  
-        <i class="fas fa-outdent" id="menu-open"></i>
-      </div>
-    </section>  
-     
+    <script src="https://kit.fontawesome.com/dacccb715c.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <section id="header">
+        <a href="#"><img src="img/logo.png" alt="" /></a>
+        <div>
+            <ul id="navbar">
+                <li><a href="index.php" class="active">Home</a></li>
+                <li><a href="display_all.php">Shop</a></li>
+                <li><a href="blog.php">Blog</a></li>
+                <li><a href="about.php">About</a></li>
+                <li><a href="contact.php">Contact</a></li>
+                <li><a href="account.php">Account</a></li>
+                <li>
+                    <a href="cart.php" id="lg-cart"><i class="fa-solid fa-cart-shopping"></i></a>
+                </li>
+                <a href="#"><i class="fas fa-times" id="close"></i></a>
+            </ul>
+        </div>
+        <div id="mobile">
+            <a href="cart.php"><i class="fa-solid fa-cart-shopping"></i></a>
+            <i class="fas fa-outdent" id="menu-open"></i>
+        </div>
+    </section>
+    
     <section id="hero">
         <h4>Trade in offers</h4>
         <h2>Super value deals</h2>
@@ -66,140 +73,15 @@
         </div>
     </section>
     
-    <section id="product1">
+    <section id='product1'>
         <h2>Featured Products</h2>
         <p>Summer collection New modern Design</p>
-        <div class="pro-container">
-            <div class="pro">
-                <img src="img/products/f1.jpg" alt="">
-                <div class="des">
-                    <span>Adidas</span>
-                    <h5>Cartoon Astronaut T-shirts</h5>
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <h4>$78</h4>
-                    </div>
-                    <a href="cart.html"><i class="fa-solid fa-cart-shopping cart"></i></a>
-                </div>               
-            </div>
-            <div class="pro">
-                <img src="img/products/f2.jpg" alt="">
-                <div class="des">
-                    <span>Adidas</span>
-                    <h5>Cartoon Astronaut T-shirts</h5>
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <h4>$78</h4>
-                    </div>
-                    <a href="cart.html"><i class="fa-solid fa-cart-shopping cart"></i></a>
-                </div>               
-            </div>
-            <div class="pro">
-                <img src="img/products/f3.jpg" alt="">
-                <div class="des">
-                    <span>Adidas</span>
-                    <h5>Cartoon Astronaut T-shirts</h5>
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <h4>$78</h4>
-                    </div>
-                    <a href="cart.html"><i class="fa-solid fa-cart-shopping cart"></i></a>
-                </div>               
-            </div>
-            <div class="pro">
-                <img src="img/products/f4.jpg" alt="">
-                <div class="des">
-                    <span>Adidas</span>
-                    <h5>Cartoon Astronaut T-shirts</h5>
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <h4>$78</h4>
-                    </div>
-                    <a href="cart.html"><i class="fa-solid fa-cart-shopping cart"></i></a>
-                </div>               
-            </div>
-            <div class="pro">
-                <img src="img/products/f5.jpg" alt="">
-                <div class="des">
-                    <span>Adidas</span>
-                    <h5>Cartoon Astronaut T-shirts</h5>
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <h4>$78</h4>
-                    </div>
-                    <a href="cart.html"><i class="fa-solid fa-cart-shopping cart"></i></a>
-                </div>               
-            </div>
-            <div class="pro">
-                <img src="img/products/f6.jpg" alt="">
-                <div class="des">
-                    <span>Adidas</span>
-                    <h5>Cartoon Astronaut T-shirts</h5>
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <h4>$78</h4>
-                    </div>
-                    <a href="cart.html"><i class="fa-solid fa-cart-shopping cart"></i></a>
-                </div>               
-            </div>
-            <div class="pro">
-                <img src="img/products/f7.jpg" alt="">
-                <div class="des">
-                    <span>Adidas</span>
-                    <h5>Cartoon Astronaut T-shirts</h5>
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <h4>$78</h4>
-                    </div>
-                    <a href="cart.html"><i class="fa-solid fa-cart-shopping cart"></i></a>
-                </div>               
-            </div>
-            <div class="pro">
-                <img src="img/products/f8.jpg" alt="">
-                <div class="des">
-                    <span>Adidas</span>
-                    <h5>Cartoon Astronaut T-shirts</h5>
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <h4>$78</h4>
-                    </div>
-                    <a href="cart.html"><i class="fa-solid fa-cart-shopping cart"></i></a>
-                </div>               
-            </div>
-        </div>        
+        <?php
+            getProducts();
+        ?>
     </section>
+    
+    
     
     <section id="banner">
         <h4>Repair Services</h4>
@@ -207,7 +89,7 @@
         <button>Explore more</button>
     </section>
     
-    <section id="product1">
+    <!-- <section id="product1">
         <h2>New Arrivals</h2>
         <p>Summer collection New modern Design</p>
         <div class="pro-container">
@@ -225,7 +107,7 @@
                         <h4>$78</h4>
                     </div>
                     <a href="cart.html"><i class="fa-solid fa-cart-shopping cart"></i></a>
-                </div>               
+                </div>
             </div>
             <div class="pro">
                 <img src="img/products/n2.jpg" alt="">
@@ -241,7 +123,7 @@
                         <h4>$78</h4>
                     </div>
                     <a href="cart.html"><i class="fa-solid fa-cart-shopping cart"></i></a>
-                </div>               
+                </div>
             </div>
             <div class="pro">
                 <img src="img/products/n3.jpg" alt="">
@@ -257,7 +139,7 @@
                         <h4>$78</h4>
                     </div>
                     <a href="cart.html"><i class="fa-solid fa-cart-shopping cart"></i></a>
-                </div>               
+                </div>
             </div>
             <div class="pro">
                 <img src="img/products/n4.jpg" alt="">
@@ -273,7 +155,7 @@
                         <h4>$78</h4>
                     </div>
                     <a href="cart.html"><i class="fa-solid fa-cart-shopping cart"></i></a>
-                </div>               
+                </div>
             </div>
             <div class="pro">
                 <img src="img/products/n5.jpg" alt="">
@@ -289,7 +171,7 @@
                         <h4>$78</h4>
                     </div>
                     <a href="cart.html"><i class="fa-solid fa-cart-shopping cart"></i></a>
-                </div>               
+                </div>
             </div>
             <div class="pro">
                 <img src="img/products/n6.jpg" alt="">
@@ -305,7 +187,7 @@
                         <h4>$78</h4>
                     </div>
                     <a href="cart.html"><i class="fa-solid fa-cart-shopping cart"></i></a>
-                </div>               
+                </div>
             </div>
             <div class="pro">
                 <img src="img/products/n7.jpg" alt="">
@@ -321,7 +203,7 @@
                         <h4>$78</h4>
                     </div>
                     <a href="cart.html"><i class="fa-solid fa-cart-shopping cart"></i></a>
-                </div>               
+                </div>
             </div>
             <div class="pro">
                 <img src="img/products/n8.jpg" alt="">
@@ -337,10 +219,10 @@
                         <h4>$78</h4>
                     </div>
                     <a href="cart.html"><i class="fa-solid fa-cart-shopping cart"></i></a>
-                </div>               
+                </div>
             </div>
-        </div>        
-    </section>
+        </div>
+    </section> -->
     
     <section id="sm-banner">
         <div class="banner-box">
@@ -371,7 +253,7 @@
             <h3>New trendy prints</h3>
         </div>
     </section>
-    
+
     <section id="newsletter">
         <div class="newstext">
             <h4>Sign Up For Newsletters</h4>
@@ -382,9 +264,10 @@
             <button type="submit">Sign Up</button>
         </div>
     </section>
-    
+
     <?php include("partials/footer.php"); ?>
     <script src="script.js"></script>
-  
-  </body>
+
+</body>
+
 </html>

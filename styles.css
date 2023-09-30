@@ -262,7 +262,8 @@ p{
 }
 
 #product1 .pro img{
-    width: 100%;
+    max-width: 100%;
+    height: auto;
     border-radius: 20px;
 }
 
@@ -1183,7 +1184,7 @@ footer .follow i:hover, footer a:hover{
     #newsletter .form{
         width: 70%;
     }
-
+    
     /* Contact page */
     
     #contact-details {

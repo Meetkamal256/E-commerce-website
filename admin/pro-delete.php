@@ -3,7 +3,7 @@ include("../partials/connect.php");
 
 $newId = $_GET['del_id'];
 
-$sql = "DELETE from products WHERE id='$newId'";
+$sql = "DELETE from products WHERE product_id='$newId'";
 if(mysqli_query($conn, $sql)){
     header("location: products-show.php");
 }else{

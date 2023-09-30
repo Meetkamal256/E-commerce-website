@@ -1,3 +1,8 @@
+<?php
+include("partials/connect.php");
+include("functions/common_functions.php");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -40,7 +45,7 @@
         <h2>Featured Products</h2>
         <p>Summer collection New modern Design</p>
         <?php
-            getProducts();
+            get_all_Products();
         ?>
     </section>
     
