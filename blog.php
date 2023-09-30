@@ -14,7 +14,7 @@
       <div>
         <ul id="navbar">
           <li><a href="index.php">Home</a></li>
-          <li><a href="shop.php">Shop</a></li>
+          <li><a href="display_all.php">Shop</a></li>
           <li><a class="active" href="blog.php">Blog</a></li>
           <li><a href="about.php">About</a></li>
           <li><a href="contact.php">Contact</a></li>

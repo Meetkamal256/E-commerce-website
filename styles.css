@@ -249,7 +249,7 @@ p{
     min-width: 250px;
     padding: 10px 12px;
     border: 1px solid lightgray;
-    border-radius: 25px;
+    border-radius: 8px;
     cursor: pointer;
     box-shadow: 20px 20px 30px rgba(0,0,0,0.03);
     margin: 15px 0px;
@@ -261,10 +261,17 @@ p{
     box-shadow: 20px 20px 30px rgba(0,0,0,0.09);
 }
 
-#product1 .pro img{
-    max-width: 100%;
-    height: auto;
-    border-radius: 20px;
+#product1 .pro .img-container{
+    width: 239px;
+    height: 239px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+#product1 .pro .img-container img{
+   width: 100%; 
+   min-height: 239px;
+   object-fit: cover;
 }
 
 #product1 .pro .des{
@@ -644,6 +651,8 @@ footer .follow i:hover, footer a:hover{
     width: 40%;
     margin-right: 50px;
 }
+
+#prodetails
 
 .small-img-group{
     display: flex;

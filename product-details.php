@@ -1,6 +1,6 @@
 <?php
 include("partials/connect.php");
-
+include("functions/common_functions.php");
 ?>
 
 <!DOCTYPE html>
@@ -20,7 +20,7 @@ include("partials/connect.php");
     <div>
       <ul id="navbar">
         <li><a href="index.php">Home</a></li>
-        <li><a href="shop.php">Shop</a></li>
+        <li><a href="display_all.php">Shop</a></li>
         <li><a href="blog.php">Blog</a></li>
         <li><a href="about.php">About</a></li>
         <li><a href="contact.php">Contact</a></li>
@@ -39,84 +39,13 @@ include("partials/connect.php");
   
   <section id="prodetails">
     <?php
-    if (isset($_GET['product_id'])) {
-      $new_id = $_GET['product_id'];
-      $select_query = "SELECT * from products WHERE product_id='$new_id'";
-      $result_query = mysqli_query($conn, $select_query);
-      while ($row = mysqli_fetch_assoc($result_query)) {
-        $product_id = $row['product_id'];
-        $product_title = $row['product_title'];
-        $product_price = $row['product_price'];
-        $product_image1 = $row['product_image1'];
-        $product_image2 = $row['product_image2'];
-        $product_image3 = $row['product_image3'];
-        $product_image4 = $row['product_image4'];
-        $product_description = $row['product_description'];
-        $category_id = $row['category_id'];
-        
-        echo "  <div class='single-pro-image'>
-          <img src='product_images/$product_image1' width='100%' id='main-img' alt='' />
-          <div class='small-img-group'>
-            <div class='small-img-col'>
-              <img
-                src='product_images/$product_image1'
-                width='100%'
-                class='small-img'
-                alt=''
-              />
-            </div>
-            <div class='small-img-col'>
-              <img
-                src='product_images/$product_image2'
-                width='100%'
-                class='small-img'
-                alt=''
-              />
-            </div>
-            <div class='small-img-col'>
-              <img
-                src='product_images/$product_image3'
-                width='100%'
-                class='small-img'
-                alt=''
-              />
-            </div>
-            <div class='small-img-col'>
-              <img
-                src='product_images/$product_image4'
-                width='100%'
-                class='small-img'
-                alt=''
-              />
-            </div>
-          </div>
-        </div>
-        <div class='single-pro-details'>
-          <h6>$product_title</h6>
-          <h4>Men's Fashion T shirt</h4>
-          <h2>$product_price</h2>
-          <select>
-            <option>Select Size</option>
-            <option>XL</option>
-            <option>XXL</option>
-            <option>Small</option>
-            <option>Large</option>
-          </select>
-          <input type='number' value='1' />
-          <button>Add to Cart</button>
-          <h4>Product details</h4>
-          <span>
-         $product_description
-          </span>
-        </div>";
-      }
-    }
+    view_more();
     ?>
   
   
   </section>
   
-  <section id="product1">
+  <!-- <section id="product1">
     <h2>Featured Products</h2>
     <p>Summer collection New modern Design</p>
     <div class="pro-container">
@@ -185,7 +114,7 @@ include("partials/connect.php");
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
   
   <section id="newsletter">
     <div class="newstext">
@@ -222,5 +151,4 @@ include("partials/connect.php");
   </script>
   <script src="script.js"></script>
 </body>
-
 </html>
