@@ -34,6 +34,7 @@ function getProducts(){
                         <h4>$product_price</h4>
                     </div>
                     <a href='cart.html'><i class='fa-solid fa-cart-shopping cart'></i></a>
+                    <a href='product-details.php?product_id=$product_id'><button>View more</button></a>
                 </div>               
             </div>
         </div>";
@@ -65,10 +66,11 @@ function get_all_products(){
                         <i class='fas fa-star'></i>
                         <i class='fas fa-star'></i>
                         <i class='fas fa-star'></i>
-                        <i class='fas fa-star'></i>
+                        <i class='fas fa-star'></i> 
                         <h4>$product_price</h4>
                     </div>
                     <a href='cart.html'><i class='fa-solid fa-cart-shopping cart'></i></a>
+                    <a href='product-details.php?product_id=$product_id'><button>View more</button></a>
                 </div>               
             </div>
         </div>";
