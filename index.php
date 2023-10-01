@@ -1,6 +1,7 @@
 <?php
 include("partials/connect.php");
 include("functions/common_functions.php");
+
 ?>
 
 
@@ -27,16 +28,21 @@ include("functions/common_functions.php");
                 <li><a href="contact.php">Contact</a></li>
                 <li><a href="account.php">Account</a></li>
                 <li>
-                    <a href="cart.php" id="lg-cart"><i class="fa-solid fa-cart-shopping"></i></a>
+                <a href='index.php?add_to_cart=$product_id'><i class='fa-solid fa-cart-shopping cart'></i></a> 
                 </li>
                 <a href="#"><i class="fas fa-times" id="close"></i></a>
             </ul>
         </div>
         <div id="mobile">
-            <a href="cart.php"><i class="fa-solid fa-cart-shopping"></i></a>
+        <a href='index.php?add_to_cart=$product_id'><i class='fa-solid fa-cart-shopping cart'></i></a> 
             <i class="fas fa-outdent" id="menu-open"></i>
         </div>
     </section>
+    
+    <!-- calling cart function -->
+    <?php
+        cart();
+    ?>
     
     <section id="hero">
         <h4>Trade in offers</h4>
@@ -78,40 +84,11 @@ include("functions/common_functions.php");
         <p>Summer collection New modern Design</p>
         <div class='pro-container'>
             <?php
-             $select_query = "SELECT * from products ORDER BY rand()";
-             $result_query = mysqli_query($conn, $select_query);
-             while ($row = mysqli_fetch_assoc($result_query)) {
-                 $product_id = $row['product_id'];
-                 $product_title = $row['product_title'];
-                 $product_price = $row['product_price'];
-                 $product_image1 = $row['product_image1'];
-                 $category_id = $row['category_id'];
-                 
-                 
-                 echo "  <div class='pro'>
-                 <div class='img-container'>
-                 <img src='product_images/$product_image1' alt=''>
-            </div>
-                 <div class='des'>
-                     <span>Adidas</span>
-                     <h5>$product_title</h5>
-                     <div class='stars'>
-                         <i class='fas fa-star'></i>
-                         <i class='fas fa-star'></i>
-                         <i class='fas fa-star'></i>
-                         <i class='fas fa-star'></i>
-                         <i class='fas fa-star'></i> 
-                         <h4>$product_price</h4>
-                     </div>
-                     <a href='cart.html'><i class='fa-solid fa-cart-shopping cart'></i></a>
-                     <a href='product-details.php?product_id=$product_id'><button>View more</button></a>
-                 </div>               
-             </div>";
-             }
-            ?>
+                getProducts();
+                $ip = getIPAddress();  
+                echo 'User Real IP Address - '.$ip;  
+            ?>        
     </section>
-    
-    
     
     <section id="banner">
         <h4>Repair Services</h4>
