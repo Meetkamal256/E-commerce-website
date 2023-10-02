@@ -16,19 +16,19 @@
       <div>
         <ul id="navbar">
           <li><a href="index.php">Home</a></li>
-          <li><a href="shop.php">Shop</a></li>
+          <li><a href="display_all.php">Shop</a></li>
           <li><a href="blog.php">Blog</a></li>
           <li><a href="about.php">About</a></li>
           <li><a class="active" href="contact.php">Contact</a></li>
-          <li><a href="account.php">Account</a></li>
+          <li><a href="register.php">Register</a></li>
           <li>
-          <a href='index.php?add_to_cart=$product_id'><i class='fa-solid fa-cart-shopping cart'></i></a>
+          <a href='cart.php'><i class='fa-solid fa-cart-shopping cart'></i></a>
           </li>
           <a href="#"><i class="fas fa-times" id="close"></i></a>
         </ul>
       </div>
       <div id="mobile">
-      <a href='index.php?add_to_cart=$product_id'><i class='fa-solid fa-cart-shopping cart'></i></a> 
+      <a href='cart.php'><i class='fa-solid fa-cart-shopping cart'></i></a> 
         <i class="fas fa-outdent" id="menu-open"></i>
       </div>
     </section>  
