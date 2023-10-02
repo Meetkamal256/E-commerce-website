@@ -4,7 +4,6 @@ include("functions/common_functions.php");
 
 ?>
 
-
 <!DOCTYPE html>
 <html lang="en">
 

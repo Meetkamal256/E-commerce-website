@@ -20,15 +20,15 @@
           <li><a href="blog.php">Blog</a></li>
           <li><a href="about.php">About</a></li>
           <li><a href="contact.php">Contact</a></li>
-          <li><a href="register.php">Register</a></li>
+          <li><a href="account.php">Register</a></li>
           <li>
-          <a href='cart.php'><i class='fa-solid fa-cart-shopping cart'></i><sup><?php cart_items();?></sup></a>
+          <a href='cart.php'><i class='fa-solid fa-cart-shopping cart'></i></a>
           </li>
           <a href="#"><i class="fas fa-times" id="close"></i></a>
         </ul>
       </div>
       <div id="mobile">
-      <a href='cart.php'><i class='fa-solid fa-cart-shopping cart'></i><sup><?php cart_items();?></sup></a>
+      <a href='cart.php'><i class='fa-solid fa-cart-shopping cart'></i></a>
         <i class="fas fa-outdent" id="menu-open"></i>
       </div>
     </section>  
