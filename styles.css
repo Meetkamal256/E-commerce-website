@@ -1016,7 +1016,7 @@ footer .follow i:hover, footer a:hover{
     font-size: 13px;
 }
 
-#cart table tbody tr td button{
+#cart table tbody tr td input{
     background-color: var(--Dark-cyan);
     padding: 7px 20px;
     border: none;
