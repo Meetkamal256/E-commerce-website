@@ -1,3 +1,11 @@
+<?php
+include("partials/connect.php");
+include("functions/common_functions.php");
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -16,7 +24,7 @@
       <div>
         <ul id="navbar">
           <li><a href="index.php">Home</a></li>
-          <li><a href="shop.php">Shop</a></li>
+          <li><a href="display_all.php">Shop</a></li>
           <li><a href="blog.php">Blog</a></li>
           <li><a href="about.php">About</a></li>
           <li><a href="contact.php">Contact</a></li>
@@ -44,42 +52,52 @@
           <tr>
             <td>Remove</td>
             <td>Image</td>
-            <td>Product</td>
+            <td>Product Title</td>
             <td>Price</td>
             <td>Quantity</td>
-            <td>Subtotal</td>
+            <td>Operations</td>
           </tr>
         </thead>
         <tbody>
-            <tr>
-                <td><i class="far fa-times-circle"></i></td>
-                <td><img src="img/products/f1.jpg" alt=""></td>
-                <td>Cartoon Astronaut T-shirt</td>
-                <td>$118.19</td>
-                <td><input type="number" value="1"></td>
-                <td>$118.19</td>
-            </tr>
-            <tr>
-                <td><i class="far fa-times-circle"></i></td>
-                <td><img src="img/products/f2.jpg" alt=""></td>
-                <td>Cartoon Astronaut T-shirt</td>
-                <td>$118.19</td>
-                <td><input type="number" value="1"></td>
-                <td>$118.19</td>
-            </tr>
-            <tr>
-                <td><i class="far fa-times-circle"></i></td>
-                <td><img src="img/products/f3.jpg" alt=""></td>
-                <td>Cartoon Astronaut T-shirt</td>
-                <td>$118.19</td>
-                <td><input type="number" value="1"></td>
-                <td>$118.19</td>
-            </tr>
+          <!-- php code to display dynamic data -->
+          <?php
+              global $conn;
+              $get_ip_address = getIPAddress();
+              $total = 0;
+              $cart_query = "SELECT * from cart_details WHERE ip_address = '$get_ip_address'";
+              $result = mysqli_query($conn, $cart_query);
+              while ($row = mysqli_fetch_array($result)) {
+                $product_id = $row['product_id'];
+                $select_products = "SELECT * from products WHERE product_id = '$product_id'";
+                $result_products = mysqli_query($conn, $select_products);
+                while ($row_product_price = mysqli_fetch_array($result_products)) {
+                  $product_price_with_currency = $row_product_price['product_price'];
+                  // Remove the currency symbol and any non-numeric characters
+                  $product_price = preg_replace("/[^0-9.]/", "", $product_price_with_currency); 
+                  // Convert the cleaned value to a float
+                  $product_price = floatval($product_price);
+                  $price_table = $row_product_price['product_price'];
+                  $product_title = $row_product_price['product_title'];
+                  $product_image1 = $row_product_price['product_image1'];
+                  $total += $product_price;
+                }
+                 echo "<tr>
+                 <td><input type='checkbox'></td>
+                 <td><img src='product_images/$product_image1' alt=''></td>
+                 <td>$product_title</td>
+                 <td>$price_table</td>
+                 <td><input type='number' value='1'></td>
+                 <td><button>Update</button></td>
+                 <td><button>Remove</button></td>
+             </tr>";
+               }
+              
+          ?>
         </tbody>
       </table>
     </section>
-
-    <section id="cart-add">
+    
+    <section id="cart-add">`
         <div id="coupon">
             <h3>Apply Coupon</h3>
             <input type="text" placeholder="Enter Your Coupon">
@@ -88,9 +106,10 @@
         <div id="subtotal">
             <h3>Cart Totals</h3>
             <table>
+              <table>
                 <tr>
                     <td>Cart Subtotal</td>
-                    <td>$ 335</td>
+                    <td>$<?php echo $total; ?></td>
                 </tr>
                 <tr>
                     <td>Shipping</td>
@@ -98,11 +117,12 @@
                 </tr>
                 <tr>
                     <td>Total</td>
-                    <td>$ 335</td>
+                    <td>$<?php echo $total; ?></td>
                 </tr>
             </table>
             <button>Proceed to checkout</button>
         </div>
+  
     </section>
     
     <?php include("partials/footer.php");?>

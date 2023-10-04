@@ -1016,6 +1016,16 @@ footer .follow i:hover, footer a:hover{
     font-size: 13px;
 }
 
+#cart table tbody tr td button{
+    background-color: var(--Dark-cyan);
+    padding: 7px 20px;
+    border: none;
+    color:  #fff;
+    font-size: 15px;
+}
+
+
+
 #cart-add{
     padding: 40px 80px;
     display: flex;
