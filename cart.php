@@ -59,10 +59,23 @@ if (isset($_POST['update_cart'])) {
 
 $cart_query = "SELECT * FROM cart_details WHERE ip_address = '$get_ip_address'";
 $result = mysqli_query($conn, $cart_query);
+
+// Check if any "Remove" button was clicked
+if (isset($_POST['remove_cart'])) {
+  foreach ($_POST['remove_cart'] as $product_id => $remove_button) {
+      // Remove the specific item from the cart
+      $remove_item_query = "DELETE FROM cart_details WHERE product_id = $product_id AND ip_address = '$get_ip_address'";
+      mysqli_query($conn, $remove_item_query);
+  }
+  // Redirect to the cart page after removing an item
+  header("Location: cart.php");
+  exit();
+}
+
 ?>
 
 <section id="cart">
-    <form action="" method="POST">
+    <form method="POST">
         <table width="100%">
             <thead>
                 <tr>
@@ -98,7 +111,8 @@ $result = mysqli_query($conn, $cart_query);
                             <td>$<?php echo $product_price ?></td>
                             <td><input type="number" name='qty[<?php echo $product_id ?>]' value='<?php echo $row['quantity'] ?>'></td>
                             <td><input type="submit" value='Update Cart' name='update_cart'></td>
-                            <td><input type="submit" value='Remove'></td>
+                            <td><input type="submit" value='Remove' name='remove_cart[<?php echo $product_id ?>]'></td>
+                        
                         </tr>
                         <?php
                     }
