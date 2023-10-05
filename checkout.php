@@ -35,12 +35,12 @@ include("partials/connect.php");
             <i class="fas fa-outdent" id="menu-open"></i>
         </div>
     </section>
-
+    
     <?php
         if(!isset($_SESSION['username'])){
             include("users_area/user_login.php");
         }else{
-            include("payment.php");
+              include("payment.php");
         }
     ?>
     

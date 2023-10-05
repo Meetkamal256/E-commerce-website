@@ -96,7 +96,5 @@
             <p>Don't have an account Register?<a href="user_registration.php" class="small"> Register</a></p>
     </div>
     </form>
-
 </body>
-
 </html>
