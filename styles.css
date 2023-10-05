@@ -1084,17 +1084,11 @@ footer .follow i:hover, footer a:hover{
 
 
 
-
-
-
-
-
-
-
-
-
-
-
+#cart-add #subtotal button a{
+    text-decoration: none;
+    color: #ffff;
+    font-size: 15px;
+}
 
 
 

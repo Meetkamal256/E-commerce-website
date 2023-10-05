@@ -25,7 +25,7 @@ include("functions/common_functions.php");
                 <li><a href="blog.php">Blog</a></li>
                 <li><a href="about.php">About</a></li>
                 <li><a href="contact.php">Contact</a></li>
-                <li><a href="register.php">Register</a></li>
+                <li><a href="register.php">Welcome Guest Login</a></li>
                 <li>
                 <a href='cart.php'><i class='fa-solid fa-cart-shopping cart'></i><sup><?php cart_items();?></sup></a> 
                 </li>

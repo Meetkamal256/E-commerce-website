@@ -20,7 +20,7 @@ include("functions/common_functions.php");
     <div>
       <ul id="navbar">
         <li><a href="index.php">Home</a></li>
-        <li><a href="shop.php">Shop</a></li>
+        <li><a href="display_all.php">Shop</a></li>
         <li><a href="blog.php">Blog</a></li>
         <li><a href="about.php">About</a></li>
         <li><a href="contact.php">Contact</a></li>
@@ -146,7 +146,7 @@ if (isset($_POST['remove_cart'])) {
           <td><?php echo $total ?></td>
         </tr>
       </table>
-      <button>Proceed to checkout</button>
+      <button><a href="checkout.php">Proceed to checkout</a></button>
     </div>
   </section>
   
