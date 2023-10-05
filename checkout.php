@@ -50,7 +50,7 @@ include("partials/connect.php");
   
     
     
-
+    
    
     <?php include("partials/footer.php"); ?>
     <script src="script.js"></script>

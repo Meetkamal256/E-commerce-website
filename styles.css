@@ -1090,6 +1090,13 @@ footer .follow i:hover, footer a:hover{
     font-size: 15px;
 }
 
+/* User Registration Page */
+
+h1{
+    text-align: center;
+    color: red;
+}
+
 
 
 
