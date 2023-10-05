@@ -47,11 +47,9 @@
             border: 2px solid lightblue;
         }
 
-        .reg-btn {
-            /* text-align: center; */
-        }
+      
         
-        .btn {
+        .reg-btn input{
             background-color: blue;
             border: none;
             padding: 7px 25px;
@@ -115,12 +113,9 @@
                 <input type="text" id="user_contact" name="user_contact" placeholder="Enter Your Mobile Number" required="required" autocomplete="off" required="required">
             </div>
             <div class="reg-btn">
-                <button class="btn">Register</button>
+                <input type="submit" value="Register" name="user_register">
             </div>
             <p>Already have an account?<a href="user_login.php" class="small"> Login</a></p>
-
-
-
     </div>
     </form>
 

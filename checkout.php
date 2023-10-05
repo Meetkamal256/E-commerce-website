@@ -1,7 +1,5 @@
 <?php
 include("partials/connect.php");
-
-
 ?>
 
 <!DOCTYPE html>
@@ -10,7 +8,7 @@ include("partials/connect.php");
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>E-commerce website Checkout</title>
+    <title>E-commerce Checkout</title>
     <link rel="stylesheet" href="styles.css" />
     <script src="https://kit.fontawesome.com/dacccb715c.js" crossorigin="anonymous"></script>
 </head>
@@ -25,15 +23,15 @@ include("partials/connect.php");
                 <li><a href="blog.php">Blog</a></li>
                 <li><a href="about.php">About</a></li>
                 <li><a href="contact.php">Contact</a></li>
-                <li><a href="register.php">Register</a></li>
+                <li><a href="register.php">Welcome Guest Login</a></li>
                 <li>
-                <a href='cart.php'><i class='fa-solid fa-cart-shopping cart'></i><sup><?php cart_items();?></sup></a> 
+                    <a href='cart.php'><i class='fa-solid fa-cart-shopping cart'></i><sup></sup></a>
                 </li>
                 <a href="#"><i class="fas fa-times" id="close"></i></a>
             </ul>
         </div>
         <div id="mobile">
-        <a href='cart.php'><i class='fa-solid fa-cart-shopping cart'></i><sup><?php cart_items();?></sup></a> 
+            <a href='cart.php'><i class='fa-solid fa-cart-shopping cart'></i></sup></a>
             <i class="fas fa-outdent" id="menu-open"></i>
         </div>
     </section>
@@ -47,11 +45,11 @@ include("partials/connect.php");
     ?>
     
     
-  
     
     
     
-   
+    
+    
     <?php include("partials/footer.php"); ?>
     <script src="script.js"></script>
 

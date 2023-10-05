@@ -1,4 +1,5 @@
 <?php
+session_start();
 include("partials/connect.php");
 include("functions/common_functions.php");
 ?>
