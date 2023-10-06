@@ -1,3 +1,44 @@
+<!-- php code -->
+<?php
+include("../partials/connect.php");
+include("../functions/common_functions.php");
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+if (isset($_POST['user_register'])) {
+    $username = $_POST['username'];
+    $user_email = $_POST['user_email'];
+    $user_password = $_POST['user_password'];
+    $user_conf_password = $_POST['user_conf_password'];
+    $user_address = $_POST['user_address'];
+    $user_contact = $_POST['user_contact'];
+    $user_image = $_FILES['user_image']['name'];
+    $user_image_tmp = $_FILES['user_image']['tmp_name'];
+    $user_ip = getIPAddress();
+    
+    $select_query = "SELECT * from user_table WHERE username = '$username' OR user_email = '$user_email'";
+    $result = mysqli_query($conn, $select_query);
+    $num_rows = mysqli_num_rows($result);
+    if ($num_rows > 0) {
+        echo "<script>alert('Username and Email already exists in database')</script>";
+    } else if ($user_password != $user_conf_password) {
+        echo "<script>alert('passwords do not match')</script>";
+    } else {
+        // insert query
+        move_uploaded_file($user_image_tmp, "./user_images/$user_image");
+        $insert_query = "INSERT INTO user_table (username, user_email, user_password, user_image, user_ip, user_address, user_mobile)
+            VALUES('$username', '$user_email', '$user_password', '$user_image', '$user_ip', '$user_address', '$user_contact')";
+        $sql_execute = mysqli_query($conn, $insert_query);
+        if ($sql_execute) {
+            echo "<script>alert('Data successfully added to database')</script>";
+        } else {
+            echo "Error: mysqli_error($conn)";
+        }
+    }
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -40,21 +81,22 @@
             margin-bottom: 15px;
         
         }
-
+        
         input[type='text']:focus,
         input[type='password']:focus {
             outline: none;
             border: 2px solid lightblue;
         }
-
-      
         
-        .reg-btn input{
+        
+        
+        .reg-btn input {
             background-color: blue;
             border: none;
             padding: 7px 25px;
             color: #ffff;
             margin-bottom: 10px;
+            cursor: pointer;
         }
         
         .small {
@@ -65,8 +107,8 @@
         
         /* Responsive styles */
         
-        @media (max-width: 576px){
-            #container{
+        @media (max-width: 576px) {
+            #container {
                 margin: 20px 30px;
             }
         }
@@ -76,7 +118,7 @@
 <body>
     <div id="container">
         <!-- Username field  -->
-        <form action="" method="post">
+        <form action="" method="post" enctype="multipart/form-data">
             <h1>User Registration</h1>
             <div>
                 <label for="username">Username</label>
@@ -95,22 +137,22 @@
             <div>
                 <!-- Password Field -->
                 <label for="user_password">Password</label>
-                <input type="password" id="user_password" name="username" class="form-control" placeholder="Enter Your Password" autocomplete="off" required="required">
+                <input type="password" id="user_password" name="user_password" placeholder="Enter Your Password" autocomplete="off" required="required">
             </div>
             <!-- Confirm Password Field -->
             <div>
                 <label for="conf_password">Confirm Password</label>
-                <input type="password" id="conf_password" name="conf_username" class="form-control" placeholder="Confirm Your Password" autocomplete="off" required="required">
+                <input type="password" id="conf_password" name="user_conf_password" placeholder="Confirm Your Password" autocomplete="off" required="required">
             </div>
             <!-- Address field -->
             <div>
                 <label for="user_address">Address</label>
-                <input type="text" id="user_address" name="user_address" placeholder="Enter Your Address" required="required" autocomplete="off" required="required">
+                <input type="text" id="user_address" name="user_address" placeholder="Enter Your Address" autocomplete="off" required="required">
             </div>
             <!-- Contact field -->
             <div>
                 <label for="user_contact">Contact</label>
-                <input type="text" id="user_contact" name="user_contact" placeholder="Enter Your Mobile Number" required="required" autocomplete="off" required="required">
+                <input type="text" id="user_contact" name="user_contact" placeholder="Enter Your Mobile Number" autocomplete="off" required="required">
             </div>
             <div class="reg-btn">
                 <input type="submit" value="Register" name="user_register">
@@ -118,7 +160,41 @@
             <p>Already have an account?<a href="user_login.php" class="small"> Login</a></p>
     </div>
     </form>
-
 </body>
 
 </html>
+
+<!-- php code -->
+<?php
+include("../partials/connect.php");
+include("../functions/common_functions.php");
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+
+
+
+if (isset($_POST['user_register'])) {
+    $username = $_POST['username'];
+    $user_email = $_POST['user_email'];
+    $user_password = $_POST['user_password'];
+    $user_conf_password = $_POST['user_conf_password'];
+    $user_address = $_POST['user_address'];
+    $user_contact = $_POST['user_contact'];
+    $user_image = $_FILES['user_image']['name'];
+    $user_image_tmp = $_FILES['user_image']['tmp_name'];
+    $user_ip = getIPAddress();
+    
+    // insert query
+    move_uploaded_file($user_image_tmp, "./user_images/$user_image");
+    $insert_query = "INSERT INTO users_table (username, user_email, user_password, user_image, user_ip, user_address, user_mobile)
+        VALUES('$username', '$user_email', '$user_password', '$user_image', '$user_ip', '$user_address', '$user_contact')";
+    $sql_execute = mysqli_query($conn, $insert_query);
+    if ($sql_execute) {
+        echo "<script>alert('Data successfully added to database')</script>";
+    } else {
+        echo "Error: mysqli_connect_error()";
+    }
+}
+
+?>
