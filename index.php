@@ -99,7 +99,6 @@ session_start();
             <?php
                 getProducts();
                 $ip = getIPAddress();  
-                echo 'User Real IP Address - '.$ip;  
             ?>        
     </section>
     

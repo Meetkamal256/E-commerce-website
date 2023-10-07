@@ -1312,6 +1312,11 @@ footer .follow i:hover, footer a:hover{
     
     /* single product page */
     
+    .smallImage-pro-container{
+        width: 200px !important;
+        height: 200px !important;
+    }
+    
     #prodetails {
         display: flex;
         flex-direction: column;

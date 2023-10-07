@@ -72,12 +72,11 @@ session_start();
         $category_id = $row['category_id'];
         
         echo "<div class='single-pro-image'>
-        <div class='mainImage-pro-container' style='width: 413.59px; height: 413.59px;'>
+        <div class='mainImage-pro-container'>
         <img src='product_images/$product_image1' alt='' id='main-img' width='100%'>
    </div>
           <div class='small-img-group'>
-            <div class='small-img-col'>
-            <div class='smallImage-pro-container'  style='width: 99.29px; height: 99.29px'>
+            <div class='smallImage-pro-container'>
               <img
                 src='product_images/$product_image1'
                 width='100%'
@@ -85,31 +84,30 @@ session_start();
                 alt=''
               />
             </div>
+            <div class='smallImage-pro-container'>
+              <img
+                src='product_images/$product_image2'
+                width='100%'
+                class='small-img'
+                alt=''
+              />
             </div>
-            <div class='smallImage-pro-container'  style='width: 99.29px; height: 99.29px'>
+            <div class='smallImage-pro-container'>
             <img
-              src='product_images/$product_image2'
+              src='product_images/$product_image3'
               width='100%'
               class='small-img'
               alt=''
             />
           </div>
-          <div class='smallImage-pro-container'  style='width: 99.29px; height: 99.29px'>
+          <div class='smallImage-pro-container'>
           <img
-            src='product_images/$product_image3'
+            src='product_images/$product_image4'
             width='100%'
             class='small-img'
             alt=''
           />
         </div>
-        <div class='smallImage-pro-container'  style='width: 99.28px; height: 99.28px'>
-        <img
-          src='product_images/$product_image4'
-          width='100%'
-          class='small-img'
-          alt=''
-        />
-      </div>
           </div>
         </div>
         <div class='single-pro-details'>
