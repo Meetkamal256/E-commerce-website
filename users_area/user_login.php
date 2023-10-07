@@ -1,3 +1,11 @@
+<?php
+include(__DIR__ . "/../partials/connect.php");
+include_once(__DIR__ . "/../functions/common_functions.php");
+@session_start();
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -55,6 +63,7 @@
             padding: 7px 25px;
             color: #ffff;
             margin-bottom: 10px;
+            cursor: pointer;
         }
         
         .small {
@@ -87,7 +96,7 @@
             <div>
                 <!-- Password Field -->
                 <label for="user_password">Password</label>
-                <input type="password" id="user_password" name="password" class="form-control" placeholder="Enter Your Password" autocomplete="off" required="required">
+                <input type="password" id="user_password" name="user_password" class="form-control" placeholder="Enter Your Password" autocomplete="off" required="required">
             </div>
             
             <div class="reg-btn">
@@ -98,3 +107,44 @@
     </form>
 </body>
 </html>
+
+<!-- php code -->
+<?php
+    if(isset($_POST['user_login'])){
+        $username = $_POST['username'];
+        $user_password = $_POST['user_password'];
+        
+        $select_query = "SELECT * from user_table WHERE username = '$username'";
+        $result = mysqli_query($conn, $select_query);
+        $row_count = mysqli_num_rows($result);
+        $row_data = mysqli_fetch_assoc($result);
+        $user_ip = getIPAddress();
+        
+        // cart items
+        $select_query_cart = "SELECT * from cart_details WHERE ip_address = '$user_ip'";
+        $result_cart = mysqli_query($conn, $select_query_cart);
+        $row_count_cart = mysqli_num_rows($result_cart);
+        if($row_count > 0){
+            $_SESSION['username'] = $username;
+            if(password_verify($user_password, $row_data['user_password'])){
+                // echo "<script>alert('Log in Successful')</script>";
+                if($row_count == 1 and $row_count_cart == 0){
+                    $_SESSION['username'] = $username;
+                    echo "<script>alert('Log in Successful')</script>";
+                    echo "<script>window.open('profile.php', '_self')</script>";
+                
+                }else{
+                    $_SESSION['username'] = $username;
+                    echo "<script>alert('Log in Successful')</script>";
+                    echo "<script>window.open('../payment.php', '_self')</script>";
+                }
+            }else{
+                echo "<script>alert('Invalid Credentials')</script>";
+            }
+           
+        }else{
+            echo "<script>alert('Invalid Credentials')</script>";
+        }
+    }
+?>
+

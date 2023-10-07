@@ -1,6 +1,7 @@
 <?php
 include("partials/connect.php");
-include("functions/common_functions.php");
+include_once("functions/common_functions.php");
+session_start();
 ?>
 
 <!DOCTYPE html>
@@ -15,16 +16,27 @@ include("functions/common_functions.php");
   </head>
   <body>
   <section id="header">
-        <a href="#"><img src="img/logo.png" alt="" /></a>
+        <a href="index.php"><img src="img/logo.png" alt="" /></a>
         <div>
             <ul id="navbar">
-                <li><a href="index.php" class="active">Home</a></li>
-                <li><a href="display_all.php">Shop</a></li>
+                <li><a href="index.php">Home</a></li>
+                <li><a href="display_all.php" class="active">Shop</a></li>
                 <li><a href="blog.php">Blog</a></li>
                 <li><a href="about.php">About</a></li>
+                <li><a href="./users_area/user_registration.php">Register</a></li>
                 <li><a href="contact.php">Contact</a></li>
-                <li><a href="#">Welcome Guest</a></li>
-                <li><a href="users_area/user_login.php">Login</a></li>
+                <?php
+                     if(!isset($_SESSION['username'])){
+                        echo "<li><a href='#'>Welcome Guest</a></li>";
+                    }else{
+                        echo "<li><a href='#'>Welcome ". $_SESSION['username']."</a></li>";
+                    }
+                    if(!isset($_SESSION['username'])){
+                        echo " <li><a href='users_area/user_login.php'>Login</a></li>";
+                    }else{
+                        echo " <li><a href='users_area/logout.php'>Logout</a></li>";
+                    }
+                ?>
                 <li>
                 <a href='cart.php'><i class='fa-solid fa-cart-shopping cart'></i><sup><?php cart_items();?></sup></a> 
                 </li>

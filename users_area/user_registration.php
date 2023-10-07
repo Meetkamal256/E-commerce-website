@@ -1,7 +1,7 @@
 <!-- php code -->
 <?php
 include("../partials/connect.php");
-include("../functions/common_functions.php");
+include_once("../functions/common_functions.php");
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
@@ -84,7 +84,7 @@ if (isset($_POST['user_register'])) {
             display: block;
             margin-bottom: 10px;
         }
-
+        
         input[type='text'],
         input[type='password'],
         input[type='file'] {
@@ -93,17 +93,17 @@ if (isset($_POST['user_register'])) {
             border: 1px solid #ccc;
             border-radius: 5px;
             margin-bottom: 15px;
-
+        
         }
-
+        
         input[type='text']:focus,
         input[type='password']:focus {
             outline: none;
             border: 2px solid lightblue;
         }
-
-
-
+        
+        
+        
         .reg-btn input {
             background-color: blue;
             border: none;
@@ -112,15 +112,15 @@ if (isset($_POST['user_register'])) {
             margin-bottom: 10px;
             cursor: pointer;
         }
-
+        
         .small {
             font-weight: bold;
             font-size: smaller;
             color: red;
         }
-
+        
         /* Responsive styles */
-
+        
         @media (max-width: 576px) {
             #container {
                 margin: 20px 30px;
