@@ -28,11 +28,16 @@ session_start();
                 <li><a href="contact.php">Contact</a></li>
                 <li><a href="#">Welcome Guest</a></li>
                 <?php
-                    if(!isset($_SESSION['username'])){
-                        echo " <li><a href='users_area/user_login.php'>Login</a></li>";
-                    }else{
-                        echo " <li><a href='users_area/logout.php'>Logout</a></li>";
-                    }
+                if (!isset($_SESSION['username'])) {
+                    echo "<li><a href='#'>Welcome Guest</a></li>";
+                } else {
+                    echo "<li><a href='#'>Welcome " . $_SESSION['username'] . "</a></li>";
+                }
+                if (!isset($_SESSION['username'])) {
+                    echo " <li><a href='users_area/user_login.php'>Login</a></li>";
+                } else {
+                    echo " <li><a href='users_area/logout.php'>Logout</a></li>";
+                }
                 ?>
                 <li>
                     <a href='cart.php'><i class='fa-solid fa-cart-shopping cart'></i><sup><?php cart_items(); ?></sup></a>
@@ -45,7 +50,7 @@ session_start();
             <i class="fas fa-outdent" id="menu-open"></i>
         </div>
     </section>
-    
+
     <?php
     if (!isset($_SESSION['username'])) {
         include("users_area/user_login.php");
@@ -53,13 +58,13 @@ session_start();
         include("payment.php");
     }
     ?>
-    
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
+
     <?php include("partials/footer.php"); ?>
     <script src="script.js"></script>
 
