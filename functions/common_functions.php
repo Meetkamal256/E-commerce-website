@@ -23,7 +23,6 @@ function getProducts(){
         <img src='product_images/$product_image1' alt=''>
    </div>
         <div class='des'>
-            <span>Adidas</span>
             <h5>$product_title</h5>
             <div class='stars'>
                 <i class='fas fa-star'></i>

@@ -111,7 +111,8 @@ session_start();
           </div>
         </div>
         <div class='single-pro-details'>
-          <h4>$product_title</h4>
+          <h6>$product_title</h6>
+          <h4>Men's Fashion T shirt</h4>
           <h2>$product_price</h2>
           <select>
             <option>Select Size</option>

@@ -50,7 +50,7 @@ session_start();
             <i class="fas fa-outdent" id="menu-open"></i>
         </div>
     </section>
-    
+
     <?php
     if (!isset($_SESSION['username'])) {
         include("users_area/user_login.php");
@@ -58,13 +58,13 @@ session_start();
         include("payment.php");
     }
     ?>
-    
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
+
     <?php include("partials/footer.php"); ?>
     <script src="script.js"></script>
 
