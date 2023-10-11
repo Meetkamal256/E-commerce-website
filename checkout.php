@@ -20,6 +20,7 @@ session_start();
         <a href="#"><img src="img/logo.png" alt="" /></a>
         <div>
             <ul id="navbar">
+                
                 <li><a href="index.php" class="active">Home</a></li>
                 <li><a href="display_all.php">Shop</a></li>
                 <li><a href="blog.php">Blog</a></li>
