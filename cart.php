@@ -49,31 +49,31 @@ include_once("functions/common_functions.php");
       <i class="fas fa-outdent" id="menu-open"></i>
     </div>
   </section>
-
-
+  
+  
   <section id="page-header" class="about-header">
     <h2>#LetsTalk</h2>
     <p>LEAVE A MESSAGE, We love to hear from you!</p>
   </section>
-
-  <?php
+  
+  //<?php
   global $conn;
   $get_ip_address = getIPAddress();
   $total = 0;
-
+  
   if (isset($_POST['update_cart'])) {
     foreach ($_POST['qty'] as $product_id => $quantity) {
       $quantity = intval($quantity);
-
+      
       // Update the cart_details table for the specific product and IP address
       $update_cart = "UPDATE cart_details SET quantity = $quantity WHERE product_id = $product_id AND ip_address ='$get_ip_address'";
       $result_product_cart = mysqli_query($conn, $update_cart);
     }
   }
-
+  
   $cart_query = "SELECT * FROM cart_details WHERE ip_address = '$get_ip_address'";
   $result = mysqli_query($conn, $cart_query);
-
+  
   // Check if any "Remove" button was clicked
   if (isset($_POST['remove_cart'])) {
     foreach ($_POST['remove_cart'] as $product_id => $remove_button) {
@@ -85,9 +85,9 @@ include_once("functions/common_functions.php");
     header("Location: cart.php");
     exit();
   }
-
+  
   ?>
-
+  
   <section id="cart">
     <form method="POST">
       <table width="100%">
@@ -126,7 +126,7 @@ include_once("functions/common_functions.php");
                 <td><input type="number" name='qty[<?php echo $product_id ?>]' value='<?php echo $row['quantity'] ?>'></td>
                 <td><input type="submit" value='Update Cart' name='update_cart'></td>
                 <td><input type="submit" value='Remove' name='remove_cart[<?php echo $product_id ?>]'></td>
-
+              
               </tr>
           <?php
             }
@@ -136,8 +136,8 @@ include_once("functions/common_functions.php");
       </table>
     </form>
   </section>
-
-
+  
+  
   <section id="cart-add">
     <div id="coupon">
       <h3>Apply Coupon</h3>
@@ -145,11 +145,11 @@ include_once("functions/common_functions.php");
       <button>Apply</button>
     </div>
     <div id="subtotal">
-      <h3><?php echo $total ?></h3>
+      
       <table>
         <tr>
           <td>Cart Subtotal</td>
-          <td><?php echo $total ?></td>
+          <td>$<?php echo $total ?></td>
         </tr>
         <tr>
           <td>Shipping</td>
@@ -157,13 +157,13 @@ include_once("functions/common_functions.php");
         </tr>
         <tr>
           <td>Total</td>
-          <td><?php echo $total ?></td>
+          <td>$<?php echo $total ?></td>
         </tr>
       </table>
       <button><a href="checkout.php">Proceed to checkout</a></button>
     </div>
   </section>
-
+  
   <?php include("partials/footer.php"); ?>
   <script src="script.js"></script>
 </body>
