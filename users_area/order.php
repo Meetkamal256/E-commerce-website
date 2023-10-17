@@ -21,7 +21,7 @@ while ($row = mysqli_fetch_array($result_cart_query)) {
     $quantity = $row['quantity'];
     $select_products = "SELECT * from products WHERE product_id = $product_id";
     $result_product_query = mysqli_query($conn, $select_products);
-        
+    
     // Initialize subtotal for the current product
     $product_subtotal = 0;
     
@@ -54,6 +54,13 @@ if($result_query){
     echo "<script>window.open('profile.php', '_self')</script>";
 }
 
-// echo $count_products .'<br>';
-// echo $subtotal .'<br>';
+// orders pending
+$insert_pending_orders = "INSERT INTO orders_pending (user_id, invoice_number, product_id, quantity, order_status)
+VALUES ($user_id, $invoice_number, $product_id, $count_products, '$status')";
+$result_pending = mysqli_query($conn, $insert_pending_orders);
+
+// empty cart
+$empty_cart = "DELETE from cart_details WHERE ip_address = '$ip_address'";
+$result_empty_cart = mysqli_query($conn, $empty_cart);
+
 ?>
