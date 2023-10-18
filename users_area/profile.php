@@ -68,7 +68,6 @@ session_start();
         height: 100%;
         margin-bottom: 15px;
         margin-top: 150px;
-    
     }
 </style>
 
@@ -118,7 +117,15 @@ session_start();
                 <h1>Your Profile</h1>
             </div>
             <ul>
-                <li><img src="../product_images/f1.resized.jpg" class="profile-img" alt=""></li>
+                <?php
+                    $username = $_SESSION['username'];
+                    $select_query = "SELECT * from user_table WHERE username = '$username'";
+                    $result = mysqli_query($conn, $select_query);
+                    $row_img = mysqli_fetch_assoc($result);
+                    $user_img = $row_img['user_image'];
+                    echo "<li><img src='../product_images/$user_img' class='profile-img' alt=''></li>";
+                ?>
+             
                 <li><a href="#">Pending Orders</a></li>
                 <li> <a href="#">Edit Account</a></li>
                 <li><a href="#">My Orders</a></li>
@@ -128,8 +135,8 @@ session_start();
         </div>
     
     </div>
-    </div>
-
+    
+    
 
 
 
