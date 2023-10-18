@@ -21,10 +21,6 @@ session_start();
         text-align: center;
     }
     
-    h1 {
-        margin: 0;
-    }
-    
     .sidebar {
         background-color: gray;
         color: #fff;
@@ -34,6 +30,7 @@ session_start();
         left: 0;
         height: 100%;
         padding: 20px;
+        margin-top: 100px;
     }
     
     .sidebar-heading {
@@ -42,11 +39,11 @@ session_start();
         position: absolute;
         left: 0;
         right: 0;
+        top: 0;
     }
     
     .sidebar h1 {
         font-size: 1.2em;
-        margin-top: 50px;
         margin-bottom: 15px;
         color: #fff;
         width: 100%;
@@ -68,6 +65,23 @@ session_start();
         height: 100%;
         margin-bottom: 15px;
         margin-top: 150px;
+    }
+    
+    #container h3 {
+        text-align: center;
+        margin-top: 100px;
+        color: green;
+        font-size: 20px;
+        font-weight: 500;
+    }
+
+    #container p{
+        text-align: center;
+        margin-top: 20px;
+    }
+    
+    #container span{
+        color: red;
     }
 </style>
 
@@ -118,30 +132,33 @@ session_start();
             </div>
             <ul>
                 <?php
-                    $username = $_SESSION['username'];
-                    $select_query = "SELECT * from user_table WHERE username = '$username'";
-                    $result = mysqli_query($conn, $select_query);
-                    $row_img = mysqli_fetch_assoc($result);
-                    $user_img = $row_img['user_image'];
-                    echo "<li><img src='../product_images/$user_img' class='profile-img' alt=''></li>";
+                $username = $_SESSION['username'];
+                $select_query = "SELECT * from user_table WHERE username = '$username'";
+                $result = mysqli_query($conn, $select_query);
+                $row_img = mysqli_fetch_assoc($result);
+                $user_img = $row_img['user_image'];
+                echo "<li><img src='../product_images/$user_img' class='profile-img' alt=''></li>";
                 ?>
-             
-                <li><a href="#">Pending Orders</a></li>
-                <li> <a href="#">Edit Account</a></li>
-                <li><a href="#">My Orders</a></li>
-                <li><a href="#">Delete Account</a></li>
-                <li><a href="#">Log Out</a></li>
+                <li><a href="profile.php">Pending Orders</a></li>
+                <li> <a href="profile.php?edit_account">Edit Account</a></li>
+                <li><a href="profile.php?my_orders">My Orders</a></li>
+                <li><a href="profile.php?delete_account">Delete Account</a></li>
+                <li><a href="logout.php">Log Out</a></li>
             </ul>
         </div>
-    
+    </div>
+    <div id="container">
+        <?php
+           get_user_order_details();
+        ?>
     </div>
     
     
-
-
-
-
-
+    
+    
+    
+    
+    
     <!-- <?php include("../partials/footer.php"); ?> -->
     <script src="../script.js"></script>
 
