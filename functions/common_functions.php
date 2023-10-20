@@ -53,8 +53,8 @@ function get_all_products()
     $product_price = $row['product_price'];
     $product_image1 = $row['product_image1'];
     $category_id = $row['category_id'];
-
-
+    
+    
     echo "<div class='pro'>
       <div class='img-container'>
       <img src='product_images/$product_image1' alt=''>
@@ -242,7 +242,7 @@ function cart_total()
 
       // Convert the cleaned value to a float
       $product_price = floatval($product_price);
-
+      
       $total += $product_price;
     }
   }

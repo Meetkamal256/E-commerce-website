@@ -67,16 +67,25 @@ session_start();
         margin-top: 150px;
     }
     
-    #container h3 {
+    #container{
+        /* display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center; */
         text-align: center;
+    }
+    
+    #container h3 {
         margin-top: 100px;
+        margin-bottom: 15px;
         color: green;
         font-size: 20px;
         font-weight: 500;
     }
 
+    
+    
     #container p{
-        text-align: center;
         margin-top: 20px;
     }
     
@@ -150,6 +159,9 @@ session_start();
     <div id="container">
         <?php
            get_user_order_details();
+           if(isset($_GET['edit_account'])){
+            include('edit_account.php');
+           }
         ?>
     </div>
     
