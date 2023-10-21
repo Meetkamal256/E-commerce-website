@@ -26,14 +26,14 @@ if (isset($_POST['user_register'])) {
         echo "<script>alert('passwords do not match')</script>";
     } else {
         // insert query
-        move_uploaded_file($user_image_tmp, "./user_images/$user_image");
+        move_uploaded_file($user_image_tmp, "../product_images/$user_image");
         $insert_query = "INSERT INTO user_table (username, user_email, user_password, user_image, user_ip, user_address, user_mobile)
             VALUES('$username', '$user_email', '$hash_password', '$user_image', '$user_ip', '$user_address', '$user_contact')";
         $sql_execute = mysqli_query($conn, $insert_query);
         if ($sql_execute) {
             echo "<script>alert('Data successfully added to database')</script>";
         } else {
-            echo "Error: mysqli_error($conn)";
+            echo "Error: .mysqli_error($conn)";
         }
     }
     // selecting cart items
