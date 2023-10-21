@@ -1,3 +1,36 @@
+<?php
+$session_username = $_SESSION['username'];
+$select_query = "SELECT * from user_table WHERE username = '$session_username'";
+$result = mysqli_query($conn, $select_query);
+while($row = mysqli_fetch_array($result)){
+    $user_id = $row['user_id'];
+    $username = $row['username'];
+    $user_email = $row['user_email'];
+    $user_address = $row['user_address'];
+    $user_mobile = $row['user_mobile'];
+}
+
+if(isset($_POST['update_user'])){
+    $update_id = $user_id;
+     $username = $_POST['username'];
+    $user_email = $_POST['user_email'];
+    $user_address = $_POST['user_address'];
+    $user_mobile = $_POST['user_mobile'];
+    $user_img = $_FILES['user_image']['name'];
+    $user_img_tmp = $_FILES['user_image']['tmp_name'];
+    move_uploaded_file($user_img_tmp, "../product_images/$user_img");
+    
+    $update_query = "UPDATE user_table SET username = '$username', user_email = '$user_email', user_image = '$user_img', user_address = '$user_address', user_mobile = '$user_mobile' WHERE user_id = $update_id";
+    $result_update = mysqli_query($conn, $update_query);
+    if ($result_update) {
+        echo "<script>alert('Data updated successfully')</script>";
+        echo "<script>window.open('logout.php', '_self')</script>";
+    }
+}    
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -51,20 +84,20 @@
   <h3>Edit Account</h3>
   <form action="" method="POST" enctype="multipart/form-data">
     <div>
-        <input type="text" id="username" name="user_username" >
+        <input type="text" id="username" name="username" value="<?php echo $username ?>">
     </div>
     <div>
-        <input type="email" id="email" name="user_email">
+        <input type="email" id="email" name="user_email" value="<?php echo $user_email ?>">
     </div>
     <div class="file" >
         <input type="file" id="email" name="user_image">
         <img src="../product_images/<?php echo $user_img ?>" alt="" class="edit_image">
     </div>
     <div>
-        <input type="text" id="address" name="user_address" >
+        <input type="text" id="address" name="user_address" value="<?php echo $user_address ?>">
     </div>
     <div>
-        <input type="text" id="user_mobile" name="user_mobile" >
+        <input type="text" id="user_mobile" name="user_mobile" value="<?php echo $user_mobile ?>" >
     </div>
     <div>
         <input type="submit" value="update" name="update_user" >
