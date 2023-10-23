@@ -16,43 +16,43 @@ session_start();
 </head>
 
 <body>
-<section id="header">
-        <a href="index.php"><img src="img/logo.png" alt="" /></a>
-        <div>
-            <ul id="navbar">
-                <li><a href="index.php" class="active">Home</a></li>
-                <li><a href="display_all.php">Shop</a></li>
-                <li><a href="blog.php">Blog</a></li>
-                <li><a href="about.php">About</a></li>
-                <li><a href="./users_area/user_registration.php">Register</a></li>
-                <li><a href="contact.php">Contact</a></li>
-                <?php
-                    if(!isset($_SESSION['username'])){
-                      echo "<li><a href='#'>Welcome Guest</a></li>";
-                    }else{
-                      echo "<li><a href='#'>Welcome ". $_SESSION['username'].  "</a></li>";
-                    }
-                    if(!isset($_SESSION['username'])){
-                        echo " <li><a href='users_area/user_login.php'>Login</a></li>";
-                    }else{
-                        echo " <li><a href='users_area/logout.php'>Logout</a></li>";
-                    }
-                ?>
-                <li>
-                <a href='cart.php'><i class='fa-solid fa-cart-shopping cart'></i><sup><?php cart_items();?></sup></a> 
-                </li>
-                <a href="#"><i class="fas fa-times" id="close"></i></a>
-            </ul>
-        </div>
-        <div id="mobile">
-        <a href='cart.php'><i class='fa-solid fa-cart-shopping cart'></i><sup><?php cart_items();?></sup></a> 
-            <i class="fas fa-outdent" id="menu-open"></i>
-        </div>
-    </section>
-  
+  <section id="header">
+    <a href="index.php" class="logo">LeisureWears</a>
+    <div>
+      <ul id="navbar">
+        <li><a href="index.php" class="active">Home</a></li>
+        <li><a href="display_all.php">Shop</a></li>
+        <li><a href="blog.php">Blog</a></li>
+        <li><a href="about.php">About</a></li>
+        <li><a href="./users_area/user_registration.php">Register</a></li>
+        <li><a href="contact.php">Contact</a></li>
+        <?php
+        if (!isset($_SESSION['username'])) {
+          echo "<li><a href='#'>Welcome Guest</a></li>";
+        } else {
+          echo "<li><a href='#'>Welcome " . $_SESSION['username'] .  "</a></li>";
+        }
+        if (!isset($_SESSION['username'])) {
+          echo " <li><a href='users_area/user_login.php'>Login</a></li>";
+        } else {
+          echo " <li><a href='users_area/logout.php'>Logout</a></li>";
+        }
+        ?>
+        <li>
+          <a href='cart.php'><i class='fa-solid fa-cart-shopping cart'></i><sup><?php cart_items(); ?></sup></a>
+        </li>
+        <a href="#"><i class="fas fa-times" id="close"></i></a>
+      </ul>
+    </div>
+    <div id="mobile">
+      <a href='cart.php'><i class='fa-solid fa-cart-shopping cart'></i><sup><?php cart_items(); ?></sup></a>
+      <i class="fas fa-outdent" id="menu-open"></i>
+    </div>
+  </section>
+
   <?php
-        cart();
-    ?>
+  cart();
+  ?>
   <section id="prodetails">
     <?php
     // view_more();
@@ -70,7 +70,7 @@ session_start();
         $product_image4 = $row['product_image4'];
         $product_description = $row['product_description'];
         $category_id = $row['category_id'];
-        
+
         echo "<div class='single-pro-image'>
         <div class='mainImage-pro-container'>
         <img src='product_images/$product_image1' alt='' id='main-img' width='100%'>
@@ -130,10 +130,10 @@ session_start();
       }
     }
     ?>
-  
-  
+
+
   </section>
-  
+
   <!-- <section id="product1">
     <h2>Featured Products</h2>
     <p>Summer collection New modern Design</p>
@@ -204,7 +204,7 @@ session_start();
       </div>
     </div>
   </section> -->
-  
+
   <section id="newsletter">
     <div class="newstext">
       <h4>Sign Up For Newsletters</h4>
@@ -218,13 +218,13 @@ session_start();
       <button type="submit">Sign Up</button>
     </div>
   </section>
-  
+
   <?php include("partials/footer.php"); ?>
-  
+
   <script>
     var mainImage = document.getElementById("main-img")
     var smallImage = document.getElementsByClassName("small-img")
-    
+
     smallImage[0].onclick = function() {
       mainImage.src = smallImage[0].src;
     }
@@ -240,4 +240,5 @@ session_start();
   </script>
   <script src="script.js"></script>
 </body>
+
 </html>

@@ -6,73 +6,80 @@ session_start();
 
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>E-commerce website</title>
     <link rel="stylesheet" href="styles.css" />
-    <script src="https://kit.fontawesome.com/dacccb715c.js"
-      crossorigin="anonymous"></script>
-  </head>
-  <body>
-  <section id="header">
-        <a href="index.php"><img src="img/logo.png" alt="" /></a>
+    <script src="https://kit.fontawesome.com/dacccb715c.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <section id="header">
+        <a href="index.php" class="logo">LeisureWears</a>
         <div>
             <ul id="navbar">
                 <li><a href="index.php">Home</a></li>
                 <li><a href="display_all.php" class="active">Shop</a></li>
                 <li><a href="blog.php">Blog</a></li>
                 <li><a href="about.php">About</a></li>
-                <li><a href="./users_area/user_registration.php">Register</a></li>
+                <?php
+                if (isset($_SESSION['username'])) {
+                    echo "<li><a href='./users_area/profile.php'>My Account</a></li>";
+                } else {
+                    echo "<li><a href='./users_area/user_registration.php'>Register</a></li>";
+                }
+                ?>
                 <li><a href="contact.php">Contact</a></li>
                 <?php
-                     if(!isset($_SESSION['username'])){
-                        echo "<li><a href='#'>Welcome Guest</a></li>";
-                    }else{
-                        echo "<li><a href='#'>Welcome ". $_SESSION['username']."</a></li>";
-                    }
-                    if(!isset($_SESSION['username'])){
-                        echo " <li><a href='users_area/user_login.php'>Login</a></li>";
-                    }else{
-                        echo " <li><a href='users_area/logout.php'>Logout</a></li>";
-                    }
+                if (!isset($_SESSION['username'])) {
+                    echo "<li><a href='#'>Welcome Guest</a></li>";
+                } else {
+                    echo "<li><a href='#'>Welcome " . $_SESSION['username'] . "</a></li>";
+                }
+                if (!isset($_SESSION['username'])) {
+                    echo " <li><a href='users_area/user_login.php'>Login</a></li>";
+                } else {
+                    echo " <li><a href='users_area/logout.php'>Logout</a></li>";
+                }
                 ?>
                 <li>
-                <a href='cart.php'><i class='fa-solid fa-cart-shopping cart'></i><sup><?php cart_items();?></sup></a> 
+                    <a href='cart.php'><i class='fa-solid fa-cart-shopping cart'></i><sup><?php cart_items(); ?></sup></a>
                 </li>
                 <a href="#"><i class="fas fa-times" id="close"></i></a>
             </ul>
         </div>
         <div id="mobile">
-        <a href='cart.php'><i class='fa-solid fa-cart-shopping cart'></i><sup><?php cart_items();?></sup></a> 
+            <a href='cart.php'><i class='fa-solid fa-cart-shopping cart'></i><sup><?php cart_items(); ?></sup></a>
             <i class="fas fa-outdent" id="menu-open"></i>
         </div>
     </section>
-    
+
     <?php
-        cart();
+    cart();
     ?>
-    
+
     <section id="page-header">
         <h2>#Stayhome</h2>
         <p>Save more on coupons & up to 70% off!</p>
     </section>
-    
+
     <section id='product1'>
         <h2>Featured Products</h2>
         <p>Summer collection New modern Design</p>
         <div class='pro-container'>
-        <?php
+            <?php
             get_all_Products();
-        ?>
+            ?>
     </section>
-    
+
     <section id="pagination">
         <a href="#">1</a>
         <a href="#">2</a>
         <a href="#"><i class="fa fa-long-arrow-alt-right"></i></a>
     </section>
-    
+
     <section id="newsletter">
         <div class="newstext">
             <h4>Sign Up For Newsletters</h4>
@@ -83,9 +90,10 @@ session_start();
             <button type="submit">Sign Up</button>
         </div>
     </section>
-    
-    <?php include("partials/footer.php");?>
+
+    <?php include("partials/footer.php"); ?>
     <script src="script.js"></script>
-  
-  </body>
+
+</body>
+
 </html>

@@ -72,17 +72,17 @@
                         }else{
                             $order_status = 'Complete';
                         }
-                        echo "    <tr>
+                        echo "<tr>
                         <td>$number</td>
                         <td>$amount_due</td>
                         <td>$total_products</td>
                         <td>$invoice_number</td>
                         <td>$order_date</td>
                         <td>$order_status</td>
-                        <td><a href='confirm_payment.php'>Confirm</a></td>
+                        <td><a href='confirm_payment.php?order_id=$order_id'>Confirm</a></td>
                     </tr>";
                     $number++;
-                    }
+                    }   
                 
                 ?>
             

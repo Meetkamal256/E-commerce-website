@@ -18,14 +18,20 @@ session_start();
 
 <body>
     <section id="header">
-        <a href="index.php"><img src="img/logo.png" alt="" /></a>
+        <a href="index.php" class="logo">LeisureWears</a>
         <div>
             <ul id="navbar">
                 <li><a href="index.php" class="active">Home</a></li>
                 <li><a href="display_all.php">Shop</a></li>
                 <li><a href="blog.php">Blog</a></li>
                 <li><a href="about.php">About</a></li>
-                <li><a href="./users_area/user_registration.php">Register</a></li>
+                <?php
+                    if(isset($_SESSION['username'])){
+                        echo "<li><a href='./users_area/profile.php'>My Account</a></li>";
+                    }else{
+                        echo "<li><a href='./users_area/user_registration.php'>Register</a></li>";
+                    }
+                ?>
                 <li><a href="contact.php">Contact</a></li>
                 <?php
                       if(!isset($_SESSION['username'])){

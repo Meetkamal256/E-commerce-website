@@ -20,7 +20,7 @@ session_start();
         color: #fff;
         text-align: center;
     }
-    
+
     .sidebar {
         background-color: gray;
         color: #fff;
@@ -32,7 +32,7 @@ session_start();
         padding: 20px;
         margin-top: 100px;
     }
-    
+
     .sidebar-heading {
         background-color: blue;
         width: 100%;
@@ -41,40 +41,40 @@ session_start();
         right: 0;
         top: 0;
     }
-    
+
     .sidebar h1 {
         font-size: 1.2em;
         margin-bottom: 15px;
         color: #fff;
         width: 100%;
     }
-    
+
     .sidebar li {
         list-style: none;
     }
-    
+
     .sidebar a {
         color: #fff;
         text-decoration: none;
         display: block;
         margin-bottom: 15px;
     }
-    
+
     .profile-img {
         width: 80%;
         height: 100%;
         margin-bottom: 15px;
         margin-top: 150px;
     }
-    
-    #container{
+
+    #container {
         /* display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center; */
         text-align: center;
     }
-    
+
     #container h3 {
         margin-top: 100px;
         margin-bottom: 15px;
@@ -83,27 +83,31 @@ session_start();
         font-weight: 500;
     }
     
-    
-    
-    #container p{
+    #container p {
         margin-top: 20px;
     }
     
-    #container span{
+    #container span {
         color: red;
     }
 </style>
 
 <body>
     <section id="header">
-        <a href="index.php"><img src="img/logo.png" alt="" /></a>
+        <a href="index.php" class="logo">LeisureWears</a>
         <div>
             <ul id="navbar">
                 <li><a href="../index.php" class="active">Home</a></li>
                 <li><a href="../display_all.php">Shop</a></li>
                 <li><a href="../blog.php">Blog</a></li>
                 <li><a href="../about.php">About</a></li>
-                <li><a href="user_registration.php">Register</a></li>
+                <?php
+                if (isset($_SESSION['username'])) {
+                    echo "<li><a href='profile.php'>My Account</a></li>";
+                } else {
+                    echo "<li><a href='./users_area/user_registration.php'>Register</a></li>";
+                }
+                ?>
                 <li><a href="../contact.php">Contact</a></li>
                 <?php
                 if (!isset($_SESSION['username'])) {
@@ -128,12 +132,12 @@ session_start();
             <i class="fas fa-outdent" id="menu-open"></i>
         </div>
     </section>
-    
+
     <!-- calling cart function -->
     <?php
     cart();
     ?>
-    
+
     <div id="user_dashboard">
         <div class="sidebar">
             <div class="sidebar-heading">
@@ -158,22 +162,22 @@ session_start();
     </div>
     <div id="container">
         <?php
-           get_user_order_details();
-           if(isset($_GET['edit_account'])){
+        get_user_order_details();
+        if (isset($_GET['edit_account'])) {
             include('edit_account.php');
-           }
-           if(isset($_GET['my_orders'])){
+        }
+        if (isset($_GET['my_orders'])) {
             include("user_orders.php");
-           }
+        }
         ?>
     </div>
-    
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
+
     <!-- <?php include("../partials/footer.php"); ?> -->
     <script src="../script.js"></script>
 

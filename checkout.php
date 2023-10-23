@@ -17,15 +17,21 @@ session_start();
 
 <body>
     <section id="header">
-        <a href="#"><img src="img/logo.png" alt="" /></a>
+        <a href="index.php" class="logo">LeisureWears</a>
         <div>
             <ul id="navbar">
-                
+
                 <li><a href="index.php" class="active">Home</a></li>
                 <li><a href="display_all.php">Shop</a></li>
                 <li><a href="blog.php">Blog</a></li>
                 <li><a href="about.php">About</a></li>
-                <li><a href="./users_area/user_registration.php">Register</a></li>
+                <?php
+                if (isset($_SESSION['username'])) {
+                    echo "<li><a href='./users_area/profile.php'>My Account</a></li>";
+                } else {
+                    echo "<li><a href='./users_area/user_registration.php'>Register</a></li>";
+                }
+                ?>
                 <li><a href="contact.php">Contact</a></li>
                 <li><a href="#">Welcome Guest</a></li>
                 <?php
@@ -51,7 +57,7 @@ session_start();
             <i class="fas fa-outdent" id="menu-open"></i>
         </div>
     </section>
-    
+
     <?php
     if (!isset($_SESSION['username'])) {
         include("users_area/user_login.php");
@@ -59,13 +65,13 @@ session_start();
         include("payment.php");
     }
     ?>
-    
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
+
     <?php include("partials/footer.php"); ?>
     <script src="script.js"></script>
 
