@@ -20,7 +20,7 @@ session_start();
         <a href="index.php" class="logo">LeisureWears</a>
         <div>
             <ul id="navbar">
-
+                
                 <li><a href="index.php" class="active">Home</a></li>
                 <li><a href="display_all.php">Shop</a></li>
                 <li><a href="blog.php">Blog</a></li>
@@ -57,7 +57,7 @@ session_start();
             <i class="fas fa-outdent" id="menu-open"></i>
         </div>
     </section>
-
+    
     <?php
     if (!isset($_SESSION['username'])) {
         include("users_area/user_login.php");
@@ -65,9 +65,9 @@ session_start();
         include("payment.php");
     }
     ?>
-
-
-
+    
+    
+    
 
 
 

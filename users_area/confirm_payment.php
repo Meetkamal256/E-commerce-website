@@ -1,5 +1,9 @@
 <?php
 include("../partials/connect.php");
+error_reporting(E_ALL);
+ini_set("display_errors", 1);
+
+
 session_start();
 if(isset($_GET['order_id'])){
     $order_id = $_GET['order_id'];
@@ -9,6 +13,20 @@ if(isset($_GET['order_id'])){
     $row_fetch = mysqli_fetch_assoc($result);
     $invoice_number = $row_fetch['invoice_number'];
     $amount_due = $row_fetch['amount_due'];
+    
+    if(isset($_POST['comfirm_payment'])){
+        $invoice_number = $_POST['invoice_number'];
+        $amount = (float) filter_var($_POST['amount'], FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
+        
+        $payment_mode = $_POST['payment_mode'];
+        $insert_query = "INSERT INTO user_payment (order_id, invoice_number, amount, payment_mode) VALUES($order_id, $invoice_number, $amount, '$payment_mode')";
+        $result = mysqli_query($conn, $insert_query);
+        if($result){
+            echo "<script>alert('Successfully completed payment')</script>";
+            echo "<script>window.open('profile.php', '_self')</script>";
+        }
+    
+    }
 }
 
 
@@ -77,24 +95,21 @@ if(isset($_GET['order_id'])){
             </div>
             <div>
                 <label for="amount">Amount</label>
-                <input type="text" name="amount"  value="<?php echo $amount_due ?>">
+                <input type="text" name="amount"  value="&#x20A6; <?php echo $amount_due ?>">
             </div>
             <div>
                <select name="payment_mode" id="payment_mode">
                 <option value="">Select Payment Mode</option>
-                <option value="">UPI</option>
-                <option value="">Netbanking</option>
-                <option value="">Cash on Delivery</option>
-                <option value="">Pay Offline</option>
+                <option value="UPI">UPI</option>
+                <option value="Netbanking">Netbanking</option>
+                <option value="Cash on Delivery">Cash on Delivery</option>
+                <option value="Pay Offline">Pay Offline</option>
                </select>
             </div>
             <div class="payment">
-                <input type="submit" name="amount" value ="Comfirm" name ="comfirm_payment">
+                <input type="submit" value ="Comfirm" name ="comfirm_payment">
             </div>
         </form>
-    
     </div>
-
-    
 </body>
 </html>

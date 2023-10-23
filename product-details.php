@@ -112,7 +112,7 @@ session_start();
         </div>
         <div class='single-pro-details'>
           <h4>$product_title</h4>
-          <h2>$product_price</h2>
+          <h2>&#x20A6; $product_price</h2>
           <select>
             <option>Select Size</option>
             <option>XL</option>

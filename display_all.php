@@ -79,7 +79,7 @@ session_start();
         <a href="#">2</a>
         <a href="#"><i class="fa fa-long-arrow-alt-right"></i></a>
     </section>
-
+    
     <section id="newsletter">
         <div class="newstext">
             <h4>Sign Up For Newsletters</h4>
@@ -90,7 +90,7 @@ session_start();
             <button type="submit">Sign Up</button>
         </div>
     </section>
-
+    
     <?php include("partials/footer.php"); ?>
     <script src="script.js"></script>
 

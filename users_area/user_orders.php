@@ -74,7 +74,7 @@
                         }
                         echo "<tr>
                         <td>$number</td>
-                        <td>$amount_due</td>
+                        <td>&#x20A6; $amount_due</td>
                         <td>$total_products</td>
                         <td>$invoice_number</td>
                         <td>$order_date</td>

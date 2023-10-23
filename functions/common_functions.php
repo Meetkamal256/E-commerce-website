@@ -14,11 +14,11 @@ function getProducts()
   while ($row = mysqli_fetch_assoc($result_query)) {
     $product_id = $row['product_id'];
     $product_title = $row['product_title'];
-    $product_price = $row['product_price'];
+    $product_price = number_format($row['product_price']);
     $product_image1 = $row['product_image1'];
     $category_id = $row['category_id'];
-
-
+    
+    
     echo "<div class='pro'>
         <div class='img-container'>
         <img src='product_images/$product_image1' alt=''>
@@ -31,7 +31,7 @@ function getProducts()
                 <i class='fas fa-star'></i>
                 <i class='fas fa-star'></i>
                 <i class='fas fa-star'></i> 
-                <h4>$product_price</h4>
+                <h4>&#x20A6; $product_price</h4>
             </div>
             <a href='index.php?add_to_cart=$product_id'><i class='fa-solid fa-cart-shopping cart'></i></a>
             <a href='product-details.php?product_id=$product_id'><button>View more</button></a>
@@ -41,41 +41,41 @@ function getProducts()
 }
 
 // getting all products
-
-function get_all_products()
-{
-  global $conn;
-  $select_query = "SELECT * from products ORDER BY rand()";
-  $result_query = mysqli_query($conn, $select_query);
-  while ($row = mysqli_fetch_assoc($result_query)) {
-    $product_id = $row['product_id'];
-    $product_title = $row['product_title'];
-    $product_price = $row['product_price'];
-    $product_image1 = $row['product_image1'];
-    $category_id = $row['category_id'];
-    
-    
-    echo "<div class='pro'>
-      <div class='img-container'>
-      <img src='product_images/$product_image1' alt=''>
- </div>
-      <div class='des'>
-          <span>Adidas</span>
-          <h5>$product_title</h5>
-          <div class='stars'>
-              <i class='fas fa-star'></i>
-              <i class='fas fa-star'></i>
-              <i class='fas fa-star'></i>
-              <i class='fas fa-star'></i>
-              <i class='fas fa-star'></i> 
-              <h4>$product_price</h4>
-          </div>
-          <a href='index.php?add_to_cart=$product_id'><i class='fa-solid fa-cart-shopping cart'></i></a>
-          <a href='product-details.php?product_id=$product_id'><button>View more</button></a>
-      </div>               
-  </div>";
+  
+  function get_all_products()
+  {
+    global $conn;
+    $select_query = "SELECT * from products ORDER BY rand()";
+    $result_query = mysqli_query($conn, $select_query);
+    while ($row = mysqli_fetch_assoc($result_query)) {
+      $product_id = $row['product_id'];
+      $product_title = $row['product_title'];
+      $product_price = number_format($row['product_price']);
+      $product_image1 = $row['product_image1'];
+      $category_id = $row['category_id'];
+      
+      
+      echo "<div class='pro'>
+        <div class='img-container'>
+        <img src='product_images/$product_image1' alt=''>
+  </div>
+        <div class='des'>
+            <span>Adidas</span>
+            <h5>$product_title</h5>
+            <div class='stars'>
+                <i class='fas fa-star'></i>
+                <i class='fas fa-star'></i>
+                <i class='fas fa-star'></i>
+                <i class='fas fa-star'></i>
+                <i class='fas fa-star'></i> 
+                <h4>&#x20A6; $product_price</h4>
+            </div>
+            <a href='index.php?add_to_cart=$product_id'><i class='fa-solid fa-cart-shopping cart'></i></a>
+            <a href='product-details.php?product_id=$product_id'><button>View more</button></a>
+        </div>               
+    </div>";
+    }
   }
-}
 
 // view more details
 
@@ -96,7 +96,7 @@ function view_more()
       $product_image4 = $row['product_image4'];
       $product_description = $row['product_description'];
       $category_id = $row['category_id'];
-
+      
       echo "<div class='single-pro-image'>
           <div class='img-container'>
           <img src='product_images/$product_image1' width='100%' alt='' class='main-img'>
@@ -139,7 +139,7 @@ function view_more()
           <div class='single-pro-details'>
             <h6>$product_title</h6>
             <h4>Men's Fashion T shirt</h4>
-            <h2>$product_price</h2>
+            <h2>&#x20A6; $product_price</h2>
             <select>
               <option>Select Size</option>
               <option>XL</option>
@@ -236,10 +236,10 @@ function cart_total()
     $result_products = mysqli_query($conn, $select_products);
     while ($row_product_price = mysqli_fetch_array($result_products)) {
       $product_price_with_currency = $row_product_price['product_price'];
-
+      
       // Remove the currency symbol and any non-numeric characters
       $product_price = preg_replace("/[^0-9.]/", "", $product_price_with_currency);
-
+      
       // Convert the cleaned value to a float
       $product_price = floatval($product_price);
       
