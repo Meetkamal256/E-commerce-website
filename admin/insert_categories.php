@@ -35,28 +35,18 @@ if (isset($_POST['insert_cat'])) {
 </head>
 
 <style>
-  form {
-    /* display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center; */
-    /* text-align: center; */
-    margin: 0 30px 30px 30px;
+  .pro-category {
+    margin: 50px auto;
   }
 
-  form h1{
-    margin-top: 50px;
-  }
-  
-  
-  
+
   input[type='text'] {
     width: 100%;
     max-width: 850px;
     padding: 5px;
     margin-bottom: 15px;
   }
-  
+
   input[type='submit'] {
     background-color: blue;
     padding: 7px 25px;
@@ -64,19 +54,30 @@ if (isset($_POST['insert_cat'])) {
     color: #ffff;
     cursor: pointer;
   }
+
+
+  /* Responsive Design */
+
+  @media(max-width: 899px) {
+    .pro-category {
+      margin: 50px 30px;
+    }
+  }
 </style>
 
 <body>
-  
-  <form action="" method="POST">
-    <h1>Insert Categories</h1>
-    <div>
-      <input type="text" name="cat_title" placeholder="Insert Categories">
-    </div>
-    <div>
-      <input type="submit" name="insert_cat" value="Insert Category">
-    </div>
-  </form>
+  <div class="pro-category">
+    <form action="" method="POST">
+      <h1>Insert Categories</h1>
+      <div>
+        <input type="text" name="cat_title" placeholder="Insert Categories">
+      </div>
+      <div>
+        <input type="submit" name="insert_cat" value="Insert Category">
+      </div>
+    </form>
+  </div>
+
 </body>
 
 </html>

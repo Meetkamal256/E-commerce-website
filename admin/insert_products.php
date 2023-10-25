@@ -34,7 +34,7 @@
     outline: none;
     border: 2px solid lightblue;
   }
-
+  
   input[type="submit"]{
     background-color: blue;
     color: #fff;
@@ -46,6 +46,7 @@
     /* text-align: left; */
   }
   
+  
   /* form select{
     display: block;
     text-align: left;
@@ -53,6 +54,14 @@
     padding: 7px;
     margin-bottom: 15px;
   } */
+
+  /* Responsive design */
+
+  @media(max-width: 899px){
+    .pro-container{
+      margin: 50px 30px;
+    }
+  }
 
 </style>
 
