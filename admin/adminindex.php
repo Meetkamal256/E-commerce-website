@@ -22,6 +22,10 @@ session_start();
         box-sizing: border-box;
     }
 
+    #container {
+        text-align: center;
+    }
+
     header {
         background-color: lightblue;
         width: 100%;
@@ -83,7 +87,7 @@ session_start();
         text-decoration: none;
         color: #ffff;
 
-    
+
     }
 
     .admin_dashboard button {
@@ -97,8 +101,8 @@ session_start();
         cursor: pointer;
     }
 
-    .content{
-        margin-top: 100px;
+    #content {
+        text-align: center;
     }
 </style>
 
@@ -123,26 +127,31 @@ session_start();
             </div>
             <div class="buttons">
                 <div>
-                    <button><a href="">Insert Products</a></button>
+                    <button><a href="adminindex.php?insert_products">Insert Products</a></button>
                     <button><a href="">View Products</a></button>
                     <button><a href="adminindex.php?insert_category">Insert Categories</a></button>
                     <button><a href="">View Categories</a></button>
                     <button><a href="">All Orders</a></button>
                     <button><a href="">All Payments</a></button>
                     <button><a href="">List Users</a></button>
-                    <button><a href="">Logout</a></button>
+                    <button><a href="admin-partials/logout.php">Logout</a></button>
                 </div>
             </div>
         </div>
     </div>
-    
-    <div class="content">
-        <?php
+
+    <div id="content">
+    <?php
         if (isset($_GET['insert_category'])) {
             include('insert_categories.php');
         }
+        if (isset($_GET['insert_products'])) {
+            include('insert_products.php');
+        }
         ?>
     </div>
+
+
 </body>
 
 </html>
