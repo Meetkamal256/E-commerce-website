@@ -47,7 +47,7 @@
               
               <div class="menu-info">
                 <h4 class="control-sidebar-subheading">Nora Joined Mailing List</h4>
-
+                
                 <p>nora@example.com</p>
               </div>
             </a>
@@ -55,17 +55,17 @@
           <li>
             <a href="javascript:void(0)">
               <i class="menu-icon fa fa-file-code-o bg-green"></i>
-
+              
               <div class="menu-info">
                 <h4 class="control-sidebar-subheading">Cron Job 254 Executed</h4>
-
+                
                 <p>Execution time 5 seconds</p>
               </div>
             </a>
           </li>
         </ul>
         <!-- /.control-sidebar-menu -->
-
+        
         <h3 class="control-sidebar-heading">Tasks Progress</h3>
         <ul class="control-sidebar-menu">
           <li>
@@ -74,7 +74,7 @@
                 Custom Template Design
                 <span class="label label-danger pull-right">70%</span>
               </h4>
-
+              
               <div class="progress progress-xxs">
                 <div class="progress-bar progress-bar-danger" style="width: 70%"></div>
               </div>
@@ -86,7 +86,7 @@
                 Update Resume
                 <span class="label label-success pull-right">95%</span>
               </h4>
-
+              
               <div class="progress progress-xxs">
                 <div class="progress-bar progress-bar-success" style="width: 95%"></div>
               </div>
@@ -98,7 +98,7 @@
                 Laravel Integration
                 <span class="label label-warning pull-right">50%</span>
               </h4>
-
+              
               <div class="progress progress-xxs">
                 <div class="progress-bar progress-bar-warning" style="width: 50%"></div>
               </div>
@@ -110,7 +110,7 @@
                 Back End Framework
                 <span class="label label-primary pull-right">68%</span>
               </h4>
-
+              
               <div class="progress progress-xxs">
                 <div class="progress-bar progress-bar-primary" style="width: 68%"></div>
               </div>
@@ -118,7 +118,7 @@
           </li>
         </ul>
         <!-- /.control-sidebar-menu -->
-
+      
       </div>
       <!-- /.tab-pane -->
       <!-- Stats tab content -->

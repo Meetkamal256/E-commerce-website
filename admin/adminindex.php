@@ -1,49 +1,148 @@
-<!DOCTYPE html>
-<html>
-<?php 
-    include("admin-partials/head.php"); 
-    include("admin-partials/session.php");  
+<?php
+include("../partials/connect.php");
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+session_start();
 ?>
 
-<body class="hold-transition skin-blue sidebar-mini">
-    <div class="wrapper">
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin area</title>
+    <script src="https://kit.fontawesome.com/dacccb715c.js" crossorigin="anonymous"></script>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    header {
+        background-color: lightblue;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    header ul li {
+        list-style: none;
+    }
+
+    header ul li a {
+        text-decoration: none;
+        margin-right: 30px;
+    }
+
+    .logo {
+        width: 70px;
+        height: 50px;
+        object-fit: contain;
+        background-color: lightblue;
+    }
+
+    h1 {
+        color: gray;
+        text-align: center;
+        margin: 20px 0px;
+        font-size: 25px;
+    }
+
+    .admin_dashboard {
+        background-color: gray;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        padding: 20px;
+
+    }
+
+    .image-container {
+        width: 100px;
+        /* height: 100px; */
+        object-fit: contain;
+        margin-right: 20px;
+    }
+
+    .image-container img {
+        width: 100%;
+    }
+
+    .admin_dashboard p {
+        color: #ffff;
+        margin-bottom: 20px;
+
+    }
+
+    .admin_dashboard button a {
+        text-decoration: none;
+        color: #ffff;
+
+    
+    }
+
+    .admin_dashboard button {
+        background-color: blue;
+        padding: 7px 25px;
+        color: #ffff;
+        text-decoration: none;
+        border: 3px solid #fff;
+        margin-right: 7px;
+        margin-top: 7px;
+        cursor: pointer;
+    }
+
+    .content{
+        margin-top: 100px;
+    }
+</style>
+
+<body>
+    <div id="container">
+        <header>
+            <div>
+                <img src="../img/shopping-cart-supermarket-generative-ai.jpg" alt="" class="logo">
+            </div>
+            <div>
+                <ul>
+                    <li><a href="#">Welcome Guest</a></li>
+                </ul>
+            </div>
+        </header>
+        <h1>Manage Details</h1>
         
-        <?php include("admin-partials/header.php");
-        include("admin-partials/aside.php");
-        ?>
-        <!-- Left side column. contains the logo and sidebar -->
-        
-        <!-- Content Wrapper. Contains page content -->
-        <div class="content-wrapper">
-            <!-- Content Header (Page header) -->
-            <section class="content-header">
-                <h1>
-                    Dashboard
-                    <small>Control panel</small>
-                </h1>
-               
-            </section>
-            
-            <!-- Main content -->
-            <section class="content">
-                <div class="row">
-                    <div class="col-sm-9">
-                        <a href="products.php">
-                            <button style="color: green">Add Products</button>
-                        </a><hr>
-                    </div>
+        <div class="admin_dashboard">
+            <div class="image-container">
+                <img src="../img/profile.jpg" alt="">
+                <p>Admin Name</p>
+            </div>
+            <div class="buttons">
+                <div>
+                    <button><a href="">Insert Products</a></button>
+                    <button><a href="">View Products</a></button>
+                    <button><a href="adminindex.php?insert_category">Insert Categories</a></button>
+                    <button><a href="">View Categories</a></button>
+                    <button><a href="">All Orders</a></button>
+                    <button><a href="">All Payments</a></button>
+                    <button><a href="">List Users</a></button>
+                    <button><a href="">Logout</a></button>
                 </div>
-                <div class="row">
-                    <div class="col-sm-9">
-                        <a href="categories.php">
-                            <button style="color: green">Add Categories</button>
-                        </a><hr>
-                    </div>
-                </div>
-            </section>
-            <!-- /.content -->
+            </div>
         </div>
-        <!-- /.content-wrapper -->
-        <?php include("admin-partials/footer"); ?>
+    </div>
+    
+    <div class="content">
+        <?php
+        if (isset($_GET['insert_category'])) {
+            include('insert_categories.php');
+        }
+        ?>
+    </div>
 </body>
+
 </html>

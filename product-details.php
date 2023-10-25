@@ -49,91 +49,18 @@ session_start();
       <i class="fas fa-outdent" id="menu-open"></i>
     </div>
   </section>
-
+  
   <?php
   cart();
   ?>
   <section id="prodetails">
     <?php
-    // view_more();
-    if (isset($_GET['product_id'])) {
-      $new_id = $_GET['product_id'];
-      $select_query = "SELECT * from products WHERE product_id='$new_id'";
-      $result_query = mysqli_query($conn, $select_query);
-      while ($row = mysqli_fetch_assoc($result_query)) {
-        $product_id = $row['product_id'];
-        $product_title = $row['product_title'];
-        $product_price = $row['product_price'];
-        $product_image1 = $row['product_image1'];
-        $product_image2 = $row['product_image2'];
-        $product_image3 = $row['product_image3'];
-        $product_image4 = $row['product_image4'];
-        $product_description = $row['product_description'];
-        $category_id = $row['category_id'];
-
-        echo "<div class='single-pro-image'>
-        <div class='mainImage-pro-container'>
-        <img src='product_images/$product_image1' alt='' id='main-img' width='100%'>
-   </div>
-          <div class='small-img-group'>
-            <div class='smallImage-pro-container'>
-              <img
-                src='product_images/$product_image1'
-                width='100%'
-                class='small-img'
-                alt=''
-              />
-            </div>
-            <div class='smallImage-pro-container'>
-              <img
-                src='product_images/$product_image2'
-                width='100%'
-                class='small-img'
-                alt=''
-              />
-            </div>
-            <div class='smallImage-pro-container'>
-            <img
-              src='product_images/$product_image3'
-              width='100%'
-              class='small-img'
-              alt=''
-            />
-          </div>
-          <div class='smallImage-pro-container'>
-          <img
-            src='product_images/$product_image4'
-            width='100%'
-            class='small-img'
-            alt=''
-          />
-        </div>
-          </div>
-        </div>
-        <div class='single-pro-details'>
-          <h4>$product_title</h4>
-          <h2>&#x20A6; $product_price</h2>
-          <select>
-            <option>Select Size</option>
-            <option>XL</option>
-            <option>XXL</option>
-            <option>Small</option>
-            <option>Large</option>
-          </select>
-          <input type='number' value='1' />
-          <a href='index.php?add_to_cart=$product_id'><button>Add To Cart</button></a>
-          <h4>Product details</h4>
-          <span>
-         $product_description
-          </span>
-        </div>";
-      }
-    }
+      view_more();
     ?>
-
-
+  
+  
   </section>
-
+  
   <!-- <section id="product1">
     <h2>Featured Products</h2>
     <p>Summer collection New modern Design</p>
@@ -204,7 +131,7 @@ session_start();
       </div>
     </div>
   </section> -->
-
+  
   <section id="newsletter">
     <div class="newstext">
       <h4>Sign Up For Newsletters</h4>
@@ -218,13 +145,13 @@ session_start();
       <button type="submit">Sign Up</button>
     </div>
   </section>
-
+  
   <?php include("partials/footer.php"); ?>
-
+  
   <script>
     var mainImage = document.getElementById("main-img")
     var smallImage = document.getElementsByClassName("small-img")
-
+    
     smallImage[0].onclick = function() {
       mainImage.src = smallImage[0].src;
     }

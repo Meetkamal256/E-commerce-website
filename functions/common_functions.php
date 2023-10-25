@@ -89,7 +89,7 @@ function view_more()
     while ($row = mysqli_fetch_assoc($result_query)) {
       $product_id = $row['product_id'];
       $product_title = $row['product_title'];
-      $product_price = $row['product_price'];
+      $product_price = number_format($row['product_price']);
       $product_image1 = $row['product_image1'];
       $product_image2 = $row['product_image2'];
       $product_image3 = $row['product_image3'];
@@ -137,8 +137,7 @@ function view_more()
             </div>
           </div>
           <div class='single-pro-details'>
-            <h6>$product_title</h6>
-            <h4>Men's Fashion T shirt</h4>
+            <h4>$product_title</h4>
             <h2>&#x20A6; $product_price</h2>
             <select>
               <option>Select Size</option>
