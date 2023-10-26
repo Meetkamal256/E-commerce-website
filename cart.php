@@ -62,7 +62,7 @@ include_once("functions/common_functions.php");
     <p>LEAVE A MESSAGE, We love to hear from you!</p>
   </section>
   
-  //<?php
+  <?php
     global $conn;
     $get_ip_address = getIPAddress();
     $total = 0;
@@ -97,7 +97,15 @@ include_once("functions/common_functions.php");
   <section id="cart">
     <form method="POST">
       <table width="100%">
-        <thead>
+          
+          <!-- php code to display dynamic data -->
+          <?php
+         $get_ip_address = getIPAddress();
+         $cart_query = "SELECT * FROM cart_details WHERE ip_address = '$get_ip_address'";
+         $result = mysqli_query($conn, $cart_query);
+         $result_count = mysqli_num_rows($result);
+         if($result_count > 0){
+          echo " <thead>
           <tr>
             <td>Remove</td>
             <td>Image</td>
@@ -107,9 +115,14 @@ include_once("functions/common_functions.php");
             <td>Operations</td>
           </tr>
         </thead>
-        <tbody>
-          <!-- php code to display dynamic data -->
-          <?php
+        <tbody>";
+         }else{
+          echo "<h2 style='text-align: center; color: red; font-weight: 500; font-size: 28px'>Cart is empty</h2>";
+          echo "<div style='text-align: center; margin-top: 20px'>
+          <a href='index.php' style='text-decoration: none; background-color: blue; padding: 7px 25px; color: #fff; display: inline-block; cursor: pointer;'>Continue Shopping</a>
+          </div>";
+          
+         }
           while ($row = mysqli_fetch_array($result)) {
             $product_id = $row['product_id'];
             $select_products = "SELECT * FROM products WHERE product_id = '$product_id'";
@@ -134,12 +147,12 @@ include_once("functions/common_functions.php");
                 <td>&#x20A6; <?php echo $formatted_price ?></td>
                 <td><input type="number" name='qty[<?php echo $product_id ?>]' value='<?php echo $row['quantity'] ?>'></td>
                 <td><input type="submit" value='Update Cart' name='update_cart'></td>
-                <td><input type="submit" value='Remove' name='remove_cart[<?php echo $product_id ?>]'></td>
-              
+                <td><input type="submit" value='Remove' name='remove_cart[<?php echo $product_id ?>]'></td>      
               </tr>
           <?php
             }
           }
+        
           ?>
         </tbody>
       </table>
@@ -148,13 +161,12 @@ include_once("functions/common_functions.php");
   
   
   <section id="cart-add">
-    <div id="coupon">
+    <div id='coupon'>
       <h3>Apply Coupon</h3>
       <input type="text" placeholder="Enter Your Coupon">
       <button>Apply</button>
     </div>
     <div id="subtotal">
-      
       <table>
         <tr>
           <td>Cart Subtotal</td>
@@ -171,7 +183,7 @@ include_once("functions/common_functions.php");
       </table>
       <button><a href="checkout.php">Proceed to checkout</a></button>
     </div>
-  </section>
+  </section> 
   
   <?php include("partials/footer.php"); ?>
   <script src="script.js"></script>

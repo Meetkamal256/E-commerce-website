@@ -83,22 +83,22 @@ session_start();
 
     }
 
-    .admin_dashboard button a {
-        text-decoration: none;
-        color: #ffff;
-
-
-    }
-
-    .admin_dashboard button {
-        background-color: blue;
+    .button-link {
+        display: inline-block;
         padding: 7px 25px;
-        color: #ffff;
+        font-size: 16px;
+        background-color: blue;
+        color: #fff;
         text-decoration: none;
-        border: 3px solid #fff;
+        border: 2px solid #fff;
         margin-right: 7px;
         margin-top: 7px;
         cursor: pointer;
+        text-align: center;
+    }
+
+    .button-link:hover {
+        background-color: #010729;
     }
 
     #content {
@@ -119,29 +119,28 @@ session_start();
             </div>
         </header>
         <h1>Manage Details</h1>
-        
+
         <div class="admin_dashboard">
             <div class="image-container">
                 <img src="../img/profile.jpg" alt="">
                 <p>Admin Name</p>
             </div>
             <div class="buttons">
-                <div>
-                    <button><a href="adminindex.php?insert_products">Insert Products</a></button>
-                    <button><a href="">View Products</a></button>
-                    <button><a href="adminindex.php?insert_category">Insert Categories</a></button>
-                    <button><a href="">View Categories</a></button>
-                    <button><a href="">All Orders</a></button>
-                    <button><a href="">All Payments</a></button>
-                    <button><a href="">List Users</a></button>
-                    <button><a href="admin-partials/logout.php">Logout</a></button>
-                </div>
+                <a href="adminindex.php?insert_products" class="button-link">Insert Products</a>
+                <a href="" class="button-link">View Products</a>
+                <a href="adminindex.php?insert_category" class="button-link">Insert Categories</a>
+                <a href="" class="button-link">View Categories</a>
+                <a href="" class="button-link">All Orders</a>
+                <a href="" class="button-link">All Payments</a>
+                <a href="" class="button-link">List Users</a>
+                <a href="admin-partials/logout.php" class="button-link">Logout</a>
             </div>
+
         </div>
     </div>
 
     <div id="content">
-    <?php
+        <?php
         if (isset($_GET['insert_category'])) {
             include('insert_categories.php');
         }
@@ -150,8 +149,6 @@ session_start();
         }
         ?>
     </div>
-
-
 </body>
 
 </html>

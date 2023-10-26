@@ -37,16 +37,23 @@ if (isset($_POST['insert_cat'])) {
 <style>
   .pro-category {
     margin: 50px auto;
+    max-width: 650px;
   }
-
-
+  
+  
   input[type='text'] {
     width: 100%;
-    max-width: 850px;
-    padding: 5px;
+    padding: 7px;
+    border: 1px solid #cccc;
     margin-bottom: 15px;
   }
 
+  input[type='text']:focus{
+    outline: none;
+    border: 2px solid lightblue;
+  }
+
+  
   input[type='submit'] {
     background-color: blue;
     padding: 7px 25px;
@@ -55,7 +62,11 @@ if (isset($_POST['insert_cat'])) {
     cursor: pointer;
   }
 
-
+  input[type='submit']:hover{
+    background-color: #010729;
+  }
+  
+  
   /* Responsive Design */
 
   @media(max-width: 899px) {

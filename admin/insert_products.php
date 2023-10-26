@@ -7,7 +7,7 @@ ini_set('display_errors', 1);
 
 if (isset($_POST['insert_product'])) {
     $product_title = $_POST['product_title'];
-    $price = $_POST['price'];
+    $price = $_POST['product_price'];
     $description = $_POST['description'];
     $product_category = $_POST['product_category'];
     
@@ -25,7 +25,8 @@ if (isset($_POST['insert_product'])) {
         
     // checking empty condition
     if($product_title=='' or  $price=='' or $description=='' or $product_category=='' or  $product_image1=='' or  $product_image2=='' or  $product_image3=='' or $product_category==''){
-        echo "Please fill all the available fields";
+        echo "<script>alert('Please fill all the available fields')</script>";
+        exit();
     } else{
         move_uploaded_file($temp_image1, "../product_images/$product_image1");
         move_uploaded_file($temp_image2, "../product_images/$product_image2");
@@ -37,11 +38,11 @@ if (isset($_POST['insert_product'])) {
     VALUES ('$product_title', '$price', '$product_image1', '$product_image2', '$product_image3', '$product_image4', '$description', '$product_category')";    
     $results = mysqli_query($conn, $insert_query);
     if ($results) {
-        echo "Successfully Inserted Products in database<br>";
+        echo "<script>alert('Successfully Inserted Products in database')</script>";
     } else {
         echo "Error: " . mysqli_error($conn). '<br>';   
-    }   
-    // header("location: products-show.php");
+    }
+
 }
 
 // Close the database connection
@@ -97,9 +98,9 @@ mysqli_close($conn);
     border-radius: 5px;
     cursor: pointer;
   }
-
+  
   input[type="submit"]:hover{
-    background-color: rgba(0,0,0,0.5);
+    background-color: #010729;
   }
   
   /* form select{
@@ -146,7 +147,7 @@ mysqli_close($conn);
       </div>
       <div>
         <label for="product_image4">Product Image 4</label>
-        <input type="file" id="product_image4" name="product_image 4" autocomplete="off" required="required">
+        <input type="file" id="product_image4" name="product_image4" autocomplete="off" required="required">
       </div>
       <div>
         <select name="product_category">
@@ -169,11 +170,11 @@ mysqli_close($conn);
         </select>
       </div>
       <div>
-        <label for="product_description">Product Description</label>
-        <textarea name="product_description" cols="30" rows="10"></textarea>
+        <label for="description">Product Description</label>
+        <textarea name="description" cols="30" rows="10"></textarea>
       </div>
       <div>
-        <input type="submit" name="insert_products" value="Insert Products">
+        <input type="submit" name="insert_product" value="Insert Products">
       </div>
     
     
