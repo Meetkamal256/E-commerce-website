@@ -27,8 +27,8 @@ include_once("functions/common_functions.php");
         <?php
         if (isset($_SESSION['username'])) {
           echo "<li><a href='./users_area/profile.php'>My Account</a></li>";
-        } else {
           echo "<li><a href='./users_area/user_registration.php'>Register</a></li>";
+        } else {
         }
         ?>
         <li><a href="contact.php">Contact</a></li>
@@ -117,9 +117,9 @@ include_once("functions/common_functions.php");
         </thead>
         <tbody>";
          }else{
-          echo "<h2 style='text-align: center; color: red; font-weight: 500; font-size: 28px'>Cart is empty</h2>";
+          echo "<h2 style='text-align: center; color: red; font-weight: 500; font-size: 28px'>You don't have any items in the cart!</h2>";
           echo "<div style='text-align: center; margin-top: 20px'>
-          <a href='index.php' style='text-decoration: none; background-color: blue; padding: 7px 25px; color: #fff; display: inline-block; cursor: pointer;'>Continue Shopping</a>
+          <a href='index.php' style='text-decoration: none; background-color:  #088178; padding: 7px 25px; color: #fff; display: inline-block; cursor: pointer;'>Continue Shopping</a>
           </div>";
           
          }
@@ -161,28 +161,37 @@ include_once("functions/common_functions.php");
   
   
   <section id="cart-add">
-    <div id='coupon'>
-      <h3>Apply Coupon</h3>
-      <input type="text" placeholder="Enter Your Coupon">
-      <button>Apply</button>
-    </div>
-    <div id="subtotal">
-      <table>
-        <tr>
-          <td>Cart Subtotal</td>
-          <td>&#x20A6;<?php echo number_format($total) ?></td>
-        </tr>
-        <tr>
-          <td>Shipping</td>
-          <td>Free</td>
-        </tr>
-        <tr>
-          <td>Total</td>
-          <td>&#x20A6;<?php  echo number_format($total) ?></td>
-        </tr>
-      </table>
-      <button><a href="checkout.php">Proceed to checkout</a></button>
-    </div>
+    <?php
+       $get_ip_address = getIPAddress();
+       $cart_query = "SELECT * FROM cart_details WHERE ip_address = '$get_ip_address'";
+       $result = mysqli_query($conn, $cart_query);
+       $result_count = mysqli_num_rows($result);
+       if($result_count > 0){
+          echo "<div id='coupon'>
+          <h3>Apply Coupon</h3>
+          <input type='text' placeholder='Enter Your Coupon'>
+          <button>Apply</button>
+        </div>
+        <div id='subtotal'>
+          <table>
+            <tr>
+              <td>Cart Subtotal</td>
+              <td>&#x20A6; ".number_format($total)."</td>
+            </tr>
+            <tr>
+              <td>Shipping</td>
+              <td>Free</td>
+            </tr>
+            <tr>
+              <td>Total</td>
+              <td>&#x20A6; ".number_format($total)."</td>
+            </tr>
+          </table>
+          <button><a href='checkout.php'>Proceed to checkout</a></button>
+        </div>";
+       }
+    ?>
+  
   </section> 
   
   <?php include("partials/footer.php"); ?>
