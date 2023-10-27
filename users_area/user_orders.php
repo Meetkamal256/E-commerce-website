@@ -79,7 +79,7 @@
                     <td>$invoice_number</td>
                     <td>$order_date</td>
                     <td>$order_status</td>";
-
+                    
                     if ($order_status == 'Complete') {
                         echo '<td>Paid</td>';
                     } else {

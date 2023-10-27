@@ -40,7 +40,7 @@ session_start();
 
     header ul li a {
         text-decoration: none;
-        margin-right: 30px;
+        margin-right: 50px;
     }
 
     .logo {
@@ -119,7 +119,7 @@ session_start();
             </div>
         </header>
         <h1>Manage Details</h1>
-
+        
         <div class="admin_dashboard">
             <div class="image-container">
                 <img src="../img/profile.jpg" alt="">
@@ -127,7 +127,7 @@ session_start();
             </div>
             <div class="buttons">
                 <a href="adminindex.php?insert_products" class="button-link">Insert Products</a>
-                <a href="" class="button-link">View Products</a>
+                <a href="adminindex.php?view_products" class="button-link">View Products</a>
                 <a href="adminindex.php?insert_category" class="button-link">Insert Categories</a>
                 <a href="" class="button-link">View Categories</a>
                 <a href="" class="button-link">All Orders</a>
@@ -135,10 +135,10 @@ session_start();
                 <a href="" class="button-link">List Users</a>
                 <a href="admin-partials/logout.php" class="button-link">Logout</a>
             </div>
-
+        
         </div>
     </div>
-
+    
     <div id="content">
         <?php
         if (isset($_GET['insert_category'])) {
@@ -147,6 +147,11 @@ session_start();
         if (isset($_GET['insert_products'])) {
             include('insert_products.php');
         }
+        if (isset($_GET['view_products'])) {
+            include('view_products.php');
+        }
+
+
         ?>
     </div>
 </body>

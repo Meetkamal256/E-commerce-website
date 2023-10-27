@@ -93,7 +93,7 @@ include_once("functions/common_functions.php");
     }
     
     ?>
-  
+    
   <section id="cart">
     <form method="POST">
       <table width="100%">
@@ -117,7 +117,7 @@ include_once("functions/common_functions.php");
         </thead>
         <tbody>";
          }else{
-          echo "<h2 style='text-align: center; color: red; font-weight: 500; font-size: 28px'>You don't have any items in the cart!</h2>";
+          echo "<h2 style='text-align: center; color: red; font-weight: 500; font-size: 28px; line-height: 1.3;'>You don't have any items in the cart!</h2>";
           echo "<div style='text-align: center; margin-top: 20px'>
           <a href='index.php' style='text-decoration: none; background-color:  #088178; padding: 7px 25px; color: #fff; display: inline-block; cursor: pointer;'>Continue Shopping</a>
           </div>";

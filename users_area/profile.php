@@ -20,7 +20,7 @@ session_start();
         color: #fff;
         text-align: center;
     }
-
+    
     .sidebar {
         background-color: gray;
         color: #fff;
@@ -41,32 +41,32 @@ session_start();
         right: 0;
         top: 0;
     }
-
+    
     .sidebar h1 {
         font-size: 1.2em;
         margin-bottom: 15px;
         color: #fff;
         width: 100%;
     }
-
+    
     .sidebar li {
         list-style: none;
     }
-
+    
     .sidebar a {
         color: #fff;
         text-decoration: none;
         display: block;
         margin-bottom: 15px;
     }
-
+    
     .profile-img {
         width: 80%;
         height: 100%;
         margin-bottom: 15px;
         margin-top: 150px;
     }
-
+    
     #container {
         /* display: flex;
         flex-direction: column;
@@ -74,7 +74,7 @@ session_start();
         justify-content: center; */
         text-align: center;
     }
-
+    
     #container h3 {
         margin-top: 100px;
         margin-bottom: 15px;
