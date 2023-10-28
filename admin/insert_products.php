@@ -115,7 +115,7 @@ mysqli_close($conn);
   
   @media(max-width: 899px){
     .pro-container{
-      margin: 50px 30px;
+      margin: 50px 30px 800px 30px;
     }
   }
 

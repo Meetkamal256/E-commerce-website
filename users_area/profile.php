@@ -19,6 +19,7 @@ session_start();
     #user_dashboard {
         color: #fff;
         text-align: center;
+
     }
     
     .sidebar {
@@ -28,11 +29,12 @@ session_start();
         position: fixed;
         top: 0;
         left: 0;
-        height: 100%;
+        height: 100vh;
         padding: 20px;
         margin-top: 100px;
+        height: 100%;
     }
-
+    
     .sidebar-heading {
         background-color: blue;
         width: 100%;
@@ -90,6 +92,9 @@ session_start();
     #container span {
         color: red;
     }
+    
+
+
 </style>
 
 <body>
@@ -132,13 +137,12 @@ session_start();
             <i class="fas fa-outdent" id="menu-open"></i>
         </div>
     </section>
-
+    
     <!-- calling cart function -->
     <?php
     cart();
     ?>
-
-    <div id="user_dashboard">
+       <div id="user_dashboard">
         <div class="sidebar">
             <div class="sidebar-heading">
                 <h1>Your Profile</h1>
@@ -160,6 +164,12 @@ session_start();
             </ul>
         </div>
     </div>
+    <div id="mobile-sidebar-toggle">
+        <i class="fas fa-bars"></i>
+    </div>     
+    
+  
+    
     <div id="container">
         <?php
         get_user_order_details();
@@ -171,16 +181,9 @@ session_start();
         }
         ?>
     </div>
-
-
-
-
-
-
-
+    
     <!-- <?php include("../partials/footer.php"); ?> -->
     <script src="../script.js"></script>
-
 </body>
 
 </html>

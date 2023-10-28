@@ -17,20 +17,95 @@
         margin: 0 auto;
     }
     
+    
     #order_table table thead tr th {
         width: 100%;
         border-collapse: collapse;
         white-space: nowrap;
         background-color: blue;
-        color: #fff;
         padding: 7px 25px;
+        color: #fff;
     }
     
     #order_table table tr td {
         background-color: gray;
         color: #fff;
-        padding: 5px 0px;
+        padding: 5px 25px;
     }
+    
+    /* Responsive styles */
+    @media (min-width: 768px) and (max-width: 1024px) {
+        #order_table{
+            max-width: 80%;
+            margin: 0 auto;
+        }
+        
+        #order_table table thead tr th ,#order_table table tr td {
+            padding: 5px 7px;
+        }
+    }
+    
+    @media (min-width: 652px) and (max-width: 1024px) {
+        #order_table{
+            max-width: 80%;
+            margin: 0 auto;
+        }
+        
+        #order_table table thead tr th ,#order_table table tr td {
+            padding: 5px 7px;
+        }
+    }
+    
+    @media (min-width: 651px) and (max-width: 767px){
+        #order_table{
+            max-width: 15%;
+            margin: 0 auto;
+        }
+        
+        #order_table table thead tr th ,#order_table table tr td {
+            padding: 5px 3px;
+        }
+    } 
+    
+    @media (min-width: 375px) and (max-width: 650px){
+        #order_table{
+            max-width: 5%;
+            margin: 0 0px 400px 320px;
+        }
+        
+        #order_table table thead tr th ,#order_table table tr td {
+            padding: 2px 5px;
+        }    
+    }
+
+    #order_table h3{
+        margin: 100px 300px 15px 0px;
+    }
+    
+  
+    
+    @media (max-width: 374px){
+        
+        #order_table h3{
+            margin-right: 300px;
+        }
+        
+        #order_table{
+            max-width: 5%;
+            margin: 0 0px 400px 350px;
+        }
+        
+        #order_table table thead tr th ,#order_table table tr td {
+            padding: 2px 5px;
+        }   
+    }
+    
+    #order_table h3{
+        margin: 100px 250px 15px 0px;
+    }
+
+
+    
 </style>
 
 <body>

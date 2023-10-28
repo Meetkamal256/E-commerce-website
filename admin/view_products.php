@@ -17,6 +17,8 @@ ini_set('display_errors', 1);
     <script src="https://kit.fontawesome.com/dacccb715c.js" crossorigin="anonymous"></script>
 </head>
 <style>
+ 
+    
     #all_products_table h1 {
         margin-top: 50px;
     }
@@ -56,8 +58,7 @@ ini_set('display_errors', 1);
         
         /* Styles for screens with a maximum width of 768px */
         #all_products_table {
-            max-width: 20%;
-            /* Allow the table to take the full width of the screen */
+            max-width: 80%;
             margin: 0 auto 400px auto;
         }
         
@@ -68,9 +69,9 @@ ini_set('display_errors', 1);
         }
         
         .product_img {
-            width: 30px;
+            width: 50px;
             /* Adjust image size for smaller screens */
-            height: 30px;
+            height: 50px;
         }
     }
       
@@ -117,7 +118,7 @@ ini_set('display_errors', 1);
             object-fit: contain;
         }
     }
-
+    
     
     @media (max-width: 374px){
         #all_products_table {
@@ -127,7 +128,7 @@ ini_set('display_errors', 1);
         }
         
         #all_products_table h1{
-            margin-right: 250px;
+            margin-right: 350px;
         
         }
         
@@ -187,15 +188,13 @@ ini_set('display_errors', 1);
                 </tr>";
                         $number++;
                     }
-
-
-                    ?>
-
+                ?>
+                
                 </tbody>
                 </thead>
             </table>
         </div>
-
+    
     </div>
 </body>
 

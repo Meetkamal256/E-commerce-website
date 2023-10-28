@@ -21,68 +21,73 @@ session_start();
         padding: 0;
         box-sizing: border-box;
     }
-
+    
     #container {
         text-align: center;
+        width:100%;
+        position: relative;
     }
-
+    
     header {
         background-color: lightblue;
         width: 100%;
         display: flex;
         justify-content: space-between;
         align-items: center;
+        position: fixed;
+        top: 0;
+        left: 0;
     }
-
+    
     header ul li {
         list-style: none;
     }
-
+    
     header ul li a {
         text-decoration: none;
         margin-right: 50px;
     }
-
+    
     .logo {
         width: 70px;
         height: 50px;
         object-fit: contain;
         background-color: lightblue;
     }
-
+    
     h1 {
         color: gray;
         text-align: center;
         margin: 20px 0px;
         font-size: 25px;
     }
-
+    
     .admin_dashboard {
         background-color: gray;
         display: flex;
         align-items: center;
         flex-wrap: wrap;
         padding: 20px;
-
+    
     }
-
+    
     .image-container {
         width: 100px;
         /* height: 100px; */
         object-fit: contain;
         margin-right: 20px;
     }
-
+    
     .image-container img {
         width: 100%;
     }
-
+    
     .admin_dashboard p {
         color: #ffff;
         margin-bottom: 20px;
-
+    
     }
-
+    
     .button-link {
         display: inline-block;
         padding: 7px 25px;
@@ -96,11 +101,11 @@ session_start();
         cursor: pointer;
         text-align: center;
     }
-
+    
     .button-link:hover {
         background-color: #010729;
     }
-
+    
     #content {
         text-align: center;
     }

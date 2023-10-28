@@ -47,12 +47,12 @@ if (isset($_POST['insert_cat'])) {
     border: 1px solid #cccc;
     margin-bottom: 15px;
   }
-
+  
   input[type='text']:focus{
     outline: none;
     border: 2px solid lightblue;
   }
-
+  
   
   input[type='submit'] {
     background-color: blue;
@@ -61,17 +61,17 @@ if (isset($_POST['insert_cat'])) {
     color: #ffff;
     cursor: pointer;
   }
-
+  
   input[type='submit']:hover{
     background-color: #010729;
   }
   
   
   /* Responsive Design */
-
+  
   @media(max-width: 899px) {
     .pro-category {
-      margin: 50px 30px;
+      margin: 50px 30px 600px 30px;
     }
   }
 </style>
