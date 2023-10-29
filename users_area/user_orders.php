@@ -14,7 +14,7 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        margin: 0 auto;
+        margin: 0 auto; 
     }
     
     
@@ -32,6 +32,8 @@
         color: #fff;
         padding: 5px 25px;
     }
+    
+    
     
     /* Responsive styles */
     @media (min-width: 768px) and (max-width: 1024px) {
@@ -77,7 +79,7 @@
             padding: 2px 5px;
         }    
     }
-
+    
     #order_table h3{
         margin: 100px 300px 15px 0px;
     }

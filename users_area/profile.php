@@ -19,20 +19,20 @@ session_start();
     #user_dashboard {
         color: #fff;
         text-align: center;
-
+    
     }
     
-    .sidebar {
+    #sidebar {
         background-color: gray;
         color: #fff;
-        width: 200px;
+        width: 185px;
         position: fixed;
         top: 0;
         left: 0;
         height: 100vh;
         padding: 20px;
-        margin-top: 100px;
-        height: 100%;
+        margin-top: 120px;
+        height: 100vh;
     }
     
     .sidebar-heading {
@@ -44,18 +44,18 @@ session_start();
         top: 0;
     }
     
-    .sidebar h1 {
+    #sidebar h1 {
         font-size: 1.2em;
         margin-bottom: 15px;
         color: #fff;
         width: 100%;
     }
     
-    .sidebar li {
+    #sidebar li {
         list-style: none;
     }
     
-    .sidebar a {
+    #sidebar a {
         color: #fff;
         text-decoration: none;
         display: block;
@@ -93,8 +93,42 @@ session_start();
         color: red;
     }
     
-
-
+    #mobile-toggle{
+        display: none;
+    }
+    
+    /* Responsive design */
+    @media (max-width: 899px){
+        
+        #sidebar {
+        background-color: gray;
+        color: #fff;
+        width: 185px;
+        position: fixed;
+        top: 0;
+        left: -185px;
+        height: 100vh;
+        padding: 20px;
+        margin-top: 120px;
+        height: 100vh;
+        transition: 0.3s;
+    }
+        #mobile-toggle{
+            display: block;
+        }
+        
+        #mobile-toggle i{
+            color: blue;
+            font-size: 20px;
+            padding-left: 15px;
+            padding-top: 7px;
+        }
+    }
+    
+    #sidebar.active{
+        left: 0;
+    }
+    
 </style>
 
 <body>
@@ -142,8 +176,8 @@ session_start();
     <?php
     cart();
     ?>
-       <div id="user_dashboard">
-        <div class="sidebar">
+    <div id="user_dashboard">
+        <div id="sidebar">
             <div class="sidebar-heading">
                 <h1>Your Profile</h1>
             </div>
@@ -164,11 +198,9 @@ session_start();
             </ul>
         </div>
     </div>
-    <div id="mobile-sidebar-toggle">
-        <i class="fas fa-bars"></i>
-    </div>     
-    
-  
+    <div id="mobile-toggle">
+        <i class="fas fa-outdent" id="sidebar-toggle"></i>
+    </div>
     
     <div id="container">
         <?php
@@ -182,8 +214,10 @@ session_start();
         ?>
     </div>
     
-    <!-- <?php include("../partials/footer.php"); ?> -->
+    <!-- Update your JavaScript to toggle the correct class -->
     <script src="../script.js"></script>
+
+
 </body>
 
 </html>

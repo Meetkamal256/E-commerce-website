@@ -15,3 +15,16 @@ if(close){
     })
 }
 }
+
+// user dashboard section
+
+const sidebarToggle = document.getElementById('sidebar-toggle');
+const sidebar = document.getElementById('sidebar');
+
+if (sidebarToggle) {
+    sidebarToggle.addEventListener('click', () => {
+        console.log('Button clicked');
+        sidebar.classList.toggle('active');
+    });
+}
+

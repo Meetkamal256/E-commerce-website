@@ -704,7 +704,7 @@ footer .follow i:hover, footer a:hover{
     outline: none;
 }
 
-#prodetails .single-pro-details button{
+#prodetails .single-pro-details a button{
     background-color: var(--Dark-cyan);
     padding: 15px 30px;
     border: none;
@@ -715,7 +715,7 @@ footer .follow i:hover, footer a:hover{
     transition: 0.3s ease;
 }
 
-#prodetails .single-pro-details button:hover{
+#prodetails .single-pro-details a button:hover{
     background-color: rgb(87, 129, 16);
 }
 

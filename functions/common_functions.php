@@ -147,7 +147,7 @@ function view_more()
               <option>Large</option>
             </select>
             <input type='number' value='1' />
-            <button>Add to Cart</button>
+            <a href='index.php?add_to_cart=$product_id'><button>Add To Cart</button></a>
             <h4>Product details</h4>
             <span>
            $product_description
