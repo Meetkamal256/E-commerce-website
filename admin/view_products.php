@@ -183,8 +183,8 @@ ini_set('display_errors', 1);
                     <td>&#x20A6; " . number_format($product_price) . "</td>
                     <td>0</td>
                     <td>true</td>
-                    <td>edit</td>
-                    <td>delete</td>
+                    <td <a href=''><i class='fa-solid fa-pen-to-square'></i></a></td>
+                    <td <a href=''><i class='fa-solid fa-trash'></i></a></td>
                 </tr>";
                         $number++;
                     }
