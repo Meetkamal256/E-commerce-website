@@ -29,7 +29,7 @@ session_start();
     }
     
     header {
-        background-color: lightblue;
+        background-color: blue;
         width: 100%;
         display: flex;
         justify-content: space-between;
@@ -46,17 +46,18 @@ session_start();
     header ul li a {
         text-decoration: none;
         margin-right: 50px;
+        color: #fff;
     }
     
     .logo {
         width: 70px;
         height: 50px;
         object-fit: contain;
-        background-color: lightblue;
+        background-color: blue;
     }
     
     h1 {
-        color: gray;
+        color: blue;
         text-align: center;
         margin: 20px 0px;
         font-size: 25px;
