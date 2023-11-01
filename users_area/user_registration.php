@@ -16,7 +16,7 @@ if (isset($_POST['user_register'])) {
     $user_image = $_FILES['user_image']['name'];
     $user_image_tmp = $_FILES['user_image']['tmp_name'];
     $user_ip = getIPAddress();
-    
+
     $select_query = "SELECT * from user_table WHERE username = '$username' OR user_email = '$user_email'";
     $result = mysqli_query($conn, $select_query);
     $num_rows = mysqli_num_rows($result);
@@ -44,8 +44,7 @@ if (isset($_POST['user_register'])) {
         $_SESSION['username'] = $username;
         echo "<script>alert('You have items in your cart')</script>";
         echo "<script>window.open('../checkout.php', '_self')</script>";
-         
-    }else{
+    } else {
         echo "<script>window.open('../index.php', '_self')</script>";
     }
 }
@@ -59,32 +58,36 @@ if (isset($_POST['user_register'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Registration</title>
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="../styles.css" />
+    <script src="https://kit.fontawesome.com/dacccb715c.js" crossorigin="anonymous"></script>
     
+
     <style>
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-        
+
         }
-        
+
         #container {
             max-width: 550px;
             margin: 20px auto;
-        
+            min-height: 100vh;
+
         }
-        
+
         h1 {
             text-align: center;
             color: blue;
+            font-size: 28px;
         }
-        
+
         label {
             display: block;
             margin-bottom: 10px;
         }
-        
+
         input[type='text'],
         input[type='password'],
         input[type='file'] {
@@ -93,17 +96,17 @@ if (isset($_POST['user_register'])) {
             border: 1px solid #ccc;
             border-radius: 5px;
             margin-bottom: 15px;
-        
+
         }
-        
+
         input[type='text']:focus,
         input[type='password']:focus {
             outline: none;
             border: 2px solid lightblue;
         }
-        
-        
-        
+
+
+
         .reg-btn input {
             background-color: blue;
             border: none;
@@ -112,15 +115,15 @@ if (isset($_POST['user_register'])) {
             margin-bottom: 10px;
             cursor: pointer;
         }
-        
+
         .small {
             font-weight: bold;
             font-size: smaller;
             color: red;
         }
-        
+
         /* Responsive styles */
-        
+
         @media (max-width: 576px) {
             #container {
                 margin: 20px 30px;
@@ -130,6 +133,45 @@ if (isset($_POST['user_register'])) {
 </head>
 
 <body>
+    <section id="header">
+        <a href="../index.php" class="logo">LeisureWears</a>
+        <div>
+            <ul id="navbar">
+                <li><a href="../index.php" class="active">Home</a></li>
+                <li><a href="../display_all.php">Shop</a></li>
+                <li><a href="../blog.php">Blog</a></li>
+                <li><a href="../about.php">About</a></li>
+                <?php
+                if (isset($_SESSION['username'])) {
+                    echo "<li><a href='profile.php'>My Account</a></li>";
+                } else {
+                    echo "<li><a href='user_registration.php'>Register</a></li>";
+                }
+                ?>
+                <li><a href="../contact.php">Contact</a></li>
+                <?php
+                if (!isset($_SESSION['username'])) {
+                    echo "<li><a href='#'>Welcome Guest</a></li>";
+                } else {
+                    echo "<li><a href='#'>Welcome " . $_SESSION['username'] . "</a></li>";
+                }
+                if (!isset($_SESSION['username'])) {
+                    echo " <li><a href='user_login.php'>Login</a></li>";
+                } else {
+                    echo " <li><a href='logout.php'>Logout</a></li>";
+                }
+                ?>
+                <li>
+                    <a href='cart.php'><i class='fa-solid fa-cart-shopping cart'></i><sup><?php cart_items(); ?></sup></a>
+                </li>
+                <a href="#"><i class="fas fa-times" id="close"></i></a>
+            </ul>
+        </div>
+        <div id="mobile">
+            <a href='../cart.php'><i class='fa-solid fa-cart-shopping cart'></i><sup><?php cart_items(); ?></sup></a>
+            <i class="fas fa-outdent" id="menu-open"></i>
+        </div>
+    </section>
     <div id="container">
         <!-- Username field  -->
         <form action="" method="post" enctype="multipart/form-data">
@@ -174,6 +216,7 @@ if (isset($_POST['user_register'])) {
             <p>Already have an account?<a href="user_login.php" class="small"> Login</a></p>
     </div>
     </form>
+    <?php include("../partials/footer.php"); ?>
 </body>
 
 </html>

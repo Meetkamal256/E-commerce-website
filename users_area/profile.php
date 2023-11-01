@@ -25,7 +25,7 @@ session_start();
     #sidebar {
         background-color: gray;
         color: #fff;
-        width: 185px;
+        width: 150px;
         position: fixed;
         top: 0;
         left: 0;
@@ -98,19 +98,19 @@ session_start();
     }
     
     /* Responsive design */
-    @media (max-width: 899px){
+    @media (max-width: 1280px){
         
         #sidebar {
         background-color: gray;
         color: #fff;
-        width: 185px;
+        width: 150px;
         position: fixed;
         top: 0;
-        left: -185px;
+        left: -150px;
         height: 100vh;
         padding: 20px;
         margin-top: 120px;
-        height: 100vh;
+        height: 100%;
         transition: 0.3s;
     }
         #mobile-toggle{
@@ -122,6 +122,7 @@ session_start();
             font-size: 20px;
             padding-left: 15px;
             padding-top: 7px;
+            cursor: pointer;
         }
     }
     

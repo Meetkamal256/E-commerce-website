@@ -187,7 +187,7 @@ include_once("functions/common_functions.php");
               <td>&#x20A6; ".number_format($total)."</td>
             </tr>
           </table>
-          <button><a href='checkout.php'>Proceed to checkout</a></button>
+          <button><a href='users_area/checkout.php'>Proceed to checkout</a></button>
         </div>";
        }
     ?>

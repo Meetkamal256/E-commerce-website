@@ -36,10 +36,10 @@
     
     
     /* Responsive styles */
-    @media (min-width: 768px) and (max-width: 1024px) {
+    @media (min-width: 768px) and (max-width: 1280px) {
         #order_table{
-            max-width: 80%;
-            margin: 0 auto;
+            max-width: 100%;
+            margin: 0 auto 900px auto;
         }
         
         #order_table table thead tr th ,#order_table table tr td {
