@@ -15,31 +15,31 @@ ini_set('display_errors', 1);
     <title>User Login</title>
     <link rel="stylesheet" href="../styles.css" />
     <script src="https://kit.fontawesome.com/dacccb715c.js" crossorigin="anonymous"></script>
-    
+
     <style>
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
-        
+
         #container {
             max-width: 550px;
             margin: 20px auto;
-        
+
         }
-        
+
         h1 {
             text-align: center;
             color: blue;
             font-size: 28px;
         }
-        
+
         label {
             display: block;
             margin-bottom: 10px;
         }
-        
+
         input[type='text'],
         input[type='password'],
         input[type='file'] {
@@ -48,17 +48,17 @@ ini_set('display_errors', 1);
             border: 1px solid #ccc;
             border-radius: 5px;
             margin-bottom: 15px;
-        
+
         }
-        
+
         input[type='text']:focus,
         input[type='password']:focus {
             outline: none;
             border: 2px solid lightblue;
         }
-        
-        
-        
+
+
+
         .reg-btn input {
             background-color: blue;
             border: none;
@@ -67,15 +67,15 @@ ini_set('display_errors', 1);
             margin-bottom: 10px;
             cursor: pointer;
         }
-        
+
         .small {
             font-weight: bold;
             font-size: smaller;
             color: red;
         }
-        
+
         /* Responsive styles */
-        
+
         @media (max-width: 576px) {
             #container {
                 margin: 20px 30px;
@@ -132,21 +132,74 @@ ini_set('display_errors', 1);
                 <label for="username">Username</label>
                 <input type="text" id="username" name="username" class="form-control" placeholder="Enter Your Username" autocomplete="off" required="required">
             </div>
-            
-            
+
+
             <div>
                 <!-- Password Field -->
                 <label for="user_password">Password</label>
                 <input type="password" id="user_password" name="user_password" class="form-control" placeholder="Enter Your Password" autocomplete="off" required="required">
             </div>
-            
+
             <div class="reg-btn">
                 <input type="submit" value="Login" name="user_login">
             </div>
             <p>Don't have an account Register?<a href="user_registration.php" class="small"> Register</a></p>
     </div>
     </form>
-    <?php include_once("../partials/footer.php"); ?> 
+    <footer>
+        <div class="col">
+            <a href="#"><img class="logo" src="img/logo.png" alt=""></a>
+            <h4>Contact</h4>
+            <p> <strong>Address: </strong> 562 Wellington Road Street 32 San Francisco </p>
+            <p><strong>Phone:</strong> +012222 365/(+91) 0123456789</p>
+            <p><strong>Hours:</strong> 10:00 - 18:00 Mon - Sat</p>
+            <div class="follow">
+                <h4>Follow Us</h4>
+                <div class="icons">
+                    <i class="fa fa-facebook"></i>
+                    <i class="fa fa-twitter"></i>
+                    <i class="fa fa-instagram"></i>
+                    <i class="fa fa-pinterest"></i>
+                    <i class="fa fa-youtube"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <h4>About</h4>
+            <a href="#">About Us</a>
+            <a href="#">Delivery Information</a>
+            <a href="#">Terms and Conditions</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Contact Us</a>
+        </div>
+
+        <div class="col">
+            <h4>My Account</h4>
+            <a href="#">Sign In</a>
+            <a href="#">View Cart</a>
+            <a href="#">My Wishlist</a>
+            <a href="#">Track My Order</a>
+            <a href="#">Help</a>
+        </div>
+
+        <div class="col install">
+            <h4>Install</h4>
+            <p>From App Store or Google Store</p>
+            <div class="row">
+                <img src="../img/pay/app.jpg" alt="">
+                <img src="../img/pay/play.jpg" alt="">
+            </div>
+            <p>Secured Payment Gateway</p>
+            <img src="../img/pay/pay.png" alt="">
+        </div>
+
+        <div class="copyright">
+            <p> &copy Copyright 2023</p>
+        </div>
+    </footer>
+    <script src="../script.js"></script>
+
 </body>
 
 </html>
@@ -156,13 +209,13 @@ ini_set('display_errors', 1);
 if (isset($_POST['user_login'])) {
     $username = $_POST['username'];
     $user_password = $_POST['user_password'];
-    
+
     $select_query = "SELECT * from user_table WHERE username = '$username'";
     $result = mysqli_query($conn, $select_query);
     $row_count = mysqli_num_rows($result);
     $row_data = mysqli_fetch_assoc($result);
     $user_ip = getIPAddress();
-    
+
     // cart items
     $select_query_cart = "SELECT * from cart_details WHERE ip_address = '$user_ip'";
     $result_cart = mysqli_query($conn, $select_query_cart);

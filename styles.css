@@ -23,6 +23,7 @@
 body{
     width: 100%;
     height: 100vh;
+    background-color: #FFFF;
 }
 
 h1{
@@ -67,8 +68,8 @@ p{
 #header .logo{
     font-family: 'Dancing Script', cursive;
     text-decoration: none;
-    font-size: 30px;
-    color: var(--Dark-grey);
+    font-size: 27px;
+    color: var(--Fairway-mist);
 
 }
 
@@ -76,8 +77,8 @@ p{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 20px 80px;
-    background-color: var(--lavender);
+    padding: 20px 40px;
+    background-color: #041E42;
     box-shadow: 0px 5px 15px rgba(0,0,0,0.06);
     position: sticky;
     top: 0;
@@ -94,13 +95,13 @@ p{
 
 #navbar li{
     list-style: none;
-    padding: 0 20px;
+    padding: 0 15px;
     position: relative;
 } 
 
 #navbar a{
     text-decoration: none;
-    color: var(--Dark-grey);
+    color: var(--Fairway-mist);
     transition: 0.3s ease;
 }
 
@@ -150,19 +151,20 @@ p{
 #hero h4{
     margin-bottom: 15px;
     font-weight: 400;
-    color: lightgrey;
+    color: #ffff;
 }
 
 #hero h2{
-    color: lightgrey;
+    color: #ffff;
 }
 
 #hero h1{
-    color: lightgrey;
+    color: #ffff;
 }
 
 #hero p{
-    color: lightgrey;
+    color: #ffff;
+   
 }
 
 #hero button{
@@ -170,7 +172,7 @@ p{
     background: url(img/button.png);
     background-color: transparent;
     padding: 14px 80px 14px 65px;
-    color: lightgrey;
+    color: #ffff;
     font-weight: 700;
     font-size: 15px;
     cursor: pointer;
@@ -550,6 +552,14 @@ footer{
     flex-wrap: wrap;
     margin: 40px 0px;
     padding: 40px 80px;
+    background-color: #041E42;
+}
+
+footer .logo{
+    font-family: 'Dancing Script', cursive;
+    text-decoration: none;
+    font-size: 25px;
+    color: var(--Fairway-mist);
 }
 
 footer .col{
@@ -565,13 +575,14 @@ footer .logo{
 }
 
 footer h4{
-    color: var(--Dark-grey);
+    color: var(--Fairway-mist);
     padding-bottom: 20px;
 }
 
 footer p{
     font-size: 13px;
     margin: 0 0 8px 0;
+    color: var(--Fairway-mist);
 }
 
 
@@ -580,7 +591,7 @@ footer a{
     text-decoration: none;
     font-size: 13px;
     margin: 0 0 8px 0;
-    color: #222;
+    color: var(--Fairway-mist);
 }
    
 footer .follow{
@@ -588,7 +599,7 @@ footer .follow{
 }
 
 footer .follow i{
-    color: var(--light-gray);
+    color: var(--Fairway-mist);
     padding-right: 4px;
     cursor: pointer;
 }
@@ -1113,13 +1124,20 @@ footer .follow i:hover, footer a:hover{
 
 
 @media(max-width: 899px){
+    #header .logo{
+        font-size: 27px;
+    }
+    
+    #mobile i {
+        font-size: 22px;
+    }
     
     #navbar{
         flex-direction: column;
         align-items: flex-start;
         justify-content: flex-start;
         width: 300px;
-        background-color: lightgray;
+        background-color: #041E42;
         position: fixed;
         top: 0px;
         right: -300px;
@@ -1140,7 +1158,7 @@ footer .follow i:hover, footer a:hover{
     #mobile i{
       font-size: 24px;
       padding-left: 20px;
-      color: #1a1a1a;
+      color: var(--Fairway-mist);
     }
     
     #navbar.active{
@@ -1151,7 +1169,7 @@ footer .follow i:hover, footer a:hover{
         position: absolute;
         top: 30px;
         left: 30px;
-        color: #222;
+        color: var(--Fairway-mist);
         font-size: 24px;
     }
     
@@ -1251,6 +1269,14 @@ footer .follow i:hover, footer a:hover{
 }
 
 @media(max-width: 477px){
+
+    #header .logo{
+        font-size: 25px;
+    }
+    
+    #mobile i {
+        font-size: 20px;
+    }
     #header {
         padding: 10px 30px;
     

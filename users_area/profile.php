@@ -36,7 +36,7 @@ session_start();
     }
     
     .sidebar-heading {
-        background-color: blue;
+        background-color: #041E42;
         width: 100%;
         position: absolute;
         left: 0;
@@ -80,7 +80,7 @@ session_start();
     #container h3 {
         margin-top: 100px;
         margin-bottom: 15px;
-        color: green;
+        color: #041E42;
         font-size: 20px;
         font-weight: 500;
     }
@@ -215,7 +215,7 @@ session_start();
         ?>
     </div>
     
-    <!-- Update your JavaScript to toggle the correct class -->
+    
     <script src="../script.js"></script>
 
 
