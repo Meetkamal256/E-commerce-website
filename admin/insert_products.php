@@ -113,6 +113,13 @@ mysqli_close($conn);
   
   /* Responsive design */
   
+   @media(max-width: 1280px){
+    .pro-container{
+      
+      margin: 50px auto 800px auto;
+    }
+  } 
+  
   @media(max-width: 899px){
     .pro-container{
       margin: 50px 30px 800px 30px;

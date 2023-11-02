@@ -79,7 +79,7 @@ if (isset($_POST['user_register'])) {
 
         h1 {
             text-align: center;
-            color: blue;
+            color: #041E42;
             font-size: 28px;
         }
 
@@ -87,7 +87,7 @@ if (isset($_POST['user_register'])) {
             display: block;
             margin-bottom: 10px;
         }
-
+        
         input[type='text'],
         input[type='password'],
         input[type='file'] {
@@ -96,26 +96,29 @@ if (isset($_POST['user_register'])) {
             border: 1px solid #ccc;
             border-radius: 5px;
             margin-bottom: 15px;
-
+        
         }
-
+        
         input[type='text']:focus,
         input[type='password']:focus {
             outline: none;
             border: 2px solid lightblue;
         }
-
+        
 
 
         .reg-btn input {
-            background-color: blue;
+            background-color: #041E42;
             border: none;
             padding: 7px 25px;
             color: #ffff;
             margin-bottom: 10px;
             cursor: pointer;
         }
-
+        
+        .reg-btn input:hover{
+            background-color: black;
+        }
         .small {
             font-weight: bold;
             font-size: smaller;
@@ -162,7 +165,7 @@ if (isset($_POST['user_register'])) {
                 }
                 ?>
                 <li>
-                    <a href='cart.php'><i class='fa-solid fa-cart-shopping cart'></i><sup><?php cart_items(); ?></sup></a>
+                    <a href='../cart.php'><i class='fa-solid fa-cart-shopping cart'></i><sup><?php cart_items(); ?></sup></a>
                 </li>
                 <a href="#"><i class="fas fa-times" id="close"></i></a>
             </ul>
@@ -218,10 +221,10 @@ if (isset($_POST['user_register'])) {
     </form>
     <footer>
         <div class="col">
-            <a href="#"><img class="logo" src="img/logo.png" alt=""></a>
+            <a href="index.php" class="logo">LeisureWears</a>
             <h4>Contact</h4>
-            <p> <strong>Address: </strong> 562 Wellington Road Street 32 San Francisco </p>
-            <p><strong>Phone:</strong> +012222 365/(+91) 0123456789</p>
+            <p> <strong>Address: </strong> 352 Leisurewear Road street 25 Abuja</p>
+            <p><strong>Phone:</strong> +2340001236789 0123456789</p>
             <p><strong>Hours:</strong> 10:00 - 18:00 Mon - Sat</p>
             <div class="follow">
                 <h4>Follow Us</h4>

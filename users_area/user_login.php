@@ -22,19 +22,19 @@ ini_set('display_errors', 1);
             margin: 0;
             padding: 0;
         }
-
+        
         #container {
             max-width: 550px;
             margin: 20px auto;
-
+        
         }
-
+        
         h1 {
             text-align: center;
-            color:#041E42;
+            color: #041E42;
             font-size: 28px;
         }
-
+        
         label {
             display: block;
             margin-bottom: 10px;
@@ -68,7 +68,7 @@ ini_set('display_errors', 1);
             cursor: pointer;
         }
 
-        .reg-btn input:hover{
+        .reg-btn input:hover {
             background-color: black;
         }
 
@@ -152,7 +152,7 @@ ini_set('display_errors', 1);
     </form>
     <footer>
         <div class="col">
-            <a href="#"><img class="logo" src="img/logo.png" alt=""></a>
+            <a href="index.php" class="logo">LeisureWears</a>
             <h4>Contact</h4>
             <p> <strong>Address: </strong> 562 Wellington Road Street 32 San Francisco </p>
             <p><strong>Phone:</strong> +012222 365/(+91) 0123456789</p>

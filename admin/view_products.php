@@ -49,8 +49,8 @@ ini_set('display_errors', 1);
     }
     
     .product_img {
-        width: 70px;
-        height: 70px;
+        width: 100px;
+        height: 100px;
         object-fit: contain;
     }
     
@@ -69,10 +69,9 @@ ini_set('display_errors', 1);
         }
         
         .product_img {
-            width: 50px;
-            /* Adjust image size for smaller screens */
-            height: 50px;
-        }
+        width: 100px;
+        height: 100px;
+    }
     }
       
     /* Styles for screens with a maximum width of 768px */
@@ -89,9 +88,8 @@ ini_set('display_errors', 1);
         }
         
         .product_img {
-            width: 50px;
-         
-            height: 50px;
+            width: 70px;
+            height: 70px;
         }
     }
     
@@ -113,10 +111,10 @@ ini_set('display_errors', 1);
         }
         
         .product_img {
-            width: 50px;
-            height: 50px;
-            object-fit: contain;
-        }
+        width: 70px;
+        height: 70px;
+        object-fit: contain;
+    }
     }
     
     
@@ -138,10 +136,10 @@ ini_set('display_errors', 1);
         }
         
         .product_img {
-            width: 50px;
-            height: 50px;
-            object-fit: contain;
-        }
+        width: 70px;
+        height: 70px;
+       
+    }
     }
  
 </style>
@@ -183,8 +181,8 @@ ini_set('display_errors', 1);
                     <td>&#x20A6; " . number_format($product_price) . "</td>
                     <td>0</td>
                     <td>true</td>
-                    <td <a href=''><i class='fa-solid fa-pen-to-square'></i></a></td>
-                    <td <a href=''><i class='fa-solid fa-trash'></i></a></td>
+                    <td <a href=''><i class='fa-solid fa-pen-to-square' style='cursor: pointer;'></i></a></td>
+                    <td <a href=''><i class='fa-solid fa-trash' style='cursor: pointer;'></i></a></td>
                 </tr>";
                         $number++;
                     }
