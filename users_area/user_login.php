@@ -31,7 +31,7 @@ ini_set('display_errors', 1);
 
         h1 {
             text-align: center;
-            color: blue;
+            color:#041E42;
             font-size: 28px;
         }
 
@@ -60,12 +60,16 @@ ini_set('display_errors', 1);
 
 
         .reg-btn input {
-            background-color: blue;
+            background-color: #041E42;
             border: none;
             padding: 7px 25px;
             color: #ffff;
             margin-bottom: 10px;
             cursor: pointer;
+        }
+
+        .reg-btn input:hover{
+            background-color: black;
         }
 
         .small {
