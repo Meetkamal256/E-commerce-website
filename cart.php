@@ -55,56 +55,61 @@ include_once("functions/common_functions.php");
       <i class="fas fa-outdent" id="menu-open"></i>
     </div>
   </section>
-  
-  
+
+
   <section id="page-header" class="about-header">
     <h2>#LetsTalk</h2>
     <p>LEAVE A MESSAGE, We love to hear from you!</p>
   </section>
-  
+
   <?php
-    global $conn;
-    $get_ip_address = getIPAddress();
-    $total = 0;
-    
-    if (isset($_POST['update_cart'])) {
-      foreach ($_POST['qty'] as $product_id => $quantity) {
-        $quantity = intval($quantity);
-        
-        // Update the cart_details table for the specific product and IP address
-        $update_cart = "UPDATE cart_details SET quantity = $quantity WHERE product_id = $product_id AND ip_address ='$get_ip_address'";
-        $result_product_cart = mysqli_query($conn, $update_cart);
+  global $conn;
+  $get_ip_address = getIPAddress();
+  $total = 0;
+
+  if (isset($_POST['update_cart'])) {
+    foreach ($_POST['qty'] as $product_id => $quantity) {
+      $quantity = intval($quantity);
+
+      // Ensure quantity is a positive number
+      if ($quantity <= 0) {
+        continue; // Skip invalid quantities
       }
+
+      // Update the cart_details table for the specific product and IP address
+      $update_cart = "UPDATE cart_details SET quantity = $quantity WHERE product_id = $product_id AND ip_address ='$get_ip_address'";
+      $result_product_cart = mysqli_query($conn, $update_cart);
     }
-    
-    $cart_query = "SELECT * FROM cart_details WHERE ip_address = '$get_ip_address'";
-    $result = mysqli_query($conn, $cart_query);
-    
-    // Check if any "Remove" button was clicked
-    if (isset($_POST['remove_cart'])) {
-      foreach ($_POST['remove_cart'] as $product_id => $remove_button) {
-        // Remove the specific item from the cart
-        $remove_item_query = "DELETE FROM cart_details WHERE product_id = $product_id AND ip_address = '$get_ip_address'";
-        mysqli_query($conn, $remove_item_query);
-      }
-      // Redirect to the cart page after removing an item
-      header("Location: cart.php");
-      exit();
+  }
+
+  $cart_query = "SELECT * FROM cart_details WHERE ip_address = '$get_ip_address'";
+  $result = mysqli_query($conn, $cart_query);
+
+  // Check if any "Remove" button was clicked
+  if (isset($_POST['remove_cart'])) {
+    foreach ($_POST['remove_cart'] as $product_id => $remove_button) {
+      // Remove the specific item from the cart
+      $remove_item_query = "DELETE FROM cart_details WHERE product_id = $product_id AND ip_address = '$get_ip_address'";
+      mysqli_query($conn, $remove_item_query);
     }
-    
-    ?>
-    
+    // Redirect to the cart page after removing an item
+    header("Location: cart.php");
+    exit();
+  }
+
+  ?>
+
   <section id="cart">
     <form method="POST">
       <table width="100%">
-          
-          <!-- php code to display dynamic data -->
-          <?php
-         $get_ip_address = getIPAddress();
-         $cart_query = "SELECT * FROM cart_details WHERE ip_address = '$get_ip_address'";
-         $result = mysqli_query($conn, $cart_query);
-         $result_count = mysqli_num_rows($result);
-         if($result_count > 0){
+
+        <!-- php code to display dynamic data -->
+        <?php
+        $get_ip_address = getIPAddress();
+        $cart_query = "SELECT * FROM cart_details WHERE ip_address = '$get_ip_address'";
+        $result = mysqli_query($conn, $cart_query);
+        $result_count = mysqli_num_rows($result);
+        if ($result_count > 0) {
           echo " <thead>
           <tr>
             <td>Remove</td>
@@ -116,58 +121,57 @@ include_once("functions/common_functions.php");
           </tr>
         </thead>
         <tbody>";
-         }else{
+        } else {
           echo "<h2 style='text-align: center; color: red; font-weight: 500; font-size: 28px; line-height: 1.3;'>You don't have any items in the cart!</h2>";
           echo "<div style='text-align: center; margin-top: 20px'>
           <a href='index.php' style='text-decoration: none; background-color:  #088178; padding: 7px 25px; color: #fff; display: inline-block; cursor: pointer;'>Continue Shopping</a>
           </div>";
-          
-         }
-          while ($row = mysqli_fetch_array($result)) {
-            $product_id = $row['product_id'];
-            $select_products = "SELECT * FROM products WHERE product_id = '$product_id'";
-            $result_products = mysqli_query($conn, $select_products);
-            while ($row_product_price = mysqli_fetch_array($result_products)) {
-              // $product_price_with_currency = $row_product_price['product_price'];
-              // // Remove the currency symbol and any non-numeric characters
-              // $product_price = preg_replace("/[^0-9.]/", "", $product_price_with_currency);
-              // // Convert the cleaned value to a float
-              $product_price = ($row_product_price['product_price']);
-              // Format the price using number_format
-              $formatted_price = number_format($product_price);
-              $product_title = $row_product_price['product_title'];
-              $product_image1 = $row_product_price['product_image1'];
-              $total += ($product_price * $row['quantity']);
-            
-          ?>
-              <tr>
-                <td><input type="checkbox"></td>
-                <td><img src="product_images/<?php echo $product_image1 ?>" alt=""></td>
-                <td><?php echo $product_title ?></td>
-                <td>&#x20A6; <?php echo $formatted_price ?></td>
-                <td><input type="number" name='qty[<?php echo $product_id ?>]' value='<?php echo $row['quantity'] ?>'></td>
-                <td><input type="submit" value='Update Cart' name='update_cart'></td>
-                <td><input type="submit" value='Remove' name='remove_cart[<?php echo $product_id ?>]'></td>      
-              </tr>
-          <?php
-            }
+        }
+        while ($row = mysqli_fetch_array($result)) {
+          $product_id = $row['product_id'];
+          $select_products = "SELECT * FROM products WHERE product_id = '$product_id'";
+          $result_products = mysqli_query($conn, $select_products);
+          while ($row_product_price = mysqli_fetch_array($result_products)) {
+            // $product_price_with_currency = $row_product_price['product_price'];
+            // // Remove the currency symbol and any non-numeric characters
+            // $product_price = preg_replace("/[^0-9.]/", "", $product_price_with_currency);
+            // // Convert the cleaned value to a float
+            $product_price = ($row_product_price['product_price']);
+            // Format the price using number_format
+            $formatted_price = number_format($product_price);
+            $product_title = $row_product_price['product_title'];
+            $product_image1 = $row_product_price['product_image1'];
+            $total += ($product_price * $row['quantity']);
+
+        ?>
+            <tr>
+              <td><input type="checkbox"></td>
+              <td><img src="product_images/<?php echo $product_image1 ?>" alt=""></td>
+              <td><?php echo $product_title ?></td>
+              <td>&#x20A6; <?php echo $formatted_price ?></td>
+              <td><input type="number" name='qty[<?php echo $product_id ?>]' value='<?php echo $row['quantity'] ?>'></td>
+              <td><input type="submit" value='Update Cart' name='update_cart'></td>
+              <td><input type="submit" value='Remove' name='remove_cart[<?php echo $product_id ?>]'></td>
+            </tr>
+        <?php
           }
-        
-          ?>
+        }
+
+        ?>
         </tbody>
       </table>
     </form>
   </section>
-  
-  
+
+
   <section id="cart-add">
     <?php
-       $get_ip_address = getIPAddress();
-       $cart_query = "SELECT * FROM cart_details WHERE ip_address = '$get_ip_address'";
-       $result = mysqli_query($conn, $cart_query);
-       $result_count = mysqli_num_rows($result);
-       if($result_count > 0){
-          echo "<div id='coupon'>
+    $get_ip_address = getIPAddress();
+    $cart_query = "SELECT * FROM cart_details WHERE ip_address = '$get_ip_address'";
+    $result = mysqli_query($conn, $cart_query);
+    $result_count = mysqli_num_rows($result);
+    if ($result_count > 0) {
+      echo "<div id='coupon'>
           <h3>Apply Coupon</h3>
           <input type='text' placeholder='Enter Your Coupon'>
           <button>Apply</button>
@@ -176,7 +180,7 @@ include_once("functions/common_functions.php");
           <table>
             <tr>
               <td>Cart Subtotal</td>
-              <td>&#x20A6; ".number_format($total)."</td>
+              <td>&#x20A6; " . number_format($total) . "</td>
             </tr>
             <tr>
               <td>Shipping</td>
@@ -184,16 +188,16 @@ include_once("functions/common_functions.php");
             </tr>
             <tr>
               <td>Total</td>
-              <td>&#x20A6; ".number_format($total)."</td>
+              <td>&#x20A6; " . number_format($total) . "</td>
             </tr>
           </table>
           <button><a href='users_area/checkout.php'>Proceed to checkout</a></button>
         </div>";
-       }
+    }
     ?>
-  
-  </section> 
-  
+
+  </section>
+
   <?php include("partials/footer.php"); ?>
   <script src="script.js"></script>
 </body>

@@ -185,14 +185,21 @@ function cart()
     global $conn;
     $get_ip_address = getIPAddress();
     $get_product_id = $_GET['add_to_cart'];
+    
+    // Check if the product is already in the cart
     $select_query = "SELECT * from cart_details WHERE ip_address = '$get_ip_address' AND product_id = $get_product_id";
     $result_query = mysqli_query($conn, $select_query);
     $num_rows = mysqli_num_rows($result_query);
+    
     if ($num_rows > 0) {
-      echo "<script>alert('This item is already present inside cart')</script>";
-      echo "<script>window.open('index.php', '_self')</script>";
+      // Product is already in the cart; update the quantity
+      $update_query = "UPDATE cart_details SET quantity = quantity + 1 WHERE ip_address = '$get_ip_address' AND product_id = $get_product_id";
+      $result_query = mysqli_query($conn, $update_query);
+      echo "<script>alert('Item quantity updated in cart')</script>";
+      echo "<script>window.open('cart.php', '_self')</script>";
     } else {
-      $insert_query = "INSERT INTO cart_details (product_id, ip_address, quantity) VALUES($get_product_id, '$get_ip_address', 1)";
+      // Product is not in the cart; insert a new entry
+      $insert_query = "INSERT INTO cart_details (product_id, ip_address, quantity) VALUES ($get_product_id, '$get_ip_address', 1)";
       $result_query = mysqli_query($conn, $insert_query);
       echo "<script>alert('Item is added to cart')</script>";
       echo "<script>window.open('index.php', '_self')</script>";
