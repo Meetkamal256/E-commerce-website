@@ -96,13 +96,13 @@ include_once("functions/common_functions.php");
     header("Location: cart.php");
     exit();
   }
-
+  
   ?>
-
+  
   <section id="cart">
     <form method="POST">
       <table width="100%">
-
+        
         <!-- php code to display dynamic data -->
         <?php
         $get_ip_address = getIPAddress();
@@ -142,7 +142,7 @@ include_once("functions/common_functions.php");
             $product_title = $row_product_price['product_title'];
             $product_image1 = $row_product_price['product_image1'];
             $total += ($product_price * $row['quantity']);
-
+        
         ?>
             <tr>
               <td><input type="checkbox"></td>
@@ -156,14 +156,14 @@ include_once("functions/common_functions.php");
         <?php
           }
         }
-
+        
         ?>
         </tbody>
       </table>
     </form>
   </section>
-
-
+  
+  
   <section id="cart-add">
     <?php
     $get_ip_address = getIPAddress();
@@ -195,9 +195,9 @@ include_once("functions/common_functions.php");
         </div>";
     }
     ?>
-
+  
   </section>
-
+  
   <?php include("partials/footer.php"); ?>
   <script src="script.js"></script>
 </body>

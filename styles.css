@@ -23,7 +23,7 @@
 body{
     width: 100%;
     height: 100vh;
-    background-color: #FFFF;
+    background-color: #c0d9fb;
 }
 
 h1{
@@ -250,7 +250,7 @@ p{
 }
 
 #product1 h2, p{
-    color: black;
+    color:  #041E42;
 }
 
 
