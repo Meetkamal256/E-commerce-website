@@ -101,7 +101,7 @@ p{
 
 #navbar a{
     text-decoration: none;
-    color: var(--Fairway-mist);
+    color: #c0f7fb;
     transition: 0.3s ease;
 }
 
@@ -151,19 +151,22 @@ p{
 #hero h4{
     margin-bottom: 15px;
     font-weight: 400;
-    color: #ffff;
+    color: #c0f7fb;
+    font-weight: 600;
 }
 
 #hero h2{
-    color: #ffff;
+    color: #c0f7fb;
 }
 
 #hero h1{
-    color: #ffff;
+    color: #c0f7fb;
+    font-weight: 700;
 }
 
 #hero p{
-    color: #ffff;
+    color: #c0f7fb;
+    font-weight: 500;
    
 }
 
