@@ -181,8 +181,8 @@ ini_set('display_errors', 1);
                     <td>&#x20A6; " . number_format($product_price) . "</td>
                     <td>0</td>
                     <td>true</td>
-                    <td <a href=''><i class='fa-solid fa-pen-to-square' style='cursor: pointer;'></i></a></td>
-                    <td <a href=''><i class='fa-solid fa-trash' style='cursor: pointer;'></i></a></td>
+                    <td><a href='adminindex.php?edit_products'><i class='fa-solid fa-pen-to-square' style='cursor: pointer; color: #fff;'></i></a></td>
+                    <td> <a href=''><i class='fa-solid fa-trash' style='cursor: pointer; color: #fff;'></i></a></td>
                 </tr>";
                         $number++;
                     }

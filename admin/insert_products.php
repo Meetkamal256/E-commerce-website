@@ -65,15 +65,14 @@ mysqli_close($conn);
   .pro-container{
     max-width: 650px;
     margin: 50px auto;
+    min-height: 100vh;
   }
-  form h1 {
-    margin-top: 50px;
-  }
-  
+    
   label {
     display: block;
     text-align: left;
     margin-bottom: 10px;
+    color: blue;
   }
   
   input[type="text"], input[type="file"], select, textarea{
