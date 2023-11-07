@@ -13,7 +13,7 @@ if (isset($_GET['edit_products'])) {
     $product_image4 = $row['product_image4'];
     $product_description = $row['product_description'];
     $category_id = $row['category_id'];
-    echo $category_id;
+    // echo $category_id;
     
     // fetching category name
     $select_category = "SELECT * from categories WHERE category_id= $category_id";
@@ -22,7 +22,6 @@ if (isset($_GET['edit_products'])) {
     $category_title = $row_category['category_title'];
     // echo $category_title;
 }
-
 ?>
 
 
@@ -203,7 +202,7 @@ if (isset($_POST['edit_products'])) {
         // update products
         
         $update_product = "UPDATE products SET product_title = '$product_title', product_price = $product_price, product_image1 = '$product_image1', product_image2 = '$product_image2', 
-        product_image3 = '$product_image3', product_image4 = '$product_image4', category_id = '$product_category', product_description = '$product_description' WHERE product_id = $edit_id";
+        product_image3 = '$product_image3', product_image4 = '$product_image4', category_id = '$product_category', product_description = '$product_description' WHERE product_id = $edit_id";       
         
         $result_update = mysqli_query($conn, $update_product);
         if($result_update){
@@ -214,5 +213,4 @@ if (isset($_POST['edit_products'])) {
         }
     }
 }
-
 ?>

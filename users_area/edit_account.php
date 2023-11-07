@@ -41,31 +41,37 @@ if (isset($_POST['update_user'])) {
     <link rel="stylesheet" href="../style.css">
 </head>
 <style>
-    input[type="text"],
-    input[type="email"] {
-        width: 100%;
+    #edit_account_container {
         max-width: 450px;
-        padding: 7px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        margin-bottom: 15px;
+        margin: 50px auto;
+        min-height: 100vh;
+        
     }
 
+    label{
+        display:block;
+        text-align: left;
+        margin-bottom: 10px;
+        color:#041E42;
+    }
+    
+    input[type="text"],
+    input[type="email"],
     input[type="file"] {
         width: 100%;
-        max-width: 380px;
         padding: 7px;
+        border: 1px solid darkgray;
         border-radius: 5px;
-        border: 1px solid #ccc;
         margin-bottom: 15px;
+        
     }
-
+    
     input[type="text"]:focus,
-    input[type="email"]:focus {
+    input[type="email"]:focus,  input[type="file"]:focus {
         outline: none;
-        border: 2px solid lightgreen;
+        border: 2px solid #cccc;
     }
-
+    
     input[type="submit"] {
         background-color: #041E42;
         color: #fff;
@@ -73,7 +79,7 @@ if (isset($_POST['update_user'])) {
         border: none;
         cursor: pointer;
         font-size: 16px;
-        width: 25%;
+        width: 100%;
     }
     
     input[type="submit"]:hover {
@@ -84,38 +90,41 @@ if (isset($_POST['update_user'])) {
         width: 70px;
         height: 70px;
         object-fit: contain;
+        margin-left: 10px;
     }
     
     @media(max-width: 576px) {
-        #edit_container{
-            margin: 0 30px;
-        }
-        
-        input[type="submit"] {
-        padding: 7px 20px;
-        width: 80%;
+     #edit_account_container{
+        margin: 50px 30px 0px 30px;
+     }
     }
-    }
+ 
 </style>
 
 <body>
-    <div id="edit_container">
-        <h3>Edit Account</h3>
+    <div id="edit_account_container">
+        
         <form action="" method="POST" enctype="multipart/form-data">
+            <h3>Edit Account</h3>
             <div>
+                <label for="username">Username</label>
                 <input type="text" id="username" name="username" value="<?php echo $username ?>">
             </div>
             <div>
+            <label for="email">Email</label>
                 <input type="email" id="email" name="user_email" value="<?php echo $user_email ?>">
             </div>
-            <div class="file">
-                <input type="file" id="email" name="user_image">
+            <div style='display: flex;'>
+            <label for="profile">Profile Photo</label>
+                <input type="file" id="user_image" name="user_image">
                 <img src="../product_images/<?php echo $user_img ?>" alt="" class="edit_image">
             </div>
             <div>
+            <label for="address">Address</label>
                 <input type="text" id="address" name="user_address" value="<?php echo $user_address ?>">
             </div>
             <div>
+            <label for="user_mobile">Mobile Number</label>
                 <input type="text" id="user_mobile" name="user_mobile" value="<?php echo $user_mobile ?>">
             </div>
             <div>
