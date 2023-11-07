@@ -93,13 +93,13 @@ if (isset($_GET['edit_products'])) {
     }
     
     /* Responsive styles */
-
+    
     @media(min-width: 750px) and (max-width: 1440px){
         #edit_pro_container{
             margin: 50px auto 200px auto;
         }
     }
-
+    
     @media(max-width: 750px){
         #edit_pro_container{
             margin: 50px 30px 200px 30px;

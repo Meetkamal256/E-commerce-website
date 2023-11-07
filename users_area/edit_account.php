@@ -51,7 +51,7 @@ if (isset($_POST['update_user'])) {
     label{
         display:block;
         text-align: left;
-        margin-bottom: 10px;
+        margin-bottom: 5px;
         color:#041E42;
     }
     
