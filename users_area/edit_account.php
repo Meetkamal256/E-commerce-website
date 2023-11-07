@@ -75,7 +75,8 @@ if (isset($_POST['update_user'])) {
     input[type="submit"] {
         background-color: #041E42;
         color: #fff;
-        padding: 10px 25px;
+        padding: 7px 25px;
+        border-radius: 5px;
         border: none;
         cursor: pointer;
         font-size: 16px;
