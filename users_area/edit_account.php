@@ -129,7 +129,7 @@ if (isset($_POST['update_user'])) {
                 <input type="text" id="user_mobile" name="user_mobile" value="<?php echo $user_mobile ?>">
             </div>
             <div>
-                <input type="submit" value="update" name="update_user">
+                <input type="submit" value="Update Account" name="update_user">
             </div>
         </form>
     </div>

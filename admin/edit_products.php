@@ -161,7 +161,7 @@ if (isset($_GET['edit_products'])) {
                 <textarea name="product_description" cols="30" rows="10"><?php echo $product_description ?></textarea>
             </div>
             <div>
-                <input type="submit" name="edit_products" value="Update">
+                <input type="submit" name="edit_products" value="Update Product">
             </div>
         </form>
     </div>
