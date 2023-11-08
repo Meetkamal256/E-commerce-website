@@ -17,12 +17,10 @@ ini_set('display_errors', 1);
     <script src="https://kit.fontawesome.com/dacccb715c.js" crossorigin="anonymous"></script>
 </head>
 <style>
- 
-    
     #all_products_table h1 {
         margin-top: 50px;
     }
-    
+
     #all_products_table {
         display: flex;
         flex-direction: column;
@@ -30,9 +28,9 @@ ini_set('display_errors', 1);
         align-items: center;
         height: 100vh;
         margin: 0 auto;
-    
+
     }
-    
+
     #all_products_table table thead tr th {
         width: 100%;
         border-collapse: collapse;
@@ -41,107 +39,106 @@ ini_set('display_errors', 1);
         padding: 7px 25px;
         color: #fff;
     }
-    
+
     #all_products_table table tbody tr td {
         background-color: grey;
         padding: 7px 25px;
         color: #fff
     }
-    
+
     .product_img {
         width: 100px;
         height: 100px;
         object-fit: contain;
     }
-    
+
     @media (min-width: 768px) and (max-width: 1024px) {
-        
+
         /* Styles for screens with a maximum width of 768px */
         #all_products_table {
             max-width: 80%;
             margin: 0 auto 400px auto;
         }
-        
+
         #all_products_table table thead tr th,
         #all_products_table table tbody tr td {
             padding: 5px 7px;
             /* Reduce padding for smaller screens */
         }
-        
+
         .product_img {
-        width: 100px;
-        height: 100px;
+            width: 100px;
+            height: 100px;
+        }
     }
-    }
-      
+
     /* Styles for screens with a maximum width of 768px */
-    @media (min-width: 600px) and (max-width: 767px){
-          
-            #all_products_table {
+    @media (min-width: 600px) and (max-width: 767px) {
+
+        #all_products_table {
             max-width: 15%;
             margin: 0 auto;
         }
-        
+
         #all_products_table table thead tr th,
         #all_products_table table tbody tr td {
             padding: 2px 5px;
         }
-        
+
         .product_img {
             width: 70px;
             height: 70px;
         }
     }
-    
-    @media (min-width: 375px) and (max-width: 600px){
+
+    @media (min-width: 375px) and (max-width: 600px) {
         #all_products_table {
             max-width: 5%;
             margin: 0 0px 400px 320px;
-            
+
         }
-        
-        #all_products_table h1{
+
+        #all_products_table h1 {
             margin-right: 250px;
-        
+
         }
-        
+
         #all_products_table table thead tr th,
         #all_products_table table tbody tr td {
             padding: 2px 5px;
         }
-        
+
         .product_img {
-        width: 70px;
-        height: 70px;
-        object-fit: contain;
+            width: 70px;
+            height: 70px;
+            object-fit: contain;
+        }
     }
-    }
-    
-    
-    @media (max-width: 374px){
+
+
+    @media (max-width: 374px) {
         #all_products_table {
             max-width: 5%;
             margin: 0 0px 400px 320px;
-            
+
         }
-        
-        #all_products_table h1{
+
+        #all_products_table h1 {
             margin-right: 350px;
-        
+
         }
-        
+
         #all_products_table table thead tr th,
         #all_products_table table tbody tr td {
             padding: 2px 5px;
         }
-        
+
         .product_img {
-        width: 70px;
-        height: 70px;
-       
+            width: 70px;
+            height: 70px;
+
+        }
     }
-    }
- 
 </style>
 
 <body>
@@ -165,7 +162,7 @@ ini_set('display_errors', 1);
                     include("../partials/connect.php");
                     error_reporting(E_ALL);
                     ini_set('display_errors', 1);
-                    
+
                     $select_products = "SELECT * from products";
                     $result = mysqli_query($conn, $select_products);
                     $number = 1;
@@ -181,18 +178,20 @@ ini_set('display_errors', 1);
                     <td>&#x20A6; " . number_format($product_price) . "</td>
                     <td>0</td>
                     <td>true</td>
-                    <td><a href='adminindex.php?edit_products=$product_id'><i class='fa-solid fa-pen-to-square' style='cursor: pointer; color: #fff;'></i></a></td>
-                    <td> <a href=''><i class='fa-solid fa-trash' style='cursor: pointer; color: #fff;'></i></a></td>
+                    <td>
+                    <a href='adminindex.php?edit_products=$product_id'>
+                    <i class='fa-solid fa-pen-to-square' style='cursor: pointer; color: #fff;'></i></a>
+                    </td>
+                    <td> <a href='adminindex.php?delete_products=$product_id'><i class='fa-solid fa-trash' style='cursor: pointer; color: #fff;'></i></a></td>
                 </tr>";
                         $number++;
                     }
-                ?>
-                
+                    ?>
+
                 </tbody>
                 </thead>
             </table>
         </div>
-    
     </div>
 </body>
 
