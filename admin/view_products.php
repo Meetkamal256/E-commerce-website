@@ -17,12 +17,6 @@ ini_set('display_errors', 1);
     <script src="https://kit.fontawesome.com/dacccb715c.js" crossorigin="anonymous"></script>
 </head>
 <style>
-    #view_pro_container {
-        min-height: 100vh;
-
-
-    }
-
     #all_products_table h1 {
         margin-top: 50px;
     }
@@ -33,7 +27,7 @@ ini_set('display_errors', 1);
         max-width: 650px;
         align-items: center;
         min-height: 100vh;
-        margin: 0 auto;
+        margin: 0 auto 50px auto;
         min-height: 100vh;
 
 
@@ -56,54 +50,54 @@ ini_set('display_errors', 1);
         color: #fff;
         font-size: 16px;
     }
-
+    
     .product_img {
         width: 100px;
         height: 100px;
         object-fit: contain;
     }
-
+    
     @media (min-width: 768px) and (max-width: 1024px) {
-
+        
         /* Styles for screens with a maximum width of 768px */
         #all_products_table {
             max-width: 80%;
             margin: 0 auto 700px auto;
         }
-
+        
         #all_products_table table thead tr th,
         #all_products_table table tbody tr td {
             padding: 5px 15px;
             /* Reduce padding for smaller screens */
         }
-
+        
         .product_img {
             width: 100px;
             height: 100px;
         }
     }
-
+    
     /* Styles for screens with a maximum width of 768px */
     @media (min-width: 600px) and (max-width: 767px) {
-
+        
         #all_products_table {
             max-width: 15%;
             margin: 0 auto;
-
+        
         }
-
+        
         #all_products_table table thead tr th,
         #all_products_table table tbody tr td {
             padding: 2px 10px;
             font-size: 14px;
         }
-
+        
         .product_img {
             width: 70px;
             height: 70px;
         }
     }
-
+    
     @media (min-width: 375px) and (max-width: 600px) {
         #all_products_table {
             max-width: 10%;
@@ -157,40 +151,39 @@ ini_set('display_errors', 1);
 </style>
 
 <body>
-    <div id="view_pro_container">
-        <div id="all_products_table">
-            <h1>All Products</h1>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Product ID</th>
-                        <th>Product Title</th>
-                        <th>Product Image</th>
-                        <th>Product Price</th>
-                        <th>Total Sold</th>
-                        <th>Status</th>
-                        <th>Edit</th>
-                        <th>Delete</th>
-                    </tr>
-                <tbody>
-                    <?php
-                    include("../partials/connect.php");
-                    error_reporting(E_ALL);
-                    ini_set('display_errors', 1);
+    <div id="all_products_table">
+        <h1>All Products</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Product ID</th>
+                    <th>Product Title</th>
+                    <th>Product Image</th>
+                    <th>Product Price</th>
+                    <th>Total Sold</th>
+                    <th>Status</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+            <tbody>
+                <?php
+                include("../partials/connect.php");
+                error_reporting(E_ALL);
+                ini_set('display_errors', 1);
 
-                    $select_products = "SELECT * from products";
-                    $result = mysqli_query($conn, $select_products);
-                    $number = 1;
-                    while ($row = mysqli_fetch_assoc($result)) {
-                        $product_id = $row['product_id'];
-                        $product_title = $row['product_title'];
-                        $product_image1 = $row['product_image1'];
-                        $product_price = $row['product_price'];
-                        // get the total number of items sold
-                        $get_total = "SELECT * FROM orders_pending WHERE product_id=$product_id";
-                        $result_total = mysqli_query($conn, $get_total);
-                        $rows_count = mysqli_num_rows($result_total);
-                        echo "<tr>
+                $select_products = "SELECT * from products";
+                $result = mysqli_query($conn, $select_products);
+                $number = 1;
+                while ($row = mysqli_fetch_assoc($result)) {
+                    $product_id = $row['product_id'];
+                    $product_title = $row['product_title'];
+                    $product_image1 = $row['product_image1'];
+                    $product_price = $row['product_price'];
+                    // get the total number of items sold
+                    $get_total = "SELECT * FROM orders_pending WHERE product_id=$product_id";
+                    $result_total = mysqli_query($conn, $get_total);
+                    $rows_count = mysqli_num_rows($result_total);
+                    echo "<tr>
                     <td>$number</td>
                     <td>$product_title</td>
                     <td><img src='../product_images/$product_image1' class='product_img'></td>
@@ -203,17 +196,17 @@ ini_set('display_errors', 1);
                     </td>
                     <td> <a href='adminindex.php?delete_products=$product_id'><i class='fa-solid fa-trash' style='cursor: pointer; color: #fff;'></i></a></td>
                 </tr>";
-                        $number++;
-                    }
+                    $number++;
+                }
 
 
-                    ?>
+                ?>
 
-                </tbody>
-                </thead>
-            </table>
-        </div>
+            </tbody>
+            </thead>
+        </table>
     </div>
+
 </body>
 
 </html>

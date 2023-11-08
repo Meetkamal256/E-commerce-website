@@ -136,7 +136,7 @@ session_start();
                 <a href="adminindex.php?insert_products" class="button-link">Insert Products</a>
                 <a href="adminindex.php?view_products" class="button-link">View Products</a>
                 <a href="adminindex.php?insert_category" class="button-link">Insert Categories</a>
-                <a href="" class="button-link">View Categories</a>
+                <a href="adminindex.php?view_categories" class="button-link">View Categories</a>
                 <a href="" class="button-link">All Orders</a>
                 <a href="" class="button-link">All Payments</a>
                 <a href="" class="button-link">List Users</a>
@@ -161,8 +161,11 @@ session_start();
             if (isset($_GET['delete_products'])) {
                 include('delete_products.php');
             }
-
-
+            if (isset($_GET['view_categories'])) {
+                include('view_categories.php');
+            }
+            
+            
             ?>
         </div>
     </div>
