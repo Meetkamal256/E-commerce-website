@@ -17,17 +17,16 @@ ini_set('display_errors', 1);
     <script src="https://kit.fontawesome.com/dacccb715c.js" crossorigin="anonymous"></script>
 </head>
 <style>
-  
-  
-    #view_pro_container{
+    #view_pro_container {
         min-height: 100vh;
-    
-      
+
+
     }
+
     #all_products_table h1 {
         margin-top: 50px;
     }
-    
+
     #all_products_table {
         display: flex;
         flex-direction: column;
@@ -36,11 +35,11 @@ ini_set('display_errors', 1);
         min-height: 100vh;
         margin: 0 auto;
         min-height: 100vh;
-       
-    
-    
+
+
+
     }
-    
+
     #all_products_table table thead tr th {
         width: 100%;
         border-collapse: collapse;
@@ -50,109 +49,109 @@ ini_set('display_errors', 1);
         color: #fff;
         font-size: 15px;
     }
-    
+
     #all_products_table table tbody tr td {
         background-color: grey;
         padding: 7px 25px;
         color: #fff;
         font-size: 16px;
     }
-    
+
     .product_img {
         width: 100px;
         height: 100px;
         object-fit: contain;
     }
-    
+
     @media (min-width: 768px) and (max-width: 1024px) {
-        
+
         /* Styles for screens with a maximum width of 768px */
         #all_products_table {
             max-width: 80%;
             margin: 0 auto 700px auto;
         }
-        
+
         #all_products_table table thead tr th,
         #all_products_table table tbody tr td {
             padding: 5px 15px;
             /* Reduce padding for smaller screens */
         }
-        
+
         .product_img {
             width: 100px;
             height: 100px;
         }
     }
-    
+
     /* Styles for screens with a maximum width of 768px */
     @media (min-width: 600px) and (max-width: 767px) {
-        
+
         #all_products_table {
             max-width: 15%;
             margin: 0 auto;
-            
+
         }
-        
+
         #all_products_table table thead tr th,
         #all_products_table table tbody tr td {
             padding: 2px 10px;
             font-size: 14px;
         }
-        
+
         .product_img {
             width: 70px;
             height: 70px;
         }
     }
-    
+
     @media (min-width: 375px) and (max-width: 600px) {
         #all_products_table {
             max-width: 10%;
             margin: 0 0px 400px 300px;
-        
+
         }
-        
+
         #all_products_table h1 {
             text-align: center;
-        
+
         }
-        
+
         #all_products_table table thead tr th,
         #all_products_table table tbody tr td {
             padding: 2px 7px;
             font-size: 14px;
         }
-        
+
         .product_img {
             width: 70px;
             height: 70px;
             object-fit: contain;
         }
     }
-    
-    
+
+
     @media (max-width: 374px) {
         #all_products_table {
             max-width: 7%;
             margin: 0 0px 400px 320px;
-        
+
         }
-        
+
         #all_products_table h1 {
             margin-right: 320px;
-        
+
         }
-        
+
         #all_products_table table thead tr th,
         #all_products_table table tbody tr td {
             padding: 2px 7px;
             font-size: 14px;
         }
-        
+
         .product_img {
             width: 70px;
             height: 70px;
-        
+
         }
     }
 </style>
@@ -187,12 +186,16 @@ ini_set('display_errors', 1);
                         $product_title = $row['product_title'];
                         $product_image1 = $row['product_image1'];
                         $product_price = $row['product_price'];
+                        // get the total number of items sold
+                        $get_total = "SELECT * FROM orders_pending WHERE product_id=$product_id";
+                        $result_total = mysqli_query($conn, $get_total);
+                        $rows_count = mysqli_num_rows($result_total);
                         echo "<tr>
                     <td>$number</td>
                     <td>$product_title</td>
                     <td><img src='../product_images/$product_image1' class='product_img'></td>
                     <td>&#x20A6; " . number_format($product_price) . "</td>
-                    <td>0</td>
+                    <td> $rows_count</td>
                     <td>true</td>
                     <td>
                     <a href='adminindex.php?edit_products=$product_id'>
@@ -202,6 +205,8 @@ ini_set('display_errors', 1);
                 </tr>";
                         $number++;
                     }
+
+
                     ?>
 
                 </tbody>
