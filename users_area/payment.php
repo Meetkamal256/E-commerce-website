@@ -3,6 +3,7 @@ include("../partials/connect.php");
 include_once("../functions/common_functions.php");
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
+session_start();
 
 
 ?>
@@ -30,8 +31,9 @@ ini_set('display_errors', 1);
     
     h1 {
         text-align: center;
-        color: lightskyblue;
+        color: #041E42;
         font-size: 25px;
+        margin-top: 50px;
     
     }
     

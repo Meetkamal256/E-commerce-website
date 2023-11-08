@@ -17,20 +17,30 @@ ini_set('display_errors', 1);
     <script src="https://kit.fontawesome.com/dacccb715c.js" crossorigin="anonymous"></script>
 </head>
 <style>
+  
+  
+    #view_pro_container{
+        min-height: 100vh;
+    
+      
+    }
     #all_products_table h1 {
         margin-top: 50px;
     }
-
+    
     #all_products_table {
         display: flex;
         flex-direction: column;
         max-width: 650px;
         align-items: center;
-        height: 100vh;
+        min-height: 100vh;
         margin: 0 auto;
-
+        min-height: 100vh;
+       
+    
+    
     }
-
+    
     #all_products_table table thead tr th {
         width: 100%;
         border-collapse: collapse;
@@ -38,111 +48,117 @@ ini_set('display_errors', 1);
         background-color: blue;
         padding: 7px 25px;
         color: #fff;
+        font-size: 15px;
     }
-
+    
     #all_products_table table tbody tr td {
         background-color: grey;
         padding: 7px 25px;
-        color: #fff
+        color: #fff;
+        font-size: 16px;
     }
-
+    
     .product_img {
         width: 100px;
         height: 100px;
         object-fit: contain;
     }
-
+    
     @media (min-width: 768px) and (max-width: 1024px) {
-
+        
         /* Styles for screens with a maximum width of 768px */
         #all_products_table {
             max-width: 80%;
-            margin: 0 auto 400px auto;
+            margin: 0 auto 700px auto;
         }
-
+        
         #all_products_table table thead tr th,
         #all_products_table table tbody tr td {
-            padding: 5px 7px;
+            padding: 5px 15px;
             /* Reduce padding for smaller screens */
         }
-
+        
         .product_img {
             width: 100px;
             height: 100px;
         }
     }
-
+    
     /* Styles for screens with a maximum width of 768px */
     @media (min-width: 600px) and (max-width: 767px) {
-
+        
         #all_products_table {
             max-width: 15%;
             margin: 0 auto;
+            
         }
-
+        
         #all_products_table table thead tr th,
         #all_products_table table tbody tr td {
-            padding: 2px 5px;
+            padding: 2px 7px;
+            font-size: 14px;
         }
-
+        
         .product_img {
             width: 70px;
             height: 70px;
         }
     }
-
+    
     @media (min-width: 375px) and (max-width: 600px) {
         #all_products_table {
-            max-width: 5%;
-            margin: 0 0px 400px 320px;
-
+            max-width: 10%;
+            margin: 0 0px 400px 300px;
+        
         }
-
+        
         #all_products_table h1 {
-            margin-right: 250px;
-
+            text-align: center;
+        
         }
-
+        
         #all_products_table table thead tr th,
         #all_products_table table tbody tr td {
-            padding: 2px 5px;
+            padding: 2px 7px;
+            font-size: 14px;
         }
-
+        
         .product_img {
             width: 70px;
             height: 70px;
             object-fit: contain;
         }
     }
-
-
+    
+    
     @media (max-width: 374px) {
         #all_products_table {
-            max-width: 5%;
+            max-width: 7%;
             margin: 0 0px 400px 320px;
-
+        
         }
-
+        
         #all_products_table h1 {
-            margin-right: 350px;
-
+            margin-right: 320px;
+        
         }
-
+        
         #all_products_table table thead tr th,
         #all_products_table table tbody tr td {
-            padding: 2px 5px;
+            padding: 2px 7px;
+            font-size: 14px;
         }
-
+        
         .product_img {
             width: 70px;
             height: 70px;
-
+        
         }
     }
 </style>
 
 <body>
-    <div id="pro-container">
+    <div id="view_pro_container">
         <div id="all_products_table">
             <h1>All Products</h1>
             <table>

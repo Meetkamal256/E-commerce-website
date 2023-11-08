@@ -21,13 +21,14 @@ session_start();
         padding: 0;
         box-sizing: border-box;
     }
-    
+
     #container {
         text-align: center;
-        width:100%;
+        width: 100%;
         position: relative;
+        min-height: 100vh;
     }
-    
+
     header {
         background-color: blue;
         width: 100%;
@@ -38,55 +39,55 @@ session_start();
         top: 0;
         left: 0;
     }
-    
+
     header ul li {
         list-style: none;
     }
-    
+
     header ul li a {
         text-decoration: none;
         margin-right: 50px;
         color: #fff;
     }
-    
+
     .logo {
         width: 70px;
         height: 50px;
         object-fit: contain;
         background-color: blue;
     }
-    
+
     h1 {
         color: blue;
         text-align: center;
         margin: 20px 0px;
         font-size: 25px;
     }
-    
+
     .admin_dashboard {
         background-color: gray;
         display: flex;
         align-items: center;
         flex-wrap: wrap;
         padding: 20px;
-    
+
     }
-    
+
     .image-container {
         width: 100px;
         /* height: 100px; */
         object-fit: contain;
         margin-right: 20px;
     }
-    
+
     .image-container img {
         width: 100%;
     }
-    
+
     .admin_dashboard p {
         color: #ffff;
         margin-bottom: 20px;
-    
+
     }
     
     .button-link {
@@ -102,13 +103,13 @@ session_start();
         cursor: pointer;
         text-align: center;
     }
-    
+
     .button-link:hover {
         background-color: #010729;
     }
-    
+
     #content {
-        text-align: center;
+        margin: 0 auto;
     }
 </style>
 
@@ -125,7 +126,7 @@ session_start();
             </div>
         </header>
         <h1>Manage Details</h1>
-        
+
         <div class="admin_dashboard">
             <div class="image-container">
                 <img src="../img/profile.jpg" alt="">
@@ -141,31 +142,32 @@ session_start();
                 <a href="" class="button-link">List Users</a>
                 <a href="admin-partials/logout.php" class="button-link">Logout</a>
             </div>
-        
+
+        </div>
+        <div id="content">
+            <?php
+            if (isset($_GET['insert_category'])) {
+                include('insert_categories.php');
+            }
+            if (isset($_GET['insert_products'])) {
+                include('insert_products.php');
+            }
+            if (isset($_GET['view_products'])) {
+                include('view_products.php');
+            }
+            if (isset($_GET['edit_products'])) {
+                include('edit_products.php');
+            }
+            if (isset($_GET['delete_products'])) {
+                include('delete_products.php');
+            }
+
+
+            ?>
         </div>
     </div>
-    
-    <div id="content">
-        <?php
-        if (isset($_GET['insert_category'])) {
-            include('insert_categories.php');
-        }
-        if (isset($_GET['insert_products'])) {
-            include('insert_products.php');
-        }
-        if (isset($_GET['view_products'])) {
-            include('view_products.php');
-        }
-        if (isset($_GET['edit_products'])) {
-            include('edit_products.php');
-        }
-        if (isset($_GET['delete_products'])) {
-            include('delete_products.php');
-        }
-        
 
-        ?>
-    </div>
+
 </body>
 
 </html>
