@@ -2,6 +2,7 @@
 session_start();
 include("partials/connect.php");
 include_once("functions/common_functions.php");
+
 ?>
 
 <!DOCTYPE html>
@@ -27,8 +28,9 @@ include_once("functions/common_functions.php");
         <?php
         if (isset($_SESSION['username'])) {
           echo "<li><a href='./users_area/profile.php'>My Account</a></li>";
-          echo "<li><a href='./users_area/user_registration.php'>Register</a></li>";
+    
         } else {
+          echo "<li><a href='./users_area/user_registration.php'>Register</a></li>";
         }
         ?>
         <li><a href="contact.php">Contact</a></li>

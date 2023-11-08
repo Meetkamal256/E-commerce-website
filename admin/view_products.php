@@ -95,7 +95,7 @@ ini_set('display_errors', 1);
         
         #all_products_table table thead tr th,
         #all_products_table table tbody tr td {
-            padding: 2px 7px;
+            padding: 2px 10px;
             font-size: 14px;
         }
         
