@@ -18,7 +18,8 @@ if (isset($_POST['insert_cat'])) {
     $result = mysqli_query($conn, $sql);
 
     if ($result) {
-      echo "<script>alert('Categories has been inserted successfully')</script>";
+      // echo "<script>alert('Categories has been inserted successfully')</script>";
+      echo "<script>window.open('adminindex.php?view_categories', '_self')</script>";
     }
   }
 }
@@ -81,7 +82,7 @@ if (isset($_POST['insert_cat'])) {
     <form action="" method="POST">
       <h1>Insert Categories</h1>
       <div>
-        <input type="text" name="cat_title" placeholder="Insert Categories">
+        <input type="text" name="cat_title" placeholder="Insert Categories" required="required">
       </div>
       <div>
         <input type="submit" name="insert_cat" value="Insert Category">

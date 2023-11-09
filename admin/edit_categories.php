@@ -37,13 +37,13 @@ if (isset($_POST['update_cat'])) {
     form h1 {
         margin-top: 50px;
     }
-
+    
     input[type='text'] {
         width: 100%;
         padding: 7px;
         border: 1px solid #ccc;
         margin-bottom: 15px;
-
+    
     }
 
     input[type='text']:focus {
@@ -56,14 +56,16 @@ if (isset($_POST['update_cat'])) {
         background-color: blue;
         color: #fff;
         cursor: pointer;
-        width: 250px;
+        width: 200px;
         margin: 0 auto;
+        border: none;
+        border-radius: 5px;
     }
-
+    
     input[type='submit']:hover {
         background-color: black;
     }
-
+    
     /* Responsive Styles */
     @media(max-width: 768px) {
         #edit_cat_container {
