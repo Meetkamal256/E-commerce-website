@@ -49,45 +49,46 @@ session_start();
         margin-right: 50px;
         color: #fff;
     }
-
+    
     .logo {
         width: 70px;
         height: 50px;
         object-fit: contain;
         background-color: blue;
     }
-
+    
     h1 {
         color: blue;
         text-align: center;
         margin: 20px 0px;
         font-size: 25px;
+        margin-top: 70px;
     }
-
+    
     .admin_dashboard {
         background-color: gray;
         display: flex;
         align-items: center;
         flex-wrap: wrap;
         padding: 20px;
-
+    
     }
-
+    
     .image-container {
         width: 100px;
         /* height: 100px; */
         object-fit: contain;
         margin-right: 20px;
     }
-
+    
     .image-container img {
         width: 100%;
     }
-
+    
     .admin_dashboard p {
         color: #ffff;
         margin-bottom: 20px;
-
+    
     }
     
     .button-link {
@@ -103,11 +104,11 @@ session_start();
         cursor: pointer;
         text-align: center;
     }
-
+    
     .button-link:hover {
         background-color: #010729;
     }
-
+    
     #content {
         margin: 0 auto;
     }
