@@ -164,7 +164,9 @@ session_start();
             if (isset($_GET['view_categories'])) {
                 include('view_categories.php');
             }
-            
+            if (isset($_GET['edit_categories'])) {
+                include('edit_categories.php');
+            }
             
             ?>
         </div>

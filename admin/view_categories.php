@@ -114,14 +114,12 @@ ini_set('display_errors', 1);
                     echo "  <tr>
                     <td>$number</td>
                     <td>$category_title</td>
-                    <td><a href='adminindex.php?view_categories=$category_id'><i class='fa-solid fa-pen-to-square'></i></a></td>
+                    <td><a href='adminindex.php?edit_categories=$category_id'><i class='fa-solid fa-pen-to-square'></i></a></td>
                     <td><a href='#'><i class='fa-solid fa-trash'></i></a></td>
                 </tr>";
                 $number++;
                 }
-                
                 ?>
-              
             </tbody>
 
             </thead>
