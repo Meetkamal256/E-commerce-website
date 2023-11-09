@@ -21,7 +21,8 @@ if (isset($_GET['edit_categories'])) {
         display: flex;
         flex-direction: column;
         max-width: 650px;
-        margin: 0 auto
+        margin: 0 auto;
+        min-height: 100vh;
     }
     
     form h1 {
