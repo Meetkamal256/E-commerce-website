@@ -49,89 +49,19 @@ session_start();
       <i class="fas fa-outdent" id="menu-open"></i>
     </div>
   </section>
-  
+
   <?php
   cart();
   ?>
   <section id="prodetails">
     <?php
-      view_more();
+    view_more();
     ?>
-  
-  
+
+
   </section>
   
-  <!-- <section id="product1">
-    <h2>Featured Products</h2>
-    <p>Summer collection New modern Design</p>
-    <div class="pro-container">
-      <div class="pro">
-        <img src="img/products/n1.jpg" alt="">
-        <div class="des">
-          <span>Adidas</span>
-          <h5>Cartoon Astronaut T-shirts</h5>
-          <div class="stars">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <h4>$78</h4>
-          </div>
-          <a href="cart.html"><i class="fa-solid fa-cart-shopping cart"></i></a>
-        </div>
-      </div>
-      <div class="pro">
-        <img src="img/products/n2.jpg" alt="">
-        <div class="des">
-          <span>Adidas</span>
-          <h5>Cartoon Astronaut T-shirts</h5>
-          <div class="stars">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <h4>$78</h4>
-          </div>
-          <a href="cart.html"><i class="fa-solid fa-cart-shopping cart"></i></a>
-        </div>
-      </div>
-      <div class="pro">
-        <img src="img/products/n3.jpg" alt="">
-        <div class="des">
-          <span>Adidas</span>
-          <h5>Cartoon Astronaut T-shirts</h5>
-          <div class="stars">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <h4>$78</h4>
-          </div>
-          <a href="cart.html"><i class="fa-solid fa-cart-shopping cart"></i></a>
-        </div>
-      </div>
-      <div class="pro">
-        <img src="img/products/n4.jpg" alt="">
-        <div class="des">
-          <span>Adidas</span>
-          <h5>Cartoon Astronaut T-shirts</h5>
-          <div class="stars">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <h4>$78</h4>
-          </div>
-          <a href="cart.html"><i class="fa-solid fa-cart-shopping cart"></i></a>
-        </div>
-      </div>
-    </div>
-  </section> -->
-  
+
   <section id="newsletter">
     <div class="newstext">
       <h4>Sign Up For Newsletters</h4>
@@ -145,13 +75,13 @@ session_start();
       <button type="submit">Sign Up</button>
     </div>
   </section>
-  
+
   <?php include("partials/footer.php"); ?>
-  
+
   <script>
     var mainImage = document.getElementById("main-img")
     var smallImage = document.getElementsByClassName("small-img")
-    
+
     smallImage[0].onclick = function() {
       mainImage.src = smallImage[0].src;
     }

@@ -29,11 +29,8 @@ ini_set('display_errors', 1);
         min-height: 100vh;
         margin: 0 auto 50px auto;
         min-height: 100vh;
-
-
-
     }
-
+    
     #all_products_table table thead tr th {
         width: 100%;
         border-collapse: collapse;
@@ -43,7 +40,7 @@ ini_set('display_errors', 1);
         color: #fff;
         font-size: 15px;
     }
-
+    
     #all_products_table table tbody tr td {
         background-color: grey;
         padding: 7px 25px;

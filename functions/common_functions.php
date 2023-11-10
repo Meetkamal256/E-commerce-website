@@ -60,7 +60,6 @@ function getProducts()
         <img src='product_images/$product_image1' alt=''>
   </div>
         <div class='des'>
-            <span>Adidas</span>
             <h5>$product_title</h5>
             <div class='stars'>
                 <i class='fas fa-star'></i>
@@ -99,7 +98,7 @@ function view_more()
       
       echo "<div class='single-pro-image'>
           <div class='img-container'>
-          <img src='product_images/$product_image1' width='100%' alt='' class='main-img'>
+          <img src='product_images/$product_image1' width='100%' alt='' id='main-img'>
      </div>
             <div class='small-img-group'>
               <div class='small-img-col'>
