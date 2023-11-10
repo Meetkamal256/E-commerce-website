@@ -19,6 +19,7 @@ ini_set('display_errors', 1);
 <style>
     #all_products_table h1 {
         margin-top: 50px;
+        margin-bottom: 5px;
     }
 
     #all_products_table {
@@ -30,7 +31,7 @@ ini_set('display_errors', 1);
         margin: 0 auto 50px auto;
         min-height: 100vh;
     }
-    
+
     #all_products_table table thead tr th {
         width: 100%;
         border-collapse: collapse;
@@ -40,28 +41,32 @@ ini_set('display_errors', 1);
         color: #fff;
         font-size: 15px;
     }
-    
+
     #all_products_table table tbody tr td {
         background-color: grey;
         padding: 7px 25px;
         color: #fff;
         font-size: 16px;
     }
-    
+
     .product_img {
         width: 100px;
         height: 100px;
         object-fit: contain;
     }
-    
+
     @media (min-width: 768px) and (max-width: 1024px) {
-        
+
         /* Styles for screens with a maximum width of 768px */
         #all_products_table {
             max-width: 80%;
             margin: 0 auto 700px auto;
         }
-        
+
+        #all_products_table h1 {
+            font-size: 22px;
+        }
+
         #all_products_table table thead tr th,
         #all_products_table table tbody tr td {
             padding: 5px 15px;
@@ -82,6 +87,10 @@ ini_set('display_errors', 1);
             margin: 0 auto;
         
         }
+
+        #all_products_table h1 {
+            font-size: 20px;
+        }
         
         #all_products_table table thead tr th,
         #all_products_table table tbody tr td {
@@ -99,35 +108,41 @@ ini_set('display_errors', 1);
         #all_products_table {
             max-width: 10%;
             margin: 0 0px 400px 300px;
-
+        
         }
-
+        
         #all_products_table h1 {
-            text-align: center;
-
+            font-size: 20px;
+            text-align:left;
         }
-
+        
+      
+        
         #all_products_table table thead tr th,
         #all_products_table table tbody tr td {
             padding: 2px 7px;
             font-size: 14px;
         }
-
+        
         .product_img {
             width: 70px;
             height: 70px;
             object-fit: contain;
         }
     }
-
+    
 
     @media (max-width: 374px) {
         #all_products_table {
             max-width: 7%;
             margin: 0 0px 400px 320px;
-
         }
-
+        
+        #all_products_table h1 {
+            font-size: 18px;
+            
+        }
+        
         #all_products_table h1 {
             margin-right: 320px;
 
@@ -196,7 +211,7 @@ ini_set('display_errors', 1);
                     $number++;
                 }
                 ?>
-            
+
             </tbody>
             </thead>
         </table>

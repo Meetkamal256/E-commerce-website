@@ -142,7 +142,7 @@ if (isset($_GET['edit_products'])) {
             </div>
             <div>
                 <select name='product_category'>
-                    <option value="<?php echo $category_title ?>"><?php echo $category_title ?></option>
+                    <option value="<?php echo $category_id ?>"><?php echo $category_title ?></option>
                     <?php
                     $select_cat_all = "SELECT * from categories";
                     $result_cat_all = mysqli_query($conn, $select_cat_all);
@@ -206,7 +206,7 @@ if (isset($_POST['edit_products'])) {
         $result_update = mysqli_query($conn, $update_product);
         if($result_update){
             echo "<script>alert('Product has been successfully updated in database')</script>";
-            echo "<script>window.open('view_products.php', '_self')</script>";
+            echo "<script>window.open('adminindex.php?view_products', '_self')</script>";
         }else{
         
         }

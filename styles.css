@@ -195,14 +195,15 @@ p{
     width: 180px;
     text-align: center;
     padding: 25px 15px;
-    box-shadow: 20px 20px 34px rgba(0,0,0,0.05);
-    border: 1px solid lightgray;
+    box-shadow: 20px 20px 34px rgba(0,0,0,0.3);
+    border: 1px solid #d1e8f4;
     border-radius: 5px;
     margin: 15px 0px;
 }
 
 #feature .fe-box:hover{
     box-shadow: 10px 10px 54px lightgray;
+    cursor: pointer;
 }
 
 #feature .fe-box img{
@@ -262,7 +263,7 @@ p{
     width: 23%;
     min-width: 250px;
     padding: 10px 12px;
-    border: 1px solid lightgray;
+    border: 1px solid var(--Azureish-White);
     border-radius: 8px;
     cursor: pointer;
     box-shadow: 20px 20px 30px rgba(0,0,0,0.03);
@@ -272,7 +273,7 @@ p{
 }
 
 #product1 .pro:hover{
-    box-shadow: 20px 20px 30px rgba(0,0,0,0.09);
+    box-shadow: 20px 20px 30px rgba(0,0,0,0.3);
 }
 
 #product1 .pro .img-container{
@@ -302,18 +303,18 @@ p{
 
 #product1 .pro .des h5{
     font-size: 14px;
-    color:#465b52;
+    color:#041E42;
     padding-bottom: 7px;
 }
 
 #product1 .pro .des .stars{
     font-size: 12px;
-    color: #f1f108;
+    color: orange;
 }
 
 #product1 .pro .des h4{
     font-weight: 700;
-    color: var(--Dark-cyan);
+    color: #041E42;
     font-size: 15px;
     padding-top: 7px;
 }
@@ -323,7 +324,7 @@ p{
     height: 40px;
     border-radius: 50%;
     background-color: #d1e8f4;
-    color: var(--Dark-cyan);
+    color: #041E42;
     border: 1px solid var(--Fairway-mist);
     position: absolute;
     bottom: 20px;
@@ -537,7 +538,7 @@ p{
 }
 
 #newsletter button{
-    background-color: var(--Dark-cyan);
+    background-color: var(--light-gray);
     color: #ffff;
     border: 0;
     padding: 18px 25px;
@@ -649,7 +650,7 @@ footer .follow i:hover, footer a:hover{
 }
 
 #pagination a{
-    background-color: var(--Dark-cyan);
+    background-color: #041E42;
     color: #fff;
     padding: 15px 25px;
     border-radius: 5px;
@@ -694,10 +695,12 @@ footer .follow i:hover, footer a:hover{
 
 #prodetails .single-pro-details h4{
     padding: 40px 0px 20px 0px;
+    color: #041E42;
 }
 
 #prodetails .single-pro-details h2{
     font-size: 25px;
+    color: #041E42;
 }
 
 #prodetails .single-pro-details select{
@@ -719,7 +722,7 @@ footer .follow i:hover, footer a:hover{
 }
 
 #prodetails .single-pro-details a button{
-    background-color: var(--Dark-cyan);
+    background-color: #041E42;
     padding: 15px 30px;
     border: none;
     color: #fff;
@@ -730,11 +733,12 @@ footer .follow i:hover, footer a:hover{
 }
 
 #prodetails .single-pro-details a button:hover{
-    background-color: rgb(87, 129, 16);
+    background-color: black;
 }
 
 #prodetails .single-pro-details span{
     line-height: 1.5;
+    color: #041E42;
 }
 
 /* Blog page */
