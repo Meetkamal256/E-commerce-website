@@ -49,14 +49,14 @@ session_start();
         margin-right: 50px;
         color: #fff;
     }
-    
+
     .logo {
         width: 70px;
         height: 50px;
         object-fit: contain;
         background-color: blue;
     }
-    
+
     h1 {
         color: blue;
         text-align: center;
@@ -64,33 +64,33 @@ session_start();
         font-size: 25px;
         margin-top: 70px;
     }
-    
+
     .admin_dashboard {
         background-color: gray;
         display: flex;
         align-items: center;
         flex-wrap: wrap;
         padding: 20px;
-    
+
     }
-    
+
     .image-container {
         width: 100px;
         /* height: 100px; */
         object-fit: contain;
         margin-right: 20px;
     }
-    
+
     .image-container img {
         width: 100%;
     }
-    
+
     .admin_dashboard p {
         color: #ffff;
         margin-bottom: 20px;
-    
+
     }
-    
+
     .button-link {
         display: inline-block;
         padding: 7px 25px;
@@ -104,13 +104,37 @@ session_start();
         cursor: pointer;
         text-align: center;
     }
-    
+
     .button-link:hover {
         background-color: #010729;
     }
-    
+
     #content {
         margin: 0 auto;
+    }
+
+    @media(min-width: 576px) and (max-width: 768px) {
+        .button-link {
+            display: inline-block;
+            padding: 5px 20px;
+            font-size: 15px;
+        }
+    }
+
+    @media(min-width: 375px) and (max-width: 575px) {
+        .button-link {
+            display: inline-block;
+            padding: 5px 15px;
+            font-size: 14px;
+        }
+    }
+    
+    @media(max-width: 374px){
+        .button-link {
+            display: inline-block;
+            padding: 5px 12px;
+            font-size: 14px;
+        }
     }
 </style>
 
@@ -174,7 +198,7 @@ session_start();
             if (isset($_GET['all_orders'])) {
                 include('all_orders.php');
             }
-            
+
             ?>
         </div>
     </div>
