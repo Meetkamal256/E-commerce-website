@@ -31,7 +31,7 @@ ini_set('display_errors', 1);
     #category_container table thead tr th {
         background-color: blue;
         color: #fff;
-        padding: 7px 25px;
+        padding: 7px 15px;
         border-collapse: collapse;
         white-space: nowrap;
         font-size: 16px;
@@ -39,7 +39,7 @@ ini_set('display_errors', 1);
     
     #category_container tbody tr td {
         background-color: gray;
-        padding: 7px 25px;
+        padding: 7px 15px;
         color: #ffff;
     }
     
