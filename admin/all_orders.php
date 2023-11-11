@@ -140,15 +140,36 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>1000</td>
-                    <td>2341290000</td>
-                    <td>4</td>
-                    <td>12-0ct-2021</td>
-                    <td>Complete</td>
+                <?php
+                    include("../partials/connect.php");
+                    error_reporting(E_ALL);
+                    ini_set('display_errors', 1);
+                $select_orders = "SELECT * FROM user_orders";
+                $result_orders = mysqli_query($conn, $select_orders);
+                $number = 1;
+                while($row = mysqli_fetch_assoc($result_orders)){
+                    $order_id = $row['order_id'];
+                    $user_id = $row['user_id'];
+                    $amount_due = $row['amount_due'];
+                    $invoice_number = $row['invoice_number'];
+                    $total_products = $row['total_products'];
+                    $order_date = $row['order_date'];
+                    $order_status = $row['order_status'];
+                    echo "   <tr>
+                    <td>$number</td>
+                    <td>&#x20A6; ".number_format($amount_due)."</td>
+                    <td>$invoice_number</td>
+                    <td>$total_products</td>
+                    <td>$order_date</td>
+                    <td>$order_status</td>
                     <td><a href=''><i class='fa fa-trash'></i></a></td>
-                </tr>
+                </tr>";
+                $number++;
+                }
+               
+                    
+                ?>
+             
             </tbody>
         </table>
     </div>
