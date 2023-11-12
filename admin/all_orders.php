@@ -25,7 +25,7 @@
             width: 100%;
             border-collapse: collapse;
             background-color: blue;
-            padding: 7px 25px;
+            padding: 5px 25px;
             white-space: nowrap;
             color: #fff;
             margin: 0 auto;
@@ -34,8 +34,9 @@
         #all_orders_container tbody tr td {
             width: 100%;
             background-color: gray;
-            padding: 7px 25px;
+            padding: 5px 25px;
             color: #fff;
+           
         }
 
         #all_orders_container tbody tr td i {

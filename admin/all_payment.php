@@ -43,7 +43,7 @@
             margin: 0 auto 50px auto;
         }
     }
-
+    
     @media(min-width: 577px) and (max-width: 765px) {
         #all_payment_container {
             margin: 0 auto 50px 200px;
@@ -54,33 +54,31 @@
             font-size: 15px;
 
         }
-
+    
     }
-
-
-
+    
     @media(min-width: 375px) and (max-width: 576px) {
         #all_payment_container {
-            margin: 0 0 50px 200px;
+            margin: 0 0 50px 260px;
         }
-
+        
         #all_payment_container table thead tr th,
         #all_payment_container tbody tr td {
             font-size: 15px;
             padding: 5px 15px;
         }
-
+    
     }
-
+    
     @media(max-width: 374px) {
         #all_payment_container {
-            margin: 0 0 50px 220px;
+            margin: 0 0 50px 260px;
         }
-
+        
         #all_payment_container table thead tr th,
         #all_payment_container tbody tr td {
             font-size: 15px;
-            padding: 5px 10px;
+            padding: 3px 10px;
 
         }
 
@@ -89,18 +87,19 @@
 
 <body>
     <div id="all_payment_container">
-        <h1>All Payment</h1>
-        <table>
-            <?php
-            include("../partials/connect.php");
-            error_reporting(E_ALL);
-            ini_set('display_errors', 1);
+        <?php
+        include("../partials/connect.php");
+        error_reporting(E_ALL);
+        ini_set('display_errors', 1);
 
-            $select_payment = "SELECT * FROM user_payment";
-            $result_payment = mysqli_query($conn, $select_payment);
-            $row_count = mysqli_num_rows($result_payment);
-            if ($row_count > 0) {
-                echo "<thead>
+        $select_payment = "SELECT * FROM user_payment";
+        $result_payment = mysqli_query($conn, $select_payment);
+        $row_count = mysqli_num_rows($result_payment);
+        if ($row_count > 0) {
+            echo "
+                <h1>All Payment</h1>
+                <table>
+                <thead>
                 <tr>
                     <th>S1 no</th>
                     <th>Invoice Number</th>
@@ -110,21 +109,21 @@
                     <th>Delete</th>
                 </tr>
             <tbody>";
-            }
-            if ($row_count == 0) {
-                echo "<h2>You have no Payments yet</h2>";
-            } else {
-                $number = 1;
-                while ($row = mysqli_fetch_array($result_payment)) {
-                    $payment_id = $row['payment_id'];
-                    $order_id = $row['order_id'];
-                    $invoice_number = $row['invoice_number'];
-                    $payment_id = $row['payment_id'];
-                    $amount = $row['amount'];
-                    $payment_mode = $row['payment_mode'];
-                    $date = $row['date'];
-                    
-                    echo "  <tr>
+        }
+        if ($row_count == 0) {
+            echo "<h2 style='background-color: red; color: #fff; text-align: center; margin: 50px auto 0 auto; width: 100%'>You have no Payments yet</h2>";
+        } else {
+            $number = 1;
+            while ($row = mysqli_fetch_array($result_payment)) {
+                $payment_id = $row['payment_id'];
+                $order_id = $row['order_id'];
+                $invoice_number = $row['invoice_number'];
+                $payment_id = $row['payment_id'];
+                $amount = $row['amount'];
+                $payment_mode = $row['payment_mode'];
+                $date = $row['date'];
+                
+                echo "  <tr>
                     <td>$number</td>
                     <td>$invoice_number</td>
                     <td>$amount</td>
@@ -134,10 +133,10 @@
                 </tr>
                 </tbody>
                 </thead>";
-                    $number++;
-                }
+                $number++;
             }
-            ?>
+        }
+        ?>
         </table>
     </div>
 

@@ -177,7 +177,7 @@ session_start();
                 <a href="adminindex.php?view_categories" class="button-link">View Categories</a>
                 <a href="adminindex.php?all_orders" class="button-link">All Orders</a>
                 <a href="adminindex.php?all_payment" class="button-link">All Payments</a>
-                <a href="" class="button-link">List Users</a>
+                <a href="adminindex.php?list_users" class="button-link">List Users</a>
                 <a href="admin-partials/logout.php" class="button-link">Logout</a>
             </div>
 
@@ -216,6 +216,12 @@ session_start();
             }
               if (isset($_GET['all_payment'])) {
                 include('all_payment.php');
+            }
+            if (isset($_GET['delete_payment'])) {
+                include('delete_payment.php');
+            }
+            if (isset($_GET['list_users'])) {
+                include('list_users.php');
             }
             ?>
         </div>
