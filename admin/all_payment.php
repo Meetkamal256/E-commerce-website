@@ -73,7 +73,7 @@
     
     @media(max-width: 374px){
         #all_payment_container{
-            margin: 0 0 50px 200px;
+            margin: 0 0 50px 220px;
         }
         
         #all_payment_container table thead tr th,
