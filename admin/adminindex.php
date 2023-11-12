@@ -223,6 +223,9 @@ session_start();
             if (isset($_GET['list_users'])) {
                 include('list_users.php');
             }
+            if (isset($_GET['delete_users'])) {
+                include('delete_users.php');
+            }
             ?>
         </div>
     </div>

@@ -36,7 +36,7 @@
         padding: 5px 25px;
     }
 
-    .user_image{
+    .user_image {
         width: 50px;
         height: 50px;
         object-fit: contain;
@@ -50,13 +50,13 @@
         }
 
         #all_users_container table thead tr th,
-        #all_users_container tbody tr td{
+        #all_users_container tbody tr td {
             padding: 5px 15px;
         }
 
 
     }
-    
+
     @media(min-width: 577px) and (max-width: 765px) {
         #all_users_container {
             margin: 0 auto 50px 400px;
@@ -68,34 +68,34 @@
             padding: 7px;
 
         }
-    
+
     }
-    
+
     @media(min-width: 375px) and (max-width: 576px) {
         #all_users_container {
             margin: 0 0 50px 400px;
         }
-        
+
         #all_users_container table thead tr th,
         #all_users_container tbody tr td {
             font-size: 15px;
             padding: 7px;
         }
-    
+
     }
-    
+
     @media(max-width: 374px) {
         #all_users_container {
             margin: 0 0 50px 260px;
         }
-        
+
         #all_users_container table thead tr th,
         #all_users_container tbody tr td {
             font-size: 15px;
             padding: 3px 10px;
 
         }
-    
+
     }
 </style>
 
@@ -105,7 +105,7 @@
         include("../partials/connect.php");
         error_reporting(E_ALL);
         ini_set('display_errors', 1);
-        
+
         $select_users = "SELECT * FROM user_table";
         $result_users = mysqli_query($conn, $select_users);
         $row_count = mysqli_num_rows($result_users);
@@ -136,7 +136,7 @@
                 $user_image = $row['user_image'];
                 $user_address = $row['user_address'];
                 $user_mobile = $row['user_mobile'];
-                
+                // echo $user_id;
                 echo "<tr>
                     <td>$number</td>
                     <td>$username</td>
@@ -144,17 +144,15 @@
                     <td><img src='../product_images/$user_image' class='user_image' alt='$username'></td>
                     <td>$user_address</td>
                     <td>$user_mobile</td>
-                    <td><a href='adminindex.php?list_users=$user_id'><i class='fa fa-trash'></i></a></td>
+                    <td><a href='adminindex.php?delete_users=$user_id'><i class='fa fa-trash'></i></a></td>
                 </tr>
-                </tbody>
-                </thead>";
+                </thead>
+                </tbody>";
                 $number++;
             }
         }
         ?>
         </table>
     </div>
-
 </body>
-
 </html>

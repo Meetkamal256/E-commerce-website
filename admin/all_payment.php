@@ -126,7 +126,7 @@
                 echo "  <tr>
                     <td>$number</td>
                     <td>$invoice_number</td>
-                    <td>$amount</td>
+                    <td>&#x20A6; ".number_format($amount)."</td>
                     <td>$payment_mode</td>
                     <td>$date</td>
                     <td><a href='adminindex.php?delete_payment=$payment_id'><i class='fa fa-trash'></i></a></td>
