@@ -114,6 +114,10 @@ session_start();
     }
 
     @media(min-width: 576px) and (max-width: 768px) {
+
+        h1{
+            font-size: 23px;
+        }
         .button-link {
             display: inline-block;
             padding: 5px 20px;
@@ -122,6 +126,10 @@ session_start();
     }
 
     @media(min-width: 375px) and (max-width: 575px) {
+
+        h1{
+            font-size: 22px;
+        }
         .button-link {
             display: inline-block;
             padding: 5px 15px;
@@ -130,6 +138,11 @@ session_start();
     }
     
     @media(max-width: 374px){
+
+        h1{
+            font-size: 20px;
+        }
+
         .button-link {
             display: inline-block;
             padding: 5px 12px;
@@ -163,7 +176,7 @@ session_start();
                 <a href="adminindex.php?insert_category" class="button-link">Insert Categories</a>
                 <a href="adminindex.php?view_categories" class="button-link">View Categories</a>
                 <a href="adminindex.php?all_orders" class="button-link">All Orders</a>
-                <a href="" class="button-link">All Payments</a>
+                <a href="adminindex.php?all_payment" class="button-link">All Payments</a>
                 <a href="" class="button-link">List Users</a>
                 <a href="admin-partials/logout.php" class="button-link">Logout</a>
             </div>
@@ -198,7 +211,12 @@ session_start();
             if (isset($_GET['all_orders'])) {
                 include('all_orders.php');
             }
-
+            if (isset($_GET['delete_orders'])) {
+                include('delete_orders.php');
+            }
+              if (isset($_GET['all_payment'])) {
+                include('all_payment.php');
+            }
             ?>
         </div>
     </div>
