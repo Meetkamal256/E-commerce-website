@@ -17,7 +17,7 @@ session_start();
 
 <body>
     <section id="header">
-        <a href="index.php" class="logo">LeisureWears</a>
+        <a href="index.php" class="logo">LeisureWears...</a>
         <div>
             <ul id="navbar">
                 <li><a href="index.php">Home</a></li>

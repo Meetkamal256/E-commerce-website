@@ -67,7 +67,7 @@ if (isset($_POST['user_register'])) {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-
+        
         }
 
         #container {
@@ -79,13 +79,14 @@ if (isset($_POST['user_register'])) {
 
         h1 {
             text-align: center;
-            color: #041E42;
+            color: #72AEC8;
             font-size: 28px;
         }
-
+        
         label {
             display: block;
             margin-bottom: 10px;
+            color: #72AEC8;
         }
         
         input[type='text'],
@@ -105,10 +106,10 @@ if (isset($_POST['user_register'])) {
             border: 2px solid lightblue;
         }
         
-
-
+        
+        
         .reg-btn input {
-            background-color: #041E42;
+            background-color: #72AEC8;
             border: none;
             padding: 7px 25px;
             color: #ffff;
@@ -137,7 +138,7 @@ if (isset($_POST['user_register'])) {
 
 <body>
     <section id="header">
-        <a href="../index.php" class="logo">LeisureWears</a>
+        <a href="../index.php" class="logo">LeisureWears...</a>
         <div>
             <ul id="navbar">
                 <li><a href="../index.php" class="active">Home</a></li>

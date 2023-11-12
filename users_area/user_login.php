@@ -31,15 +31,16 @@ ini_set('display_errors', 1);
         
         h1 {
             text-align: center;
-            color: #041E42;
-            font-size: 28px;
+            color: #72AEC8;
+            font-size: 25px;
         }
         
         label {
             display: block;
             margin-bottom: 10px;
+            color: #72AEC8;
         }
-
+        
         input[type='text'],
         input[type='password'],
         input[type='file'] {
@@ -48,38 +49,38 @@ ini_set('display_errors', 1);
             border: 1px solid #ccc;
             border-radius: 5px;
             margin-bottom: 15px;
-
+        
         }
-
+        
         input[type='text']:focus,
         input[type='password']:focus {
             outline: none;
             border: 2px solid lightblue;
         }
-
-
-
+        
+        
+        
         .reg-btn input {
-            background-color: #041E42;
+            background-color: #72AEC8;
             border: none;
             padding: 7px 25px;
             color: #ffff;
             margin-bottom: 10px;
             cursor: pointer;
         }
-
+        
         .reg-btn input:hover {
             background-color: black;
         }
-
+        
         .small {
             font-weight: bold;
             font-size: smaller;
             color: red;
         }
-
+        
         /* Responsive styles */
-
+        
         @media (max-width: 576px) {
             #container {
                 margin: 20px 30px;
@@ -90,7 +91,7 @@ ini_set('display_errors', 1);
 
 <body>
     <section id="header">
-        <a href="../index.php" class="logo">LeisureWears</a>
+        <a href="../index.php" class="logo">LeisureWears...</a>
         <div>
             <ul id="navbar">
                 <li><a href="../index.php" class="active">Home</a></li>
@@ -136,14 +137,14 @@ ini_set('display_errors', 1);
                 <label for="username">Username</label>
                 <input type="text" id="username" name="username" class="form-control" placeholder="Enter Your Username" autocomplete="off" required="required">
             </div>
-
-
+            
+            
             <div>
                 <!-- Password Field -->
                 <label for="user_password">Password</label>
                 <input type="password" id="user_password" name="user_password" class="form-control" placeholder="Enter Your Password" autocomplete="off" required="required">
             </div>
-
+            
             <div class="reg-btn">
                 <input type="submit" value="Login" name="user_login">
             </div>
@@ -152,7 +153,7 @@ ini_set('display_errors', 1);
     </form>
     <footer>
         <div class="col">
-            <a href="index.php" class="logo">LeisureWears</a>
+            <a href="index.php" class="logo">LeisureWears...</a>
             <h4>Contact</h4>
             <p> <strong>Address: </strong> 562 Wellington Road Street 32 San Francisco </p>
             <p><strong>Phone:</strong> +012222 365/(+91) 0123456789</p>

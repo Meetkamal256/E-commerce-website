@@ -23,7 +23,7 @@
 body{
     width: 100%;
     height: 100vh;
-    background-color: #c0d9fb;
+    background-color: #F8F9FA
 }
 
 h1{
@@ -69,7 +69,7 @@ p{
     font-family: 'Dancing Script', cursive;
     text-decoration: none;
     font-size: 27px;
-    color: var(--Fairway-mist);
+    color: #72AEC8;
 
 }
 
@@ -78,7 +78,7 @@ p{
     align-items: center;
     justify-content: space-between;
     padding: 20px 40px;
-    background-color: #041E42;
+    background-color: #F8F9FA;
     box-shadow: 0px 5px 15px rgba(0,0,0,0.06);
     position: sticky;
     top: 0;
@@ -101,8 +101,9 @@ p{
 
 #navbar a{
     text-decoration: none;
-    color: #c0f7fb;
+    color: #212529;
     transition: 0.3s ease;
+    text-transform: uppercase;
 }
 
 #navbar a:hover, 
@@ -115,7 +116,7 @@ p{
     content: "";
     width: 40%;
     height: 2px;
-    background-color: var(--Dark-cyan);
+    background-color: #72AEC8;
     position: absolute;
     bottom: -4px;
     left: 20px;
@@ -151,21 +152,21 @@ p{
 #hero h4{
     margin-bottom: 15px;
     font-weight: 400;
-    color: #c0f7fb;
+    color: #F8F9FA;
     font-weight: 600;
 }
 
 #hero h2{
-    color: #c0f7fb;
+    color: #F8F9FA;
 }
 
 #hero h1{
-    color: #c0f7fb;
+    color: #F8F9FA;
     font-weight: 700;
 }
 
 #hero p{
-    color: #c0f7fb;
+    color: #F8F9FA;
     font-weight: 500;
    
 }
@@ -175,7 +176,7 @@ p{
     background: url(img/button.png);
     background-color: transparent;
     padding: 14px 80px 14px 65px;
-    color: #ffff;
+    color: #F8F9FA;
     font-weight: 700;
     font-size: 15px;
     cursor: pointer;
@@ -254,7 +255,7 @@ p{
 }
 
 #product1 h2, p{
-    color:  #041E42;
+    color:  #72AEC8;
 }
 
 
@@ -303,7 +304,7 @@ p{
 
 #product1 .pro .des h5{
     font-size: 14px;
-    color:#041E42;
+    color: #72AEC8;
     padding-bottom: 7px;
 }
 
@@ -314,7 +315,7 @@ p{
 
 #product1 .pro .des h4{
     font-weight: 700;
-    color: #041E42;
+    color: #72AEC8;
     font-size: 15px;
     padding-top: 7px;
 }
@@ -499,7 +500,7 @@ p{
     background: url(img/banner/b14.png);
     background-repeat: no-repeat;
     background-position: 20% 30%; 
-    background-color: #041e42;
+    background-color: #212529;
     padding: 40px 80px;
     margin: 40px 0px;
 }
@@ -538,7 +539,7 @@ p{
 }
 
 #newsletter button{
-    background-color: var(--light-gray);
+    background-color: #72AEC8;
     color: #ffff;
     border: 0;
     padding: 18px 25px;
@@ -546,6 +547,10 @@ p{
     font-size: 15px;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
+}
+
+#newsletter button:hover{
+    background-color: #000;
 }
 
 /* footer section */
@@ -556,14 +561,14 @@ footer{
     flex-wrap: wrap;
     margin: 40px 0px;
     padding: 40px 80px;
-    background-color: #041E42;
+    background-color: #F8F9FA;
 }
 
 footer .logo{
     font-family: 'Dancing Script', cursive;
     text-decoration: none;
     font-size: 25px;
-    color: var(--Fairway-mist);
+    color: #72AEC8;
 }
 
 footer .col{
@@ -579,14 +584,14 @@ footer .logo{
 }
 
 footer h4{
-    color: var(--Fairway-mist);
+    color: #212529;
     padding-bottom: 20px;
 }
 
 footer p{
     font-size: 13px;
     margin: 0 0 8px 0;
-    color: var(--Fairway-mist);
+    color: #212529;
 }
 
 
@@ -595,7 +600,7 @@ footer a{
     text-decoration: none;
     font-size: 13px;
     margin: 0 0 8px 0;
-    color: var(--Fairway-mist);
+    color: #212529;
 }
    
 footer .follow{
@@ -603,13 +608,13 @@ footer .follow{
 }
 
 footer .follow i{
-    color: var(--Fairway-mist);
+    color: #212529;
     padding-right: 4px;
     cursor: pointer;
 }
 
 footer .install .row img{
-    border: 1px solid var(--Dark-cyan);
+    border: 1px solid #212529;
     border-radius: 6px;
 }
 
@@ -676,7 +681,7 @@ footer .follow i:hover, footer a:hover{
     margin-right: 50px;
 }
 
-#prodetails
+
 
 .small-img-group{
     display: flex;
@@ -695,12 +700,12 @@ footer .follow i:hover, footer a:hover{
 
 #prodetails .single-pro-details h4{
     padding: 40px 0px 20px 0px;
-    color: #041E42;
+    color: #72AEC8;
 }
 
 #prodetails .single-pro-details h2{
     font-size: 25px;
-    color: #041E42;
+    color: #72AEC8;
 }
 
 #prodetails .single-pro-details select{
@@ -722,7 +727,7 @@ footer .follow i:hover, footer a:hover{
 }
 
 #prodetails .single-pro-details a button{
-    background-color: #041E42;
+    background-color: #72AEC8;
     padding: 15px 30px;
     border: none;
     color: #fff;
@@ -750,6 +755,16 @@ footer .follow i:hover, footer a:hover{
 #blog{
     padding: 150px 150px 0px 150px
 }
+
+#blog h4{
+    color: #72AEC8;
+}
+
+#blog p{
+    color: black;
+}
+
+
 
 #blog .blog-box{
     display: flex;
@@ -828,6 +843,14 @@ footer .follow i:hover, footer a:hover{
     padding: 40px 80px;
 }
 
+#about h2{
+    color: #72AEC8;
+}
+
+#about p{
+    color: #000;
+}
+
 #about img{
     width: 50%;
     height: auto;
@@ -848,6 +871,10 @@ footer .follow i:hover, footer a:hover{
 
 #choose h2{
     text-align: center;
+    color: #72AEC8;
+}
+#choose p{
+    color: #000;
 }
 
 .options-1, .options-2{

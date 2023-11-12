@@ -17,7 +17,7 @@ session_start();
 
 <body>
   <section id="header">
-    <a href="index.php" class="logo">LeisureWears</a>
+    <a href="index.php" class="logo">LeisureWears...</a>
     <div>
       <ul id="navbar">
         <li><a href="index.php">Home</a></li>
@@ -75,7 +75,7 @@ session_start();
       <br />
       <marquee bgcolor="#ccc" loop="-1" scrollamount="5" width="100%">Create stunning images with as much and as little control as you like
         thanks to a choice of basic and creative modes</marquee>
-
+    
     </div>
   </section>
   <section id="choose">

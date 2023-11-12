@@ -18,7 +18,7 @@ session_start();
 
 <body>
     <section id="header">
-        <a href="index.php" class="logo">LeisureWears</a>
+        <a href="index.php" class="logo">LeisureWears...</a>
         <div>
             <ul id="navbar">
                 <li><a href="index.php" class="active">Home</a></li>
@@ -286,7 +286,7 @@ session_start();
         </div>
         <div class="form">
             <input type="email" name="email" id="email" placeholder="Your Email Address">
-            <button type="submit">Sign Up</button>
+            <button type="submit">Subscribe</button>
         </div>
     </section>
     
