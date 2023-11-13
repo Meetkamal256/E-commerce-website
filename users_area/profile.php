@@ -36,7 +36,7 @@ session_start();
     }
     
     .sidebar-heading {
-        background-color: #041E42;
+        background-color: #088178;
         width: 100%;
         position: absolute;
         left: 0;

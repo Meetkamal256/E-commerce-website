@@ -22,7 +22,7 @@
         width: 100%;
         border-collapse: collapse;
         white-space: nowrap;
-        background-color: #041E42;
+        background-color: #088178;
         padding: 7px 25px;
         color: #fff;
     }

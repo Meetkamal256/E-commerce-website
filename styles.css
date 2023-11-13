@@ -91,6 +91,7 @@ p{
     align-items: center;
     justify-content: center;
      width: 100%;
+     word-wrap: nowrap;
 } 
 
 #navbar li{
@@ -1164,7 +1165,7 @@ footer .follow i:hover, footer a:hover{
 
 @media(max-width: 899px){
     #header .logo{
-        font-size: 27px;
+        font-size: 24px;
     }
     
     #mobile i {
@@ -1176,7 +1177,7 @@ footer .follow i:hover, footer a:hover{
         align-items: flex-start;
         justify-content: flex-start;
         width: 300px;
-        background-color: #041E42;
+        background-color:  #212529;
         position: fixed;
         top: 0px;
         right: -300px;
@@ -1189,6 +1190,11 @@ footer .follow i:hover, footer a:hover{
         margin-bottom: 25px;
     }
     
+  
+    #navbar a{
+        color: #fff;
+    }
+    
     #mobile{
         display: flex;
         align-items: center;
@@ -1197,7 +1203,11 @@ footer .follow i:hover, footer a:hover{
     #mobile i{
       font-size: 24px;
       padding-left: 20px;
-      color: var(--Fairway-mist);
+      color:  #041E42;
+    }
+    
+    #mobile i:hover{
+        color: var(--Dark-cyan);
     }
     
     #navbar.active{
@@ -1208,7 +1218,7 @@ footer .follow i:hover, footer a:hover{
         position: absolute;
         top: 30px;
         left: 30px;
-        color: var(--Fairway-mist);
+        color: #ffff;
         font-size: 24px;
     }
     
@@ -1308,9 +1318,9 @@ footer .follow i:hover, footer a:hover{
 }
 
 @media(max-width: 477px){
-
+    
     #header .logo{
-        font-size: 25px;
+        font-size: 22px;
     }
     
     #mobile i {
