@@ -76,17 +76,17 @@ if (isset($_POST['user_register'])) {
             min-height: 100vh;
 
         }
-
+        
         h1 {
             text-align: center;
-            color: #72AEC8;
+            color:  #088178;
             font-size: 28px;
         }
         
         label {
             display: block;
             margin-bottom: 10px;
-            color: #72AEC8;
+            color: #088178;
         }
         
         input[type='text'],
@@ -109,7 +109,7 @@ if (isset($_POST['user_register'])) {
         
         
         .reg-btn input {
-            background-color: #72AEC8;
+            background-color: #088178; 
             border: none;
             padding: 7px 25px;
             color: #ffff;
@@ -118,16 +118,16 @@ if (isset($_POST['user_register'])) {
         }
         
         .reg-btn input:hover{
-            background-color: black;
+            background-color: #041E42;
         }
         .small {
             font-weight: bold;
             font-size: smaller;
             color: red;
         }
-
+        
         /* Responsive styles */
-
+        
         @media (max-width: 576px) {
             #container {
                 margin: 20px 30px;

@@ -31,14 +31,14 @@ ini_set('display_errors', 1);
         
         h1 {
             text-align: center;
-            color: #72AEC8;
+            color:  #088178; 
             font-size: 25px;
         }
         
         label {
             display: block;
             margin-bottom: 10px;
-            color: #72AEC8;
+            color:  #088178; 
         }
         
         input[type='text'],
@@ -61,7 +61,7 @@ ini_set('display_errors', 1);
         
         
         .reg-btn input {
-            background-color: #72AEC8;
+            background-color:  #088178; 
             border: none;
             padding: 7px 25px;
             color: #ffff;
@@ -70,7 +70,7 @@ ini_set('display_errors', 1);
         }
         
         .reg-btn input:hover {
-            background-color: black;
+            background-color: #041E42;
         }
         
         .small {
