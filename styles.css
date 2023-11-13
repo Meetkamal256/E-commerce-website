@@ -69,7 +69,7 @@ p{
     font-family: 'Dancing Script', cursive;
     text-decoration: none;
     font-size: 27px;
-    color: #72AEC8;
+    color: var(--Dark-cyan);
 
 }
 
@@ -255,7 +255,7 @@ p{
 }
 
 #product1 h2, p{
-    color:  #72AEC8;
+    color:  #041E42;
 }
 
 
@@ -271,6 +271,7 @@ p{
     margin: 15px 0px;
     transition: 0.3s ease;
     position: relative;
+  
 }
 
 #product1 .pro:hover{
@@ -300,24 +301,27 @@ p{
     font-weight: 500;
     color:gray;
     padding-bottom: 7px;
+    
 } 
 
 #product1 .pro .des h5{
     font-size: 14px;
-    color: #72AEC8;
+    color: #041E42;
     padding-bottom: 7px;
+    text-decoration: none;
 }
 
 #product1 .pro .des .stars{
     font-size: 12px;
-    color: orange;
+    color: var(--Dark-cyan);
 }
 
 #product1 .pro .des h4{
     font-weight: 700;
-    color: #72AEC8;
+    color: #041E42;
     font-size: 15px;
     padding-top: 7px;
+    text-decoration: none;
 }
 
 #product1 .pro  .cart{
@@ -325,7 +329,7 @@ p{
     height: 40px;
     border-radius: 50%;
     background-color: #d1e8f4;
-    color: #041E42;
+    color: var(--Dark-cyan);
     border: 1px solid var(--Fairway-mist);
     position: absolute;
     bottom: 20px;
@@ -567,8 +571,8 @@ footer{
 footer .logo{
     font-family: 'Dancing Script', cursive;
     text-decoration: none;
-    font-size: 25px;
-    color: #72AEC8;
+    font-size: 28px;
+    color: var(--Dark-cyan);
 }
 
 footer .col{
@@ -700,7 +704,7 @@ footer .follow i:hover, footer a:hover{
 
 #prodetails .single-pro-details h4{
     padding: 40px 0px 20px 0px;
-    color: #72AEC8;
+    color: black;
 }
 
 #prodetails .single-pro-details h2{
@@ -727,7 +731,7 @@ footer .follow i:hover, footer a:hover{
 }
 
 #prodetails .single-pro-details a button{
-    background-color: #72AEC8;
+    background-color: black;
     padding: 15px 30px;
     border: none;
     color: #fff;
@@ -738,12 +742,13 @@ footer .follow i:hover, footer a:hover{
 }
 
 #prodetails .single-pro-details a button:hover{
-    background-color: black;
+    background-color: #72AEC8;
 }
 
 #prodetails .single-pro-details span{
     line-height: 1.5;
-    color: #041E42;
+    color: #B4B4B4;
+    font-weight: 600;
 }
 
 /* Blog page */
