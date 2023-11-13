@@ -19,7 +19,7 @@ function getProducts()
     $category_id = $row['category_id'];
     
     
-    echo "<div class='pro'>
+    echo "<div class='pro product-link' data-id ='$product_id'>
         <div class='img-container'>
         <img src='product_images/$product_image1' alt=''>
    </div>
