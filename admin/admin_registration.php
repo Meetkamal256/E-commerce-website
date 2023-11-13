@@ -66,6 +66,12 @@
             font-size: 15px;
         }
 
+        form input[type="submit"]:hover{
+            background-color: blue;
+        }
+
+        /* Responsive design */
+
         @media (max-width: 600px) {
             #registration_container {
                 flex-direction: column;
