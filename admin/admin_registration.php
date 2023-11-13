@@ -6,11 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Registration</title>
     <style>
-        *{
+        * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
+
         body {
             font-family: 'Arial', sans-serif;
         }
@@ -19,36 +20,34 @@
             display: flex;
             max-width: 850px;
             margin: 50px auto;
-            min-height: 100vh;
-            
         }
-        
+
         h1 {
             text-align: center;
             margin-top: 15px;
         }
-        
+
         .left {
             flex-basis: 50%;
-            background-color: red;
+
         }
-        
+
         .left img {
             width: 100%;
-            height: 100%; 
+            height: 100%;
             display: block;
         }
-        
+
         .right {
             flex-basis: 50%;
             padding: 20px;
         }
-        
+
         form label {
             margin-bottom: 5px;
             display: block;
         }
-        
+
         form input[type="text"],
         form input[type="email"],
         form input[type="password"] {
@@ -56,7 +55,7 @@
             padding: 8px;
             margin-bottom: 10px;
         }
-        
+
         form input[type="submit"] {
             background-color: #333;
             color: #fff;
@@ -67,29 +66,28 @@
             font-size: 15px;
         }
 
-        /* responsive styles */
-        
-        @media (max-width: 768px) {
+        @media (max-width: 600px) {
             #registration_container {
                 flex-direction: column;
                 margin: 50px 30px 700px 30px;
             }
-            
-            h1{
+
+            h1 {
                 font-size: 22px;
             }
-        }
-/*         
-        @media (max-width: 576px) {
-            #registration_container {
-                flex-direction: column;
-                margin: 50px 30px 0px 30px;
+
+
+            form input[type="text"],
+            form input[type="email"],
+            form input[type="password"] {
+                padding: 5px;
+            
             }
             
-            h1{
-                font-size: 20px;
-            }
-        } */
+            form input[type="submit"] {
+            padding: 7px;
+        }
+        }
     </style>
 </head>
 
