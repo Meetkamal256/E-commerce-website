@@ -54,7 +54,7 @@ function get_all_products()
     $category_id = $row['category_id'];
     
     
-    echo "<div class='pro'>
+    echo "<div class='pro product-link' data-id = '$product_id'>
         <div class='img-container'>
         <img src='product_images/$product_image1' alt=''>
   </div>
@@ -70,7 +70,6 @@ function get_all_products()
                 <h4>&#x20A6; $product_price</h4>
             </div>
             <a href='index.php?add_to_cart=$product_id'><i class='fa-solid fa-cart-shopping cart'></i></a>
-            <a href='product-details.php?product_id=$product_id'><button>View more</button></a>
         </div>               
     </div>";
   }

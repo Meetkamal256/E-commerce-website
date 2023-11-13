@@ -543,7 +543,7 @@ p{
 }
 
 #newsletter button{
-    background-color: #72AEC8;
+    background-color: var(--Dark-cyan);
     color: #ffff;
     border: 0;
     padding: 18px 25px;
@@ -554,7 +554,7 @@ p{
 }
 
 #newsletter button:hover{
-    background-color: #000;
+    background-color:  #041E42;
 }
 
 /* footer section */
@@ -704,12 +704,12 @@ footer .follow i:hover, footer a:hover{
 
 #prodetails .single-pro-details h4{
     padding: 40px 0px 20px 0px;
-    color: black;
+    color:  #041E42;
 }
 
 #prodetails .single-pro-details h2{
     font-size: 25px;
-    color: #72AEC8;
+    color: var(--Dark-cyan);
 }
 
 #prodetails .single-pro-details select{
@@ -731,7 +731,7 @@ footer .follow i:hover, footer a:hover{
 }
 
 #prodetails .single-pro-details a button{
-    background-color: black;
+    background-color:  #041E42;
     padding: 15px 30px;
     border: none;
     color: #fff;
@@ -742,7 +742,7 @@ footer .follow i:hover, footer a:hover{
 }
 
 #prodetails .single-pro-details a button:hover{
-    background-color: #72AEC8;
+    background-color: var(--Dark-cyan);
 }
 
 #prodetails .single-pro-details span{

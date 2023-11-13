@@ -22,11 +22,9 @@ var productLinks = document.querySelectorAll('.product-link');
 productLinks.forEach(function (productLink) {
     productLink.addEventListener('click', function () {
         var productId = this.getAttribute('data-id');
-        console.log('Product ID:', productId);
         window.location.href = 'product-details.php?product_id=' + productId;
     });
 });
-
 
 
 // user dashboard section
