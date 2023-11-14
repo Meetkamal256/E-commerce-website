@@ -1,3 +1,6 @@
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -126,7 +129,7 @@
                 <label for="admin_password">Password</label>
                 <input type="password" name="admin_password" id="admin_password" placeholder="Password" required="required">
                 <a href="#"><small class="reset">Forgot Password?</small></a>
-                <input type="submit" value="Login" name>
+                <input type="submit" value="Login" name="admin_login">
                 <small>Don't have an account?<a href="admin_registration.php">Register</a></small>
             </form>
         </div>

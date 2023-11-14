@@ -16,7 +16,7 @@ if (isset($_POST['user_register'])) {
     $user_image = $_FILES['user_image']['name'];
     $user_image_tmp = $_FILES['user_image']['tmp_name'];
     $user_ip = getIPAddress();
-
+    
     $select_query = "SELECT * from user_table WHERE username = '$username' OR user_email = '$user_email'";
     $result = mysqli_query($conn, $select_query);
     $num_rows = mysqli_num_rows($result);
@@ -60,7 +60,7 @@ if (isset($_POST['user_register'])) {
     <title>User Registration</title>
     <link rel="stylesheet" href="../styles.css" />
     <script src="https://kit.fontawesome.com/dacccb715c.js" crossorigin="anonymous"></script>
-
+    
 
     <style>
         * {
