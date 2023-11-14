@@ -110,6 +110,8 @@
                 padding: 7px;
             }
         }
+
+        
     </style>
 </head>
 
@@ -122,18 +124,17 @@
         <div class="right">
             <form action="" method="POST">
                 <label for="username">Username</label>
-                <input type="text" name="username" id="username" placeholder="Username">
+                <input type="text" name="username" id="username" placeholder="Username" required="required">
                 <label for="email">Email</label>
-                <input type="email" name="email" id="email" placeholder="Email">
+                <input type="email" name="email" id="email" placeholder="Email" required="required">
                 <label for="password">Password</label>
-                <input type="password" name="password" id="password" placeholder="Password">
+                <input type="password" name="password" id="password" placeholder="Password" required="required">
                 <label for="conf_password">Confirm Password</label>
-                <input type="password" name="conf_password" id="conf_password" placeholder="Confirm Password">
+                <input type="password" name="conf_password" id="conf_password" placeholder="Confirm Password" required="required">
                 <input type="submit" value="Register">
-                <small>Already have an account? <a href="#">login</a></small>
+                <small>Already have an account? <a href="admin_login.php">login</a></small>
             </form>
         </div>
     </div>
 </body>
-
 </html>
