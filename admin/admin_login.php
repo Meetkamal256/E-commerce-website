@@ -110,8 +110,6 @@
         padding: 7px;
        
     }
-
-
     }
 </style>
 
