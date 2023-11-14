@@ -266,7 +266,7 @@ p{
     min-width: 250px;
     padding: 10px 12px;
     border: 1px solid var(--Azureish-White);
-    border-radius: 8px;
+    border-radius: 25px;
     cursor: pointer;
     box-shadow: 20px 20px 30px rgba(0,0,0,0.03);
     margin: 15px 0px;
@@ -279,16 +279,19 @@ p{
     box-shadow: 20px 20px 30px rgba(0,0,0,0.3);
 }
 
-#product1 .pro .img-container{
+#product1 .pro .image-container{
     width: 239px;
     height: 239px;
-    border-radius: 8px;
     overflow: hidden;
+    
 }
 
-#product1 .pro .img-container img{
-   width: 100%; 
-   min-height: 239px;
+
+
+#product1 .pro img{
+   max-width: 100%; 
+   border-radius: 10px;
+   min-height: 100%;
    object-fit: cover;
 }
 
@@ -311,8 +314,8 @@ p{
     padding-bottom: 7px;
     text-decoration: none;
 }
-
 #product1 .pro .des .stars{
+    
     font-size: 12px;
     color: var(--Dark-cyan);
 }

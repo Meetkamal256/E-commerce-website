@@ -26,43 +26,42 @@ session_start();
                 <li><a href="blog.php">Blog</a></li>
                 <li><a href="about.php">About</a></li>
                 <?php
-                    if(isset($_SESSION['username'])){
-                        echo "<li><a href='./users_area/profile.php'>My Account</a></li>";
-                    }else{
-                        echo "<li><a href='./users_area/user_registration.php'>Register</a></li>";
-                    }
+                if (isset($_SESSION['username'])) {
+                    echo "<li><a href='./users_area/profile.php'>My Account</a></li>";
+                } else {
+                    echo "<li><a href='./users_area/user_registration.php'>Register</a></li>";
+                }
                 ?>
                 <li><a href="contact.php">Contact</a></li>
                 <?php
-                      if(!isset($_SESSION['username'])){
-                        echo "<li><a href='#'>Welcome Guest</a></li>";
-                    }else{
-                        echo "<li><a href='#'>Welcome " . $_SESSION['username'] . "</a></li>";
-                        
-                    }
-                    if(!isset($_SESSION['username'])){
-                        echo " <li><a href='users_area/user_login.php'>Login</a></li>";
-                    }else{
-                        echo " <li><a href='users_area/logout.php'>Logout</a></li>";
-                    }
+                if (!isset($_SESSION['username'])) {
+                    echo "<li><a href='#'>Welcome Guest</a></li>";
+                } else {
+                    echo "<li><a href='#'>Welcome " . $_SESSION['username'] . "</a></li>";
+                }
+                if (!isset($_SESSION['username'])) {
+                    echo " <li><a href='users_area/user_login.php'>Login</a></li>";
+                } else {
+                    echo " <li><a href='users_area/logout.php'>Logout</a></li>";
+                }
                 ?>
                 <li>
-                <a href='cart.php'><i class='fa-solid fa-cart-shopping cart'></i><sup><?php cart_items();?></sup></a> 
+                    <a href='cart.php'><i class='fa-solid fa-cart-shopping cart'></i><sup><?php cart_items(); ?></sup></a>
                 </li>
                 <a href="#"><i class="fas fa-times" id="close"></i></a>
             </ul>
         </div>
         <div id="mobile">
-        <a href='cart.php'><i class='fa-solid fa-cart-shopping cart'></i><sup><?php cart_items();?></sup></a> 
+            <a href='cart.php'><i class='fa-solid fa-cart-shopping cart'></i><sup><?php cart_items(); ?></sup></a>
             <i class="fas fa-outdent" id="menu-open"></i>
         </div>
     </section>
-    
+
     <!-- calling cart function -->
     <?php
-        cart();
+    cart();
     ?>
-    
+
     <section id="hero">
         <h4>Trade in offers</h4>
         <h2>Super value deals</h2>
@@ -103,9 +102,9 @@ session_start();
         <p>Summer collection New modern Design</p>
         <div class='pro-container'>
             <?php
-                getProducts();
-                $ip = getIPAddress();  
-            ?>        
+              get_products();
+            ?>
+        </div>
     </section>
     
     <section id="banner">
@@ -113,8 +112,8 @@ session_start();
         <h2>off to <span>70% off</span> -All t-shirts and Accessories</h2>
         <button>Explore more</button>
     </section>
-    
-     <!-- <section id="product1">
+
+    <!-- <section id="product1">
         <h2>New Arrivals</h2>
         <p>Summer collection New modern Design</p>
         <div class="pro-container">
@@ -248,7 +247,7 @@ session_start();
             </div>
         </div>
     </section> -->
-    
+
     <section id="sm-banner">
         <div class="banner-box">
             <h5>Crazy deals</h5>
@@ -263,7 +262,7 @@ session_start();
             <button>Collection</button>
         </div>
     </section>
-    
+
     <section id="banner3">
         <div class="banner-box">
             <h2>Season Sale</h2>
@@ -278,7 +277,7 @@ session_start();
             <h3>New trendy prints</h3>
         </div>
     </section>
-    
+
     <section id="newsletter">
         <div class="newstext">
             <h4>Sign Up For Newsletters</h4>
@@ -289,7 +288,7 @@ session_start();
             <button type="submit">Subscribe</button>
         </div>
     </section>
-    
+
     <?php include("partials/footer.php"); ?>
     <script src="script.js"></script>
 

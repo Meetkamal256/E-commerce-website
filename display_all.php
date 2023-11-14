@@ -70,8 +70,9 @@ session_start();
         <p>Summer collection New modern Design</p>
         <div class='pro-container'>
             <?php
-            get_all_Products();
+                get_all_products();
             ?>
+        </div>
     </section>
 
     <section id="pagination">
@@ -79,7 +80,7 @@ session_start();
         <a href="#">2</a>
         <a href="#"><i class="fa fa-long-arrow-alt-right"></i></a>
     </section>
-    
+
     <section id="newsletter">
         <div class="newstext">
             <h4>Sign Up For Newsletters</h4>
@@ -90,7 +91,7 @@ session_start();
             <button type="submit">Sign Up</button>
         </div>
     </section>
-    
+
     <?php include("partials/footer.php"); ?>
     <script src="script.js"></script>
 

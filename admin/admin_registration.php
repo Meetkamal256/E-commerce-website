@@ -64,10 +64,15 @@
             cursor: pointer;
             width: 100%;
             font-size: 15px;
+            margin-bottom: 7px;
         }
 
-        form input[type="submit"]:hover{
+        form input[type="submit"]:hover {
             background-color: blue;
+        }
+        
+        small a{
+            color: red;
         }
 
         /* Responsive design */
@@ -87,12 +92,12 @@
             form input[type="email"],
             form input[type="password"] {
                 padding: 5px;
-            
+
             }
-            
+
             form input[type="submit"] {
-            padding: 7px;
-        }
+                padding: 7px;
+            }
         }
     </style>
 </head>
@@ -114,6 +119,7 @@
                 <label for="conf_password">Confirm Password</label>
                 <input type="password" name="conf_password" id="conf_password" placeholder="Confirm Password">
                 <input type="submit" value="Register">
+                <small>Already have an account? <a href="#">login</a></small>
             </form>
         </div>
     </div>
