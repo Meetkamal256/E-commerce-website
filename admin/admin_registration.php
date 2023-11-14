@@ -11,51 +11,61 @@
             padding: 0;
             box-sizing: border-box;
         }
-
+        
         body {
             font-family: 'Arial', sans-serif;
         }
-
+        
         #registration_container {
             display: flex;
             max-width: 850px;
             margin: 50px auto;
         }
-
+        
         h1 {
             text-align: center;
-            margin-top: 15px;
+            background-color: #000;
+            color: #ffff;
+            font-size: 25px;
         }
-
+        
         .left {
             flex-basis: 50%;
-
+        
         }
-
+        
         .left img {
             width: 100%;
-            height: 100%;
+            min-height: 100%;
             display: block;
         }
-
+        
         .right {
             flex-basis: 50%;
             padding: 20px;
         }
-
+        
         form label {
             margin-bottom: 5px;
             display: block;
         }
-
+        
         form input[type="text"],
         form input[type="email"],
         form input[type="password"] {
             width: 100%;
             padding: 8px;
             margin-bottom: 10px;
+            border-radius: 5px;
+            border: 1px solid lightgrey;
         }
 
+        form input[type="text"]:focus,
+        form input[type="email"]:focus,
+        form input[type="password"]:focus{
+            outline: none;
+        } 
+        
         form input[type="submit"] {
             background-color: #333;
             color: #fff;
@@ -65,8 +75,9 @@
             width: 100%;
             font-size: 15px;
             margin-bottom: 7px;
+            border-radius: 5px;
         }
-
+        
         form input[type="submit"]:hover {
             background-color: blue;
         }
@@ -74,27 +85,27 @@
         small a{
             color: red;
         }
-
+        
         /* Responsive design */
-
+        
         @media (max-width: 600px) {
             #registration_container {
                 flex-direction: column;
                 margin: 50px 30px 700px 30px;
             }
-
+            
             h1 {
                 font-size: 22px;
             }
-
-
+            
+            
             form input[type="text"],
             form input[type="email"],
             form input[type="password"] {
                 padding: 5px;
-
+            
             }
-
+            
             form input[type="submit"] {
                 padding: 7px;
             }
