@@ -10,14 +10,14 @@
     if (isset($_POST["admin_register"])) {
         //validate username
         if (empty($_POST["admin_username"])) {
-            $errors["admin_username"] = "A Username is required <br/>";
+            $errors["admin_username"] = "A username is required <br/>";
         } else {
             $admin_username = $_POST["admin_username"];
             if (!preg_match("/^[a-zA-Z\s]+$/", $admin_username)) {
                 $errors["admin_username"] = "Username must be letters and spaces only";
             }
         }
-
+        
         // validate email
         if (empty($_POST["admin_email"])) {
             $errors["admin_email"] = "An email address is required <br/>";
@@ -39,7 +39,7 @@
         
         // validate confirm password
         if (empty($_POST["admin_conf_password"])) {
-            $errors["admin_conf_password"] = "please confirm password <br/>";
+            $errors["admin_conf_password"] = "A password confirmation is required<br/>";
         }else{
             $admin_conf_password = $_POST["admin_conf_password"];
             if($admin_password != $admin_conf_password){
@@ -47,7 +47,7 @@
             }
         }
     }
-
+    
     // if there is no errors
     if(array_filter($errors)){
 
@@ -69,7 +69,7 @@
              padding: 0;
              box-sizing: border-box;
          }
-
+         
          body {
              font-family: 'Arial', sans-serif;
          }
@@ -89,7 +89,7 @@
 
          .left {
              flex-basis: 50%;
-
+         
          }
 
          .left img {
@@ -135,49 +135,50 @@
              margin-bottom: 7px;
              border-radius: 5px;
          }
-
+         
          form input[type="submit"]:hover {
              background-color: blue;
          }
-
+         
          small a {
              color: red;
          }
-
+         
+         .red-text {
+             color: red;
+             font-size: 13px;
+             margin-bottom: 3px;
+         }
+         
+         
          /* Responsive design */
-
+         
          @media (max-width: 600px) {
              #registration_container {
                  flex-direction: column;
                  margin: 50px 30px 700px 30px;
              }
-
+             
              h1 {
                  font-size: 22px;
              }
-
-
+             
+             
              form input[type="text"],
              form input[type="email"],
              form input[type="password"] {
                  padding: 5px;
-
+             
              }
-
+             
              form input[type="submit"] {
                  padding: 7px;
              }
          }
-
-         .red-text {
-             color: red;
-             font-size: 13px;
-             margin-bottom: 3px;
-
-         }
+     
      </style>
  </head>
-
+ 
  <body>
      <h1>Admin Registration</h1>
      <div id="registration_container">
@@ -185,24 +186,72 @@
              <img src="../img/register2.jpg" alt="reg">
          </div>
          <div class="right">
-             <form action="" method="POST">
+             <form action="" method="POST" onsubmit="return validateForm()">
                  <label for="username">Username</label>
                  <input type="text" name="admin_username" id="admin_username" placeholder="Username" value="<?php echo htmlspecialchars($admin_username) ?>">
-                 <div class="red-text"><?php echo $errors["admin_username"] ?></div>
+                 <div class="red-text"  id="usernameError"><?php echo $errors["admin_username"] ?></div>
                  <label for="admin_email">Email</label>
                  <input type="email" name="admin_email" id="admin_email" placeholder="Email" value="<?php echo htmlspecialchars($admin_email) ?>">
-                 <div class="red-text"><?php echo $errors["admin_email"] ?></div>
+                 <div class="red-text" id="emailError"><?php echo $errors["admin_email"] ?></div>
                  <label for="password">Password</label>
-                 <input type="password" name="admin_password" id="admin_password" placeholder="Password" value="<?php echo  htmlspecialchars($admin_password) ?>">
-                 <div class="red-text"><?php echo $errors["admin_password"] ?></div>
+                 <input type="password" name="admin_password" id="admin_password" placeholder="Password" value="<?php echo ($admin_password) ?>">
+                 <div class="red-text" id="passwordError"><?php echo $errors["admin_password"] ?></div>
                  <label for="conf_password">Confirm Password</label>
-                 <input type="password" name="admin_conf_password" id="admin_conf_password" placeholder="Confirm Password" value="<?php echo htmlspecialchars($admin_conf_password)?>">
-                 <div class="red-text"><?php echo $errors["admin_conf_password"] ?></div>
+                 <input type="password" name="admin_conf_password" id="admin_conf_password" placeholder="Confirm Password" value="<?php echo ($admin_conf_password)?>">
+                 <div class="red-text" id="confPasswordError"><?php echo $errors["admin_conf_password"] ?></div>
                  <input type="submit" value="Register" name="admin_register">
                  <small>Already have an account? <a href="admin_login.php">login</a></small>
              </form>
          </div>
      </div>
+     <script>
+        function validateForm() {
+        var username = document.getElementById('admin_username').value;
+        var email = document.getElementById('admin_email').value;
+        var password = document.getElementById('admin_password').value;
+        var confPassword = document.getElementById('admin_conf_password').value;
+        
+        var isValid = true;
+        
+        // Validate Username
+        if (username.trim() === "") {
+            document.getElementById('usernameError').innerHTML = "A username is required";
+            isValid = false;
+        } else {
+            document.getElementById('usernameError').innerHTML = "";
+        }
+        
+        // Validate Email
+        if (email.trim() === "") {
+            document.getElementById('emailError').innerHTML = "An email address is required";
+            isValid = false;
+        } else {
+            document.getElementById('emailError').innerHTML = "";
+        }
+        
+        // Validate Password
+        if (password.trim() === "") {
+            document.getElementById('passwordError').innerHTML = "A password is required";
+            isValid = false;
+        } else {
+            document.getElementById('passwordError').innerHTML = "";
+        }
+        
+        // Validate Confirm Password
+        if (confPassword.trim() === "") {
+            document.getElementById('confPasswordError').innerHTML = "A password confirmation is required";
+            isValid = false;
+        } else if (password !== confPassword) {
+            document.getElementById('confPasswordError').innerHTML = "Passwords do not match";
+            isValid = false;
+        } else {
+            document.getElementById('confPasswordError').innerHTML = "";
+        }
+        
+        return isValid;
+    }
+     </script>
  </body>
-
+ 
+ 
  </html>
