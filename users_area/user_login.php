@@ -15,7 +15,7 @@ ini_set('display_errors', 1);
     <title>User Login</title>
     <link rel="stylesheet" href="../styles.css" />
     <script src="https://kit.fontawesome.com/dacccb715c.js" crossorigin="anonymous"></script>
-
+    
     <style>
         * {
             box-sizing: border-box;
@@ -169,7 +169,7 @@ ini_set('display_errors', 1);
                 </div>
             </div>
         </div>
-
+        
         <div class="col">
             <h4>About</h4>
             <a href="#">About Us</a>
@@ -178,7 +178,7 @@ ini_set('display_errors', 1);
             <a href="#">Privacy Policy</a>
             <a href="#">Contact Us</a>
         </div>
-
+        
         <div class="col">
             <h4>My Account</h4>
             <a href="#">Sign In</a>
@@ -187,7 +187,7 @@ ini_set('display_errors', 1);
             <a href="#">Track My Order</a>
             <a href="#">Help</a>
         </div>
-
+        
         <div class="col install">
             <h4>Install</h4>
             <p>From App Store or Google Store</p>
@@ -198,7 +198,7 @@ ini_set('display_errors', 1);
             <p>Secured Payment Gateway</p>
             <img src="../img/pay/pay.png" alt="">
         </div>
-
+        
         <div class="copyright">
             <p> &copy Copyright 2023</p>
         </div>
@@ -214,13 +214,13 @@ ini_set('display_errors', 1);
 if (isset($_POST['user_login'])) {
     $username = $_POST['username'];
     $user_password = $_POST['user_password'];
-
+    
     $select_query = "SELECT * from user_table WHERE username = '$username'";
     $result = mysqli_query($conn, $select_query);
     $row_count = mysqli_num_rows($result);
     $row_data = mysqli_fetch_assoc($result);
     $user_ip = getIPAddress();
-
+    
     // cart items
     $select_query_cart = "SELECT * from cart_details WHERE ip_address = '$user_ip'";
     $result_cart = mysqli_query($conn, $select_query_cart);

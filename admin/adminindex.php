@@ -2,8 +2,13 @@
 include("../partials/connect.php");
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
-
 session_start();
+
+if (!isset($_SESSION['admin_username'])) {
+    header("Location: admin_login.php");
+    exit();
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -178,9 +183,8 @@ session_start();
                 <a href="adminindex.php?all_orders" class="button-link">All Orders</a>
                 <a href="adminindex.php?all_payment" class="button-link">All Payments</a>
                 <a href="adminindex.php?list_users" class="button-link">List Users</a>
-                <a href="admin-partials/logout.php" class="button-link">Logout</a>
+                <a href="admin_logout.php" class="button-link">Logout</a>
             </div>
-
         </div>
         <div id="content">
             <?php
@@ -229,8 +233,5 @@ session_start();
             ?>
         </div>
     </div>
-
-
 </body>
-
 </html>
