@@ -15,7 +15,6 @@ function get_products(){
       $product_price = number_format($row['product_price']);
       $product_image1 = $row['product_image1'];
       $category_id = $row['category_id'];
-      
       echo " <div class='pro product-link'  data-id='$product_id'>
   <div class='image-container'>
       <img src='product_images/$product_image1' alt=''>
