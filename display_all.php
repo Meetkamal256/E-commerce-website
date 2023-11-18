@@ -16,83 +16,85 @@ session_start();
 </head>
 
 <body>
-    <section id="header">
-        <a href="index.php" class="logo">LeisureWears...</a>
-        <div>
-            <ul id="navbar">
-                <li><a href="index.php">Home</a></li>
-                <li><a href="display_all.php" class="active">Shop</a></li>
-                <li><a href="blog.php">Blog</a></li>
-                <li><a href="about.php">About</a></li>
+    <div id="container">
+        <section id="header">
+            <a href="index.php" class="logo">LeisureWears...</a>
+            <div>
+                <ul id="navbar">
+                    <li><a href="index.php">Home</a></li>
+                    <li><a href="display_all.php" class="active">Shop</a></li>
+                    <li><a href="blog.php">Blog</a></li>
+                    <li><a href="about.php">About</a></li>
+                    <?php
+                    if (isset($_SESSION['username'])) {
+                        echo "<li><a href='./users_area/profile.php'>My Account</a></li>";
+                    } else {
+                        echo "<li><a href='./users_area/user_registration.php'>Register</a></li>";
+                    }
+                    ?>
+                    <li><a href="contact.php">Contact</a></li>
+                    <?php
+                    if (!isset($_SESSION['username'])) {
+                        echo "<li><a href='#'>Welcome Guest</a></li>";
+                    } else {
+                        echo "<li><a href='#'>Welcome " . $_SESSION['username'] . "</a></li>";
+                    }
+                    if (!isset($_SESSION['username'])) {
+                        echo " <li><a href='users_area/user_login.php'>Login</a></li>";
+                    } else {
+                        echo " <li><a href='users_area/logout.php'>Logout</a></li>";
+                    }
+                    ?>
+                    <li>
+                        <a href='cart.php'><i class='fa-solid fa-cart-shopping cart'></i><sup><?php cart_items(); ?></sup></a>
+                    </li>
+                    <a href="#"><i class="fas fa-times" id="close"></i></a>
+                </ul>
+            </div>
+            <div id="mobile">
+                <a href='cart.php'><i class='fa-solid fa-cart-shopping cart'></i><sup><?php cart_items(); ?></sup></a>
+                <i class="fas fa-outdent" id="menu-open"></i>
+            </div>
+        </section>
+
+        <?php
+        cart();
+        ?>
+
+        <section id="page-header">
+            <h2>#Stayhome</h2>
+            <p>Save more on coupons & up to 70% off!</p>
+        </section>
+
+        <section id='product1'>
+            <h2>Featured Products</h2>
+            <p>Summer collection New modern Design</p>
+            <div class='pro-container'>
                 <?php
-                if (isset($_SESSION['username'])) {
-                    echo "<li><a href='./users_area/profile.php'>My Account</a></li>";
-                } else {
-                    echo "<li><a href='./users_area/user_registration.php'>Register</a></li>";
-                }
-                ?>
-                <li><a href="contact.php">Contact</a></li>
-                <?php
-                if (!isset($_SESSION['username'])) {
-                    echo "<li><a href='#'>Welcome Guest</a></li>";
-                } else {
-                    echo "<li><a href='#'>Welcome " . $_SESSION['username'] . "</a></li>";
-                }
-                if (!isset($_SESSION['username'])) {
-                    echo " <li><a href='users_area/user_login.php'>Login</a></li>";
-                } else {
-                    echo " <li><a href='users_area/logout.php'>Logout</a></li>";
-                }
-                ?>
-                <li>
-                    <a href='cart.php'><i class='fa-solid fa-cart-shopping cart'></i><sup><?php cart_items(); ?></sup></a>
-                </li>
-                <a href="#"><i class="fas fa-times" id="close"></i></a>
-            </ul>
-        </div>
-        <div id="mobile">
-            <a href='cart.php'><i class='fa-solid fa-cart-shopping cart'></i><sup><?php cart_items(); ?></sup></a>
-            <i class="fas fa-outdent" id="menu-open"></i>
-        </div>
-    </section>
-
-    <?php
-    cart();
-    ?>
-
-    <section id="page-header">
-        <h2>#Stayhome</h2>
-        <p>Save more on coupons & up to 70% off!</p>
-    </section>
-
-    <section id='product1'>
-        <h2>Featured Products</h2>
-        <p>Summer collection New modern Design</p>
-        <div class='pro-container'>
-            <?php
                 get_all_products();
-            ?>
-        </div>
-    </section>
+                ?>
+            </div>
+        </section>
 
-    <section id="pagination">
-        <a href="#">1</a>
-        <a href="#">2</a>
-        <a href="#"><i class="fa fa-long-arrow-alt-right"></i></a>
-    </section>
+        <section id="pagination">
+            <a href="#">1</a>
+            <a href="#">2</a>
+            <a href="#"><i class="fa fa-long-arrow-alt-right"></i></a>
+        </section>
 
-    <section id="newsletter">
-        <div class="newstext">
-            <h4>Sign Up For Newsletters</h4>
-            <p>Get E-mail updates about our latest shop and <span>special offers</span></p>
-        </div>
-        <div class="form">
-            <input type="email" name="email" id="email" placeholder="Your Email Address">
-            <button type="submit">Sign Up</button>
-        </div>
-    </section>
+        <section id="newsletter">
+            <div class="newstext">
+                <h4>Sign Up For Newsletters</h4>
+                <p>Get E-mail updates about our latest shop and <span>special offers</span></p>
+            </div>
+            <div class="form">
+                <input type="email" name="email" id="email" placeholder="Your Email Address">
+                <button type="submit">Sign Up</button>
+            </div>
+        </section>
 
-    <?php include("partials/footer.php"); ?>
+        <?php include("partials/footer.php"); ?>
+    </div>
     <script src="script.js"></script>
 
 </body>

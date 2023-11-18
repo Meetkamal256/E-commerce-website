@@ -75,7 +75,7 @@ session_start();
             width: 100%;
         }
     }
-    
+
 </style>
 
 <body>

@@ -24,8 +24,6 @@ body{
     width: 100%;
     min-height: 100%;
     background-color: #F8F9FA;
-  
-
 }
 
 
@@ -785,7 +783,6 @@ footer .follow i:hover, footer a:hover{
 #blog .blog-box{
     display: flex;
     align-items: center;
-    justify-content: center;
     width: 100%;
     position: relative;
     padding-bottom: 90px;
@@ -847,7 +844,7 @@ footer .follow i:hover, footer a:hover{
 
 /* About page */
 
-#page-header.about-header{
+#page-header .about-header{
     background-image: url(img/about/banner.png);
     background-position: center;
     background-size: cover;
@@ -870,10 +867,11 @@ footer .follow i:hover, footer a:hover{
 #about img{
     width: 50%;
     height: auto;
+    margin-right: 20px;
 }
 
 #about div{
-    padding-left: 40px;
+    width: 50%;
 }
 
 #about p{
@@ -893,20 +891,12 @@ footer .follow i:hover, footer a:hover{
     color:  #041E42;
 }
 
-.options-1, .options-2{
-    display: flex;
-    align-items: center;   
-}
-
-.options-1 .free-shipping {
-    padding-right: 80px; /* Adjust the margin as needed to control the space */
-}
-
 
 
 #choose img{
     background-color: #ccc;
     border-radius: 50%;
+
 }
 
 /* Contact page */
@@ -1165,10 +1155,10 @@ footer .follow i:hover, footer a:hover{
 /* Responsive Styles */
 
 @media(min-width: 940px) and (max-width: 1440px){
-    /* #container{
+     #container{
         min-height: 100vh;
         margin-bottom: 800px;  
-    } */
+    } 
     
     #feature {
         padding: 40px;
@@ -1553,14 +1543,3 @@ footer {
 }
 
 }
-
-
-/* Blog page responsive design */
-/* 
-@media(max-width: 939px){
-    #blog-container{
-        min-height: 100vh;
-        margin-bottom: 200px;
-    }
-} */
-
