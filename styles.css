@@ -651,7 +651,7 @@ footer .follow i:hover, footer a:hover{
 #page-header{
     background: url(img/banner/b1.jpg);
     width: 100%;
-    height: 40vh;
+    height: 250px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -1097,7 +1097,6 @@ footer .follow i:hover, footer a:hover{
 }
 
 
-
 #cart-add{
     padding: 40px 80px;
     display: flex;
@@ -1166,10 +1165,10 @@ footer .follow i:hover, footer a:hover{
 /* Responsive Styles */
 
 @media(min-width: 940px) and (max-width: 1440px){
-    #container{
+    /* #container{
         min-height: 100vh;
         margin-bottom: 800px;  
-    }
+    } */
     
     #feature {
         padding: 40px;
@@ -1201,15 +1200,24 @@ footer .follow i:hover, footer a:hover{
         flex-wrap: wrap;
         padding: 40px;
     }
+    
+    footer {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin: 40px 0px 200px 0px;
+        padding: 40px 80px;
+        background-color: #F8F9FA;
+    }
 }
 
 
 @media(max-width: 939px){   
     
-    #container{
+     #container{
         min-height: 100vh;
         margin-bottom: 800px;
-    }
+    } 
     
     #navbar {
         display: flex;
@@ -1217,7 +1225,7 @@ footer .follow i:hover, footer a:hover{
         align-items: start;
         justify-content: flex-start;
         width: 100%;
-        background-color: #E3E6F3;
+        background-color: #041E42;
         position: fixed;
         top: 0;
         right: -300px;
@@ -1232,7 +1240,7 @@ footer .follow i:hover, footer a:hover{
         margin-bottom: 20px;
     }
     #navbar a {
-        color: var(--Dark-grey);
+        color: #fff;
     }
     
     #mobile{
@@ -1243,6 +1251,7 @@ footer .follow i:hover, footer a:hover{
     #mobile i{
         font-size: 24px;
         padding-left: 20px;
+        color: #041E42;
     }
     
     #close{
@@ -1251,7 +1260,7 @@ footer .follow i:hover, footer a:hover{
         top: 30px;
         left: 30px;
         font-size: 24px;
-        color: #222;
+        color: #fff;
     }
     
     #lg-cart{
@@ -1284,16 +1293,18 @@ footer .follow i:hover, footer a:hover{
     
     #sm-banner {
         flex-direction: column;
+        padding: 0 15px 15px 15px;
     
     }
     
     #sm-banner .banner-box {
     min-width: 100%;
-    height: 20vh;
+    height: 40vh;
+    margin-bottom: 15px;
 }
 
 #sm-banner .banner-box2 {   
-    margin-top: 20px;
+    margin-top: 20px 0 15px 0;
 }
 
 
@@ -1318,9 +1329,20 @@ footer .follow i:hover, footer a:hover{
     width: 100%;
 }
 
+
 }
 
 @media(max-width: 477px){
+    #header .logo {
+        font-size: 22px;
+      
+    }
+    
+    #mobile i {
+        font-size: 22px;
+        padding-left: 20px;
+    }
+    
     #header {
         padding: 10px 30px;
     }
@@ -1360,6 +1382,11 @@ footer .follow i:hover, footer a:hover{
     justify-content: space-between;
 }
 
+h2 {
+    font-size: 30px;
+    line-height: 1.1;
+}
+
 #product1 {
     padding: 40px;
     text-align: center;     
@@ -1370,8 +1397,12 @@ footer .follow i:hover, footer a:hover{
    
 }
 
-#sm-banner .banner-box {
+#banner {
     height: 40vh;
+}
+
+#sm-banner .banner-box {
+    height: 42vh;
     padding: 30px;
 }
 
@@ -1380,7 +1411,8 @@ footer .follow i:hover, footer a:hover{
 }
 
 #banner3 {
-    padding: 0 20px;
+    padding: 0 15px;
+    margin-top: 15px;
 }
 
 #banner3 .banner-box {
@@ -1394,5 +1426,141 @@ footer .follow i:hover, footer a:hover{
 footer p {
     text-align: start;
 }
+}
+
+@media(max-width: 374px){
+    #header .logo {
+        font-size: 20px;
+    }
+    
+    #mobile i {
+        font-size: 20px;
+        padding-left: 20px;
+    }
+    
+    
+    #hero {
+        height: 50vh;
+        padding: 25px;
+        background-position: 55%;
+    }
+    
+    #hero h2 {
+        font-size: 24px;
+    }
+    
+    #hero h1 {
+        font-size: 26px;
+    }
+    
+    #hero p {
+        font-size: 14px;
+    }
+    
+    #hero button {
+        font-size: 14px;
+    }
+    
+    #feature {
+        padding: 10px;
+        justify-content: center;
+    }
+    
+    h2 {
+        font-size: 28px;
+        line-height: 1.1;
+    }
+    
+    #product1 {
+        padding: 0;
+        margin: 0
+    }
+    
+    #product1 .pro {
+        margin: 0 0 10px 0;
+    }
+    
+    #pagination a {
+        padding: 15px 20px;
+    }
+    
+    #banner {
+        height: 30vh;
+    }
+    
+    #banner h4 {
+        font-size: 15px;
+        margin-bottom: 5px;
+    }
+    
+    #banner h2 {
+        color: #fff;
+        font-size: 22px;
+        margin-bottom: 5px;
+    }
+    
+    #banner button {
+        font-size: 14px;
+        padding: 12px;
+    }
+    
+    #sm-banner .banner-box {
+        height: 40vh;
+        padding: 20px;
+    }
+    
+    #sm-banner .banner-box {
+        height: 40vh;
+        padding: 20px;
+    }
+    
+    #sm-banner{
+        width: 100%;
+        padding: 5px
+    }
+    
+    #banner3 {
+        padding: 0 5px;
+    }
+    
+    #newsletter h4 {
+        font-size: 20px;
+        color: #fff;
+    }
+    
+    #newsletter button {
+        background-color: var(--Dark-cyan);
+        color: #ffff;
+        border: 0;
+        padding: 15px;
+        white-space: nowrap;
+        font-size: 15px;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+    
+    footer .logo {
+    font-size: 24px;
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 40px 0px;
+    padding: 40px;
+    background-color: #F8F9FA;
+}
 
 }
+
+
+/* Blog page responsive design */
+/* 
+@media(max-width: 939px){
+    #blog-container{
+        min-height: 100vh;
+        margin-bottom: 200px;
+    }
+} */
+
