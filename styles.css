@@ -901,7 +901,7 @@ footer .follow i:hover, footer a:hover{
 /* Contact page */
 
 #contact-location{
-    padding: 40px 80px;
+    padding: 40px 20px;
 }
  
 
@@ -918,6 +918,7 @@ footer .follow i:hover, footer a:hover{
 #form-details h2{
     font-size: 26px;
     color: var(--Dark-cyan);
+    margin-bottom: 20px;
 }
 
 
@@ -925,6 +926,7 @@ footer .follow i:hover, footer a:hover{
     background-color: #fff;
     flex-basis: 60%;
     padding: 40px 60px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
 }
 
 #form-details .contact-right{
@@ -967,6 +969,7 @@ footer .follow i:hover, footer a:hover{
 
 #form-details .contact-right{
     color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); 
 }
 
 #form-details .contact-right span{
