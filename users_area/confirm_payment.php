@@ -22,7 +22,7 @@ if (isset($_GET['order_id'])) {
         $insert_query = "INSERT INTO user_payment (order_id, invoice_number, amount, payment_mode) VALUES($order_id, $invoice_number, $amount, '$payment_mode')";
         $result = mysqli_query($conn, $insert_query);
         if ($result) {
-            echo "<script>alert('Successfully completed payment')</script>";
+            // echo "<script>alert('Successfully completed payment')</script>";
             echo "<script>window.open('profile.php?my_orders', '_self')</script>";
         }
     }

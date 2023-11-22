@@ -40,17 +40,17 @@ session_start();
     .contact_row .input-group input {
       width: 100%;
     }
-
+  
   }
-
+  
   @media(max-width: 576px) {
-
+      
       #form-details {
         display: flex;
         flex-direction: column-reverse;
         padding: 20px;
       }
-
+      
       #form-details .contact-left {
     background-color: #fff;
     flex-basis: 100%;
@@ -107,11 +107,11 @@ session_start();
       <h2>#LetsTalk</h2>
       <p>LEAVE A MESSAGE, We love to hear from you!</p>
     </section>
-
+    
     <section id="contact-location">
       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3940.0953764139394!2d7.486967674298248!3d9.05506459100732!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x104e0ba5000f0bd5%3A0x3443a3ae32765e3f!2sCeddi%20Plaza!5e0!3m2!1sen!2sng!4v1694817183044!5m2!1sen!2sng" width="600" height="450" style="border: 0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </section>
-
+    
     <section id="form-details">
       <div class="contact-left">
         <h2>Send your Request</h2>
@@ -137,6 +137,7 @@ session_start();
             </div>
           </div>
           <textarea name="" id="" cols="30" rows="10" placeholder="Enter your message" autocomplete="off"></textarea>
+          <input type="submit" name="send" id="send" value="Send message">
         </form>
       </div>
       <div class="contact-right">
@@ -162,9 +163,9 @@ session_start();
           </li>
         </div>
       </div>
-
+    
     </section>
-
+    
     <section id="newsletter">
       <div class="newstext">
         <h4>Sign Up For Newsletters</h4>
@@ -178,7 +179,7 @@ session_start();
         <button type="submit">Sign Up</button>
       </div>
     </section>
-
+    
     <?php include("partials/footer.php"); ?>
   </div>
   <script src="script.js"></script>

@@ -226,13 +226,13 @@ ini_set('display_errors', 1);
 if (isset($_POST['user_login'])) {
     $username = $_POST['username'];
     $user_password = $_POST['user_password'];
-
+    
     $select_query = "SELECT * from user_table WHERE username = '$username'";
     $result = mysqli_query($conn, $select_query);
     $row_count = mysqli_num_rows($result);
     $row_data = mysqli_fetch_assoc($result);
     $user_ip = getIPAddress();
-
+    
     // cart items
     $select_query_cart = "SELECT * from cart_details WHERE ip_address = '$user_ip'";
     $result_cart = mysqli_query($conn, $select_query_cart);
@@ -243,11 +243,11 @@ if (isset($_POST['user_login'])) {
             // echo "<script>alert('Log in Successful')</script>";
             if ($row_count == 1 and $row_count_cart == 0) {
                 $_SESSION['username'] = $username;
-                echo "<script>alert('Log in Successful')</script>";
+                // echo "<script>alert('Log in Successful')</script>";
                 echo "<script>window.open('profile.php', '_self')</script>";
             } else {
                 $_SESSION['username'] = $username;
-                echo "<script>alert('Log in Successful')</script>";
+                // echo "<script>alert('Log in Successful')</script>";
                 echo "<script>window.open('payment.php', '_self')</script>";
             }
         } else {

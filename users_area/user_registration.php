@@ -31,7 +31,7 @@ if (isset($_POST['user_register'])) {
             VALUES('$username', '$user_email', '$hash_password', '$user_image', '$user_ip', '$user_address', '$user_contact')";
         $sql_execute = mysqli_query($conn, $insert_query);
         if ($sql_execute) {
-            echo "<script>alert('Data successfully added to database')</script>";
+            // echo "<script>alert('Data successfully added to database')</script>";
         } else {
             echo "Error: .mysqli_error($conn)";
         }

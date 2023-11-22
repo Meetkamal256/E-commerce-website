@@ -965,6 +965,19 @@ footer .follow i:hover, footer a:hover{
     outline: none;
 }
 
+#form-details input[type="submit"]{
+    background-color: var(--Dark-cyan);
+    border: none;
+    color: #fff;
+    padding: 7px 25px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#form-details input[type="submit"]:hover{
+    background-color: var(--Dark-grey);
+}
+
 #form-details .contact-right{
     color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); 
@@ -1132,7 +1145,6 @@ footer .follow i:hover, footer a:hover{
 @media(min-width: 940px) and (max-width: 1440px){
      #container{
         min-height: 100vh;
-        margin-bottom: 800px;  
     } 
     
     #feature {
@@ -1181,7 +1193,6 @@ footer .follow i:hover, footer a:hover{
     
      #container{
         min-height: 100vh;
-        margin-bottom: 800px;
     } 
     
     #navbar {
@@ -1294,6 +1305,9 @@ footer .follow i:hover, footer a:hover{
     width: 100%;
 }
 
+footer{
+    margin-bottom: 800px;
+}
 
 }
 
@@ -1388,6 +1402,9 @@ h2 {
     padding: 40px 20px;
 }
 
+footer{
+    margin-bottom: 300px;
+}
 footer p {
     text-align: start;
 }

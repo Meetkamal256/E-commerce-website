@@ -22,7 +22,7 @@ session_start();
       margin-bottom: 800px;
     }
   }
-
+  
   @media(max-width: 800px) {
     #prodetails {
       display: flex;
@@ -58,16 +58,16 @@ session_start();
         height: 40px;
         font-size: 15px;
       }
-
+      
       #prodetails .single-pro-details a button {
         padding: 12px 30px;
         font-size: 15px;
       }
-
+      
       footer {
         margin-bottom: 300px;
       }
-
+    
     }
 
     @media(max-width: 374px) {
@@ -76,8 +76,12 @@ session_start();
         padding: 10px;
       }
 
+      footer{
+        margin-bottom: 300px;
+      }
+    
     }
-
+  
   }
 </style>
 

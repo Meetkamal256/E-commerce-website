@@ -117,7 +117,7 @@ if (isset($_POST['update_user'])) {
             </div>
             <div style='display: flex;'>
             <label for="profile">Profile Photo</label>
-                <input type="file" id="user_image" name="user_image">
+                <input type="file" id="user_image" name="user_image" required="required">
                 <img src="../product_images/<?php echo $user_img ?>" alt="" class="edit_image">
             </div>
             <div>

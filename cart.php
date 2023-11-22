@@ -61,37 +61,37 @@ include_once("functions/common_functions.php");
       #cart form table {
         max-width: 450px;
       }
-
-
+      
+      
       #cart form table thead tr th,
       #cart form table tbody tr td {
         padding: 5px;
         font-size: 15px;
       }
-
+      
       #cart form table tbody td input[type="number"] {
         width: 30px;
         height: 25px;
       }
-
+      
       #cart form table tbody td input[type="submit"] {
         padding: 7px 5px;
       }
-
+      
       #cart-add {
         padding: 15px;
       }
-
+      
       #coupon button,
       #subtotal button {
         padding: 7px 20px;
-
+      
       }
-
+      
       footer {
         margin-bottom: 300px;
       }
-
+    
     }
   }
 </style>
@@ -136,36 +136,36 @@ include_once("functions/common_functions.php");
       <i class="fas fa-outdent" id="menu-open"></i>
     </div>
   </section>
-
-
+  
+  
   <section id="page-header" class="about-header">
     <h2>#LetsTalk</h2>
     <p>LEAVE A MESSAGE, We love to hear from you!</p>
   </section>
-
+  
   <?php
   global $conn;
   $get_ip_address = getIPAddress();
   $total = 0;
-
+  
   if (isset($_POST['update_cart'])) {
     foreach ($_POST['qty'] as $product_id => $quantity) {
       $quantity = intval($quantity);
-
+      
       // Ensure quantity is a positive number
       if ($quantity <= 0) {
         continue; // Skip invalid quantities
       }
-
+      
       // Update the cart_details table for the specific product and IP address
       $update_cart = "UPDATE cart_details SET quantity = $quantity WHERE product_id = $product_id AND ip_address ='$get_ip_address'";
       $result_product_cart = mysqli_query($conn, $update_cart);
     }
   }
-
+  
   $cart_query = "SELECT * FROM cart_details WHERE ip_address = '$get_ip_address'";
   $result = mysqli_query($conn, $cart_query);
-
+  
   // Check if any "Remove" button was clicked
   if (isset($_POST['remove_cart'])) {
     foreach ($_POST['remove_cart'] as $product_id => $remove_button) {
@@ -177,13 +177,13 @@ include_once("functions/common_functions.php");
     header("Location: cart.php");
     exit();
   }
-
+  
   ?>
-
+  
   <section id="cart">
     <form method="POST">
       <table width="100%">
-
+        
         <!-- php code to display dynamic data -->
         <?php
         $get_ip_address = getIPAddress();
@@ -237,14 +237,14 @@ include_once("functions/common_functions.php");
         <?php
           }
         }
-
+        
         ?>
         </tbody>
       </table>
     </form>
   </section>
-
-
+  
+  
   <section id="cart-add">
     <?php
     $get_ip_address = getIPAddress();
