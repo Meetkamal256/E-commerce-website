@@ -693,8 +693,6 @@ footer .follow i:hover, footer a:hover{
     margin-right: 50px;
 }
 
-
-
 .small-img-group{
     display: flex;
     justify-content: space-between;
@@ -711,7 +709,7 @@ footer .follow i:hover, footer a:hover{
 }
 
 #prodetails .single-pro-details h4{
-    padding: 40px 0px 20px 0px;
+    padding: 20px 0px 5px 0px;
     color:  #041E42;
 }
 
@@ -1251,7 +1249,7 @@ footer .follow i:hover, footer a:hover{
     
     
     #hero {
-        height: 80vh;
+        height: 70vh;
         padding: 0 60px;
         background-position: top 30% left 40%;
     }
@@ -1330,7 +1328,7 @@ footer .follow i:hover, footer a:hover{
     }
     
     #hero {
-        height: 80vh;
+        height: 60vh;
         padding: 20px;
         background-position: 55%;
     }

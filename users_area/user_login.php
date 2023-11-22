@@ -15,32 +15,32 @@ ini_set('display_errors', 1);
     <title>User Login</title>
     <link rel="stylesheet" href="../styles.css" />
     <script src="https://kit.fontawesome.com/dacccb715c.js" crossorigin="anonymous"></script>
-    
+
     <style>
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
-        
-        #container {
+
+        .container {
             max-width: 550px;
             margin: 20px auto;
-        
+
         }
-        
+
         h1 {
             text-align: center;
-            color:  #088178; 
+            color: #088178;
             font-size: 25px;
         }
-        
+
         label {
             display: block;
             margin-bottom: 10px;
-            color:  #088178; 
+            color: #088178;
         }
-        
+
         input[type='text'],
         input[type='password'],
         input[type='file'] {
@@ -49,41 +49,52 @@ ini_set('display_errors', 1);
             border: 1px solid #ccc;
             border-radius: 5px;
             margin-bottom: 15px;
-        
+
         }
-        
+
         input[type='text']:focus,
         input[type='password']:focus {
             outline: none;
             border: 2px solid lightblue;
         }
-        
-        
-        
+
+
+
         .reg-btn input {
-            background-color:  #088178; 
+            background-color: #088178;
             border: none;
             padding: 7px 25px;
             color: #ffff;
             margin-bottom: 10px;
             cursor: pointer;
         }
-        
+
         .reg-btn input:hover {
             background-color: #041E42;
         }
-        
+
         .small {
             font-weight: bold;
             font-size: smaller;
             color: red;
         }
-        
+
         /* Responsive styles */
+        @media (min-width: 576px) and (max-width: 1024px){
+            footer{
+                margin-bottom: 800px;
+            }
+        } 
+        
+        
         
         @media (max-width: 576px) {
-            #container {
+            .container {
                 margin: 20px 30px;
+            }
+            
+            footer{
+                margin-bottom: 300px;
             }
         }
     </style>
@@ -129,7 +140,7 @@ ini_set('display_errors', 1);
             <i class="fas fa-outdent" id="menu-open"></i>
         </div>
     </section>
-    <div id="container">
+    <div class="container">
         <!-- Username field  -->
         <form action="" method="post">
             <h1>User Login</h1>
@@ -137,8 +148,8 @@ ini_set('display_errors', 1);
                 <label for="username">Username</label>
                 <input type="text" id="username" name="username" class="form-control" placeholder="Enter Your Username" autocomplete="off" required="required">
             </div>
-            
-            
+
+
             <div>
                 <!-- Password Field -->
                 <label for="user_password">Password</label>
@@ -149,8 +160,9 @@ ini_set('display_errors', 1);
                 <input type="submit" value="Login" name="user_login">
             </div>
             <p>Don't have an account Register?<a href="user_registration.php" class="small"> Register</a></p>
+        </form>
     </div>
-    </form>
+
     <footer>
         <div class="col">
             <a href="index.php" class="logo">LeisureWears...</a>
@@ -169,7 +181,7 @@ ini_set('display_errors', 1);
                 </div>
             </div>
         </div>
-        
+
         <div class="col">
             <h4>About</h4>
             <a href="#">About Us</a>
@@ -178,7 +190,7 @@ ini_set('display_errors', 1);
             <a href="#">Privacy Policy</a>
             <a href="#">Contact Us</a>
         </div>
-        
+
         <div class="col">
             <h4>My Account</h4>
             <a href="#">Sign In</a>
@@ -187,7 +199,7 @@ ini_set('display_errors', 1);
             <a href="#">Track My Order</a>
             <a href="#">Help</a>
         </div>
-        
+
         <div class="col install">
             <h4>Install</h4>
             <p>From App Store or Google Store</p>
@@ -198,7 +210,7 @@ ini_set('display_errors', 1);
             <p>Secured Payment Gateway</p>
             <img src="../img/pay/pay.png" alt="">
         </div>
-        
+
         <div class="copyright">
             <p> &copy Copyright 2023</p>
         </div>
@@ -214,13 +226,13 @@ ini_set('display_errors', 1);
 if (isset($_POST['user_login'])) {
     $username = $_POST['username'];
     $user_password = $_POST['user_password'];
-    
+
     $select_query = "SELECT * from user_table WHERE username = '$username'";
     $result = mysqli_query($conn, $select_query);
     $row_count = mysqli_num_rows($result);
     $row_data = mysqli_fetch_assoc($result);
     $user_ip = getIPAddress();
-    
+
     // cart items
     $select_query_cart = "SELECT * from cart_details WHERE ip_address = '$user_ip'";
     $result_cart = mysqli_query($conn, $select_query_cart);

@@ -14,6 +14,72 @@ session_start();
   <link rel="stylesheet" href="styles.css" />
   <script src="https://kit.fontawesome.com/dacccb715c.js" crossorigin="anonymous"></script>
 </head>
+<style>
+  /* Responsive styles */
+  
+  @media (min-width: 576px) and (max-width: 1024px) {
+    footer {
+      margin-bottom: 800px;
+    }
+  }
+
+  @media(max-width: 800px) {
+    #prodetails {
+      display: flex;
+      flex-direction: column;
+    }
+    
+    #prodetails .single-pro-image {
+      width: 80%;
+    }
+    
+    @media(max-width: 576px) {
+      #prodetails {
+        flex-direction: column;
+        padding: 30px;
+      }
+      
+      #prodetails .single-pro-image {
+        width: 100%;
+      }
+      
+      #prodetails .single-pro-details h4 {
+        padding: 20px 0px 10px 0px;
+        font-size: 20px;
+      }
+      
+      #prodetails .single-pro-details h2 {
+        font-size: 24px;
+        margin-bottom: 5px;
+      }
+      
+      #prodetails .single-pro-details input {
+        width: 40px;
+        height: 40px;
+        font-size: 15px;
+      }
+
+      #prodetails .single-pro-details a button {
+        padding: 12px 30px;
+        font-size: 15px;
+      }
+
+      footer {
+        margin-bottom: 300px;
+      }
+
+    }
+
+    @media(max-width: 374px) {
+      #prodetails {
+        flex-direction: column;
+        padding: 10px;
+      }
+
+    }
+
+  }
+</style>
 
 <body>
   <section id="header">
@@ -60,7 +126,7 @@ session_start();
 
 
   </section>
-  
+
 
   <section id="newsletter">
     <div class="newstext">
