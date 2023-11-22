@@ -70,12 +70,11 @@ session_start();
             width: 100%;
             height: 300px;
         }
-        
+
         #blog-details {
             width: 100%;
         }
     }
-
 </style>
 
 <body>
@@ -88,7 +87,13 @@ session_start();
                     <li><a href="display_all.php">Shop</a></li>
                     <li><a href="blog.php" class="active">Blog</a></li>
                     <li><a href="about.php">About</a></li>
-                    <li><a href="./users_area/user_registration.php">Register</a></li>
+                    <?php
+                    if (isset($_SESSION['username'])) {
+                        echo "<li><a href='./users_area/profile.php'>My Account</a></li>";
+                    } else {
+                        echo "<li><a href='./users_area/user_registration.php'>Register</a></li>";
+                    }
+                    ?>
                     <li><a href="contact.php">Contact</a></li>
                     <?php
                     if (!isset($_SESSION['username'])) {
@@ -113,7 +118,7 @@ session_start();
                 <i class="fas fa-outdent" id="menu-open"></i>
             </div>
         </section>
-
+        
         <section id="page-header" class="blog-header">
             <h2>#readmore</h2>
             <p>Read all case studies about our products!</p>

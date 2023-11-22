@@ -63,7 +63,6 @@ p{
 }
 
 
-
 /* navigation section */
 
 #header .logo{
@@ -588,7 +587,7 @@ footer .col{
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    margin-bottom: 20px;
+     margin-bottom: 20px;
 }
 
 
@@ -901,116 +900,106 @@ footer .follow i:hover, footer a:hover{
 
 /* Contact page */
 
-#contact-details{
+#contact-location{
     padding: 40px 80px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-#contact-details .details{
-    width: 40%;
-}
-
-#contact-details .details span,
-#form-details form {
-    font-size: 12px;
-    text-transform: uppercase;
-}
-
-#contact-details .details h2,
-#form-details form h2 {
-    font-size: 26px;
-    line-height: 1.2;
-    padding: 20px 0;
-}
-
-#contact-details .details li{
-    list-style: none;
-    display: flex;
-    align-items: center;
-    padding: 10px 0;
-}
-
-#contact-details .details li i{
-    font-size: 14px;
-    padding-right: 22px;
-}
-
-#contact-details .details p{
-    margin: 0;
-    font-size: 14px;
-}
-
-#contact-details .details .map{
-    width: 55%;
-    height: 400px;
 }
  
-#contact-details .details .map iframe{
+
+
+#contact-location iframe{
     width: 100%;
-    height: 100%;
 }
 
 #form-details{
-     display: flex;
-    justify-content: space-between;
-    margin: 40px;
-    padding: 80px;
-    border: 1px solid lightgray;
-}  
-
-#form-details form{
-    width: 65%;
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    padding: 40px 80px;
 }
 
-#form-details form input,
-#form-details form textarea{
-    width: 100%;
-    padding: 12px 15px;
-    outline: none;
-    margin-bottom: 20px;
-    border: 1px solid lightgray;
+#form-details h2{
+    font-size: 26px;
+    color: var(--Dark-cyan);
 }
 
-#form-details form button{
+
+#form-details .contact-left{
+    background-color: #fff;
+    flex-basis: 60%;
+    padding: 40px 60px;
+}
+
+#form-details .contact-right{
     background-color: var(--Dark-cyan);
-    padding: 15px 30px;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    font-size: 15px;
+    flex-basis: 40%;
+    padding: 40px;
 }
 
-#form-details .people div{
+
+#form-details .contact_row{
     display: flex;
-    margin-bottom: 20px;
-    align-items: flex-start;
-
+    justify-content: space-between;
 }
 
-#form-details .people img{
-    width: 65px;
-    height: 65px;
-    object-fit: cover;
-    margin-right: 15px;
-}
-
-#form-details .people p{
-    margin: 0;
-    font-size: 13px;
-    line-height: 25px;
-}
-
-#form-details .people p span{
+#form-details .contact_row label{
     display: block;
+    margin-bottom: 5px;
+    color: var(--Dark-cyan);
+   
+}
+
+.contact_row .input-group{
+    flex-basis: 45%;
+}
+
+.contact_row .input-group input{
+    flex-basis: 100%;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #cccc;
+    margin-bottom: 15px;
+}
+
+#form-details textarea{
+    width: 100%;
+    padding: 7px;
+    border: 1px solid #cccc;
+    outline: none;
+}
+
+#form-details .contact-right{
+    color: #fff;
+}
+
+#form-details .contact-right span{
     font-size: 16px;
-    color: #000;
+    margin-bottom: 15px;
     font-weight: 600;
 }
+
+#form-details .contact-right h2 {
+    font-size: 22px;
+    color: #fff;
+    line-height: 1.2;
+    margin: 10px 0;
+}
+
+#form-details .contact-right h4{
+    font-size: 18px;
+}
+
+#form-details .contact-right li{
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+#form-details .contact-right p{
+    color: #ffff;
+    margin-left: 15px;
+}
+
+
+
+
 
 /* Cart page */
 
@@ -1533,6 +1522,7 @@ footer p {
     font-size: 24px;
 }
 
+
 footer {
     display: flex;
     justify-content: space-between;
@@ -1541,5 +1531,4 @@ footer {
     padding: 40px;
     background-color: #F8F9FA;
 }
-
 }

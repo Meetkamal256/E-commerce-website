@@ -2,8 +2,8 @@
     <div class="col">
         <a href="index.php" class="logo">LeisureWears...</a>
         <h4>Contact</h4>
-        <p> <strong>Address: </strong> 562 Wellington Road Street 32 San Francisco </p>
-        <p><strong>Phone:</strong> +012222 365/(+91) 0123456789</p>
+        <p> <strong>Address: </strong>264 Tafawa Balewa Rd, Phase 1 901002, Abuja, Federal Capital Territory</p>
+        <p><strong>Phone:</strong>+234123456789</p>
         <p><strong>Hours:</strong> 10:00 - 18:00 Mon - Sat</p>
         <div class="follow">
             <h4>Follow Us</h4>

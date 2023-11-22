@@ -129,7 +129,7 @@ session_start();
                 <button>Collection</button>
             </div>
         </section>
-
+        
         <section id="banner3">
             <div class="banner-box">
                 <h2>Season Sale</h2>
@@ -144,7 +144,7 @@ session_start();
                 <h3>New trendy prints</h3>
             </div>
         </section>
-
+        
         <section id="newsletter">
             <div class="newstext">
                 <h4>Sign Up For Newsletters</h4>
