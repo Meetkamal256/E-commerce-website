@@ -15,6 +15,86 @@ include_once("functions/common_functions.php");
   <link rel="stylesheet" href="styles.css" />
   <script src="https://kit.fontawesome.com/dacccb715c.js" crossorigin="anonymous"></script>
 </head>
+<style>
+  /* Responsive styles */
+
+  @media (min-width: 576px) and (max-width: 1024px) {
+    footer {
+      margin-bottom: 800px;
+    }
+  }
+
+  @media(max-width: 900px) {
+    #cart {
+      padding: 40px;
+    }
+
+    #cart form table {
+      max-width: 700px;
+    }
+
+
+    #cart form table thead tr th,
+    #cart form table tbody tr td {
+      padding: 5px 7px;
+    }
+
+    #cart-add {
+      padding: 40px;
+      flex-direction: column;
+    }
+
+    #coupon {
+      width: 100%;
+    }
+
+    #subtotal {
+      width: 100%;
+
+    }
+
+    @media(max-width: 576px) {
+      #cart {
+        padding: 15px;
+      }
+
+      #cart form table {
+        max-width: 450px;
+      }
+
+
+      #cart form table thead tr th,
+      #cart form table tbody tr td {
+        padding: 5px;
+        font-size: 15px;
+      }
+
+      #cart form table tbody td input[type="number"] {
+        width: 30px;
+        height: 25px;
+      }
+
+      #cart form table tbody td input[type="submit"] {
+        padding: 7px 5px;
+      }
+
+      #cart-add {
+        padding: 15px;
+      }
+
+      #coupon button,
+      #subtotal button {
+        padding: 7px 20px;
+
+      }
+
+      footer {
+        margin-bottom: 300px;
+      }
+
+    }
+  }
+</style>
 
 <body>
   <section id="header">
@@ -28,7 +108,6 @@ include_once("functions/common_functions.php");
         <?php
         if (isset($_SESSION['username'])) {
           echo "<li><a href='./users_area/profile.php'>My Account</a></li>";
-    
         } else {
           echo "<li><a href='./users_area/user_registration.php'>Register</a></li>";
         }
@@ -98,13 +177,13 @@ include_once("functions/common_functions.php");
     header("Location: cart.php");
     exit();
   }
-  
+
   ?>
-  
+
   <section id="cart">
     <form method="POST">
       <table width="100%">
-        
+
         <!-- php code to display dynamic data -->
         <?php
         $get_ip_address = getIPAddress();
@@ -114,12 +193,13 @@ include_once("functions/common_functions.php");
         if ($result_count > 0) {
           echo " <thead>
           <tr>
-            <td>Remove</td>
-            <td>Image</td>
-            <td>Product</td>
-            <td>Price</td>
-            <td>Quantity</td>
-            <td>Operations</td>
+            <th>Image</th>
+            <th>Product</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Update cart</th>
+            <th>Delete cart</th>
+            </th>
           </tr>
         </thead>
         <tbody>";
@@ -144,28 +224,27 @@ include_once("functions/common_functions.php");
             $product_title = $row_product_price['product_title'];
             $product_image1 = $row_product_price['product_image1'];
             $total += ($product_price * $row['quantity']);
-        
+
         ?>
             <tr>
-              <td><input type="checkbox"></td>
               <td><img src="product_images/<?php echo $product_image1 ?>" alt=""></td>
               <td><?php echo $product_title ?></td>
               <td>&#x20A6; <?php echo $formatted_price ?></td>
-              <td><input type="number" name='qty[<?php echo $product_id ?>]' value='<?php echo $row['quantity'] ?>'></td>
+              <td><input type="number" name='qty[<?php echo $product_id ?>]' value='<?php echo $row['quantity'] ?>' min="1" max="20"></td>
               <td><input type="submit" value='Update Cart' name='update_cart'></td>
               <td><input type="submit" value='Remove' name='remove_cart[<?php echo $product_id ?>]'></td>
             </tr>
         <?php
           }
         }
-        
+
         ?>
         </tbody>
       </table>
     </form>
   </section>
-  
-  
+
+
   <section id="cart-add">
     <?php
     $get_ip_address = getIPAddress();
@@ -197,9 +276,9 @@ include_once("functions/common_functions.php");
         </div>";
     }
     ?>
-  
+
   </section>
-  
+
   <?php include("partials/footer.php"); ?>
   <script src="script.js"></script>
 </body>

@@ -61,7 +61,7 @@ if (isset($_POST['user_register'])) {
     <link rel="stylesheet" href="../styles.css" />
     <script src="https://kit.fontawesome.com/dacccb715c.js" crossorigin="anonymous"></script>
     
-
+    
     <style>
         * {
             box-sizing: border-box;
@@ -69,12 +69,10 @@ if (isset($_POST['user_register'])) {
             padding: 0;
         
         }
-
-        #container {
+        
+        .container {
             max-width: 550px;
             margin: 20px auto;
-            min-height: 100vh;
-
         }
         
         h1 {
@@ -128,9 +126,20 @@ if (isset($_POST['user_register'])) {
         
         /* Responsive styles */
         
+        @media (min-width: 576px) and (max-width: 1024px){
+            footer{
+                margin-bottom: 800px;
+            }
+        } 
+        
+        
         @media (max-width: 576px) {
-            #container {
+            .container {
                 margin: 20px 30px;
+            }
+            
+            footer{
+                margin-bottom: 300px;
             }
         }
     </style>
@@ -176,7 +185,7 @@ if (isset($_POST['user_register'])) {
             <i class="fas fa-outdent" id="menu-open"></i>
         </div>
     </section>
-    <div id="container">
+    <div class="container">
         <!-- Username field  -->
         <form action="" method="post" enctype="multipart/form-data">
             <h1>User Registration</h1>
@@ -238,7 +247,7 @@ if (isset($_POST['user_register'])) {
                 </div>
             </div>
         </div>
-
+        
         <div class="col">
             <h4>About</h4>
             <a href="#">About Us</a>
@@ -247,7 +256,7 @@ if (isset($_POST['user_register'])) {
             <a href="#">Privacy Policy</a>
             <a href="#">Contact Us</a>
         </div>
-
+        
         <div class="col">
             <h4>My Account</h4>
             <a href="#">Sign In</a>
@@ -256,7 +265,7 @@ if (isset($_POST['user_register'])) {
             <a href="#">Track My Order</a>
             <a href="#">Help</a>
         </div>
-
+        
         <div class="col install">
             <h4>Install</h4>
             <p>From App Store or Google Store</p>

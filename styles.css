@@ -1006,76 +1006,55 @@ footer .follow i:hover, footer a:hover{
 
 #cart{
     padding: 40px 80px;
-  
 }
 
-#cart table{
+#cart form table {
     width: 100%;
     border-collapse: collapse;
     table-layout: fixed;
+    max-width: 900px;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+}
+
+#cart form table thead tr th{
+    width: 100%;
+    padding: 7px 25px;
+    background-color: #041E42;
+    color: #fff;
     white-space: nowrap;
-    table-layout: fixed;
-    white-space: nowrap;
+}
+
+#cart form table tbody td{
+    padding: 7px 25px;
+    color: #041E42;
+}
+
+#cart form table tbody td input[type="number"]{
+    width: 50px;
+    height: 30px;
+    text-align: center;
+    background-color: #041E42;
+    color: #ffff;
+    border: none;
+}
+
+#cart form table tbody td input[type="submit"]{
+    background-color: #041E42;
+    border: none;
+    padding: 7px 25px;
+    color: #fff;
+    cursor: pointer;
+}
+
+#cart form table tbody td input[type="submit"]:hover{
+    background-color: var(--Dark-cyan);
 }
 
 #cart table img{
     width: 70px;
 }
-
-#cart table td:nth-child(1){
-    width: 100px;
-    text-align: center;
-}
-
-#cart table td:nth-child(2){
-    width: 150px;
-}
-
-#cart table td:nth-child(3){
-    width: 250px;
-}
-
-#cart table td:nth-child(4),
-#cart table td:nth-child(5),
-#cart table td:nth-child(6){
-    width: 150px;
-    text-align: center;
-}
-
-#cart table td:nth-child(5) input{
-    width: 70px;
-    padding: 10px 5px 10px 15px; 
-}
-
-#cart table thead tr {
-    border: 1px solid #e2e9e1;
-    border-left: none;
-    border-right: none;
-}
-
-
-#cart table thead td{
-    text-transform: uppercase;
-    font-size: 13px;
-    padding: 18px 0;
-}
-
-#cart table tbody tr td{
-    padding-top: 15px;
-}
-
-#cart table thead tr td{
-    font-size: 13px;
-}
-
-#cart table tbody tr td input{
-    background-color: var(--Dark-cyan);
-    padding: 7px 20px;
-    border: none;
-    color:  #fff;
-    font-size: 15px;
-}
-
 
 #cart-add{
     padding: 40px 80px;
@@ -1105,7 +1084,7 @@ footer .follow i:hover, footer a:hover{
 
 #coupon button,
 #subtotal button{ 
-    background-color: var(--Dark-cyan);
+    background-color: #041E42;
     color: #fff;
     border: none;
     padding: 12px 20px;
@@ -1113,10 +1092,16 @@ footer .follow i:hover, footer a:hover{
     border-radius: 5px;
 }
 
+#coupon button:hover,
+#subtotal button:hover{
+    background-color: var(--Dark-cyan);
+}
+
 #subtotal{
     width: 50%;
     margin-bottom: 30px;
-    border: 1px solid lightgray;
+    border: none;
+    color: #041E42;
     padding: 30px;
 }
 
