@@ -1022,10 +1022,10 @@ footer .follow i:hover, footer a:hover{
 }
 
 #cart form table {
-    width: 100%;
+    width: 80%;
     border-collapse: collapse;
-    table-layout: fixed;
-    max-width: 900px;
+    /* table-layout: fixed; */
+    /* max-width: 900px; */
     display: flex;
     flex-direction: column;
     margin: 0 auto;
@@ -1037,11 +1037,15 @@ footer .follow i:hover, footer a:hover{
     background-color: #041E42;
     color: #fff;
     white-space: nowrap;
+    /* box-shadow: rgba(0, 0, 0, 0.5); */
 }
 
 #cart form table tbody td{
+    width: 100%;
     padding: 7px 25px;
     color: #041E42;
+    text-align: left;
+    
 }
 
 #cart form table tbody td input[type="number"]{

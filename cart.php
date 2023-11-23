@@ -17,49 +17,51 @@ include_once("functions/common_functions.php");
 </head>
 <style>
   /* Responsive styles */
-
+  
   @media (min-width: 576px) and (max-width: 1024px) {
     footer {
       margin-bottom: 800px;
     }
   }
-
+  
   @media(max-width: 900px) {
     #cart {
       padding: 40px;
     }
-
+    
     #cart form table {
       max-width: 700px;
     }
-
-
+    
+    
     #cart form table thead tr th,
     #cart form table tbody tr td {
       padding: 5px 7px;
     }
-
+    
     #cart-add {
       padding: 40px;
       flex-direction: column;
     }
-
+    
     #coupon {
       width: 100%;
     }
-
+    
     #subtotal {
       width: 100%;
-
+    
     }
-
+    
     @media(max-width: 576px) {
       #cart {
         padding: 15px;
+  
       }
-
+      
       #cart form table {
         max-width: 450px;
+        margin: 0;
       }
       
       
@@ -224,12 +226,12 @@ include_once("functions/common_functions.php");
             $product_title = $row_product_price['product_title'];
             $product_image1 = $row_product_price['product_image1'];
             $total += ($product_price * $row['quantity']);
-
+        
         ?>
             <tr>
               <td><img src="product_images/<?php echo $product_image1 ?>" alt=""></td>
               <td><?php echo $product_title ?></td>
-              <td>&#x20A6; <?php echo $formatted_price ?></td>
+              <td>&#x20A6;<?php echo $formatted_price ?></td>
               <td><input type="number" name='qty[<?php echo $product_id ?>]' value='<?php echo $row['quantity'] ?>' min="1" max="20"></td>
               <td><input type="submit" value='Update Cart' name='update_cart'></td>
               <td><input type="submit" value='Remove' name='remove_cart[<?php echo $product_id ?>]'></td>
