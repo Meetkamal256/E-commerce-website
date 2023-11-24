@@ -138,6 +138,7 @@
                 $result_orders = mysqli_query($conn, $get_order_details);
                 $number = 1;
                 while ($row_orders = mysqli_fetch_assoc($result_orders)) {
+                    $user_id = $row_orders['user_id'];
                     $order_id = $row_orders['order_id'];
                     $amount_due = number_format($row_orders['amount_due']);
                     $invoice_number = $row_orders['invoice_number'];

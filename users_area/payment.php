@@ -6,6 +6,7 @@ ini_set('display_errors', 1);
 session_start();
 
 
+
 ?>
 
 <!DOCTYPE html>
@@ -129,6 +130,7 @@ session_start();
     $result = mysqli_query($conn, $get_user);
     $row = mysqli_fetch_assoc($result);
     $user_id = $row['user_id'];
+    echo $user_id;
     ?>
     
     <h1>Payment Options</h1>

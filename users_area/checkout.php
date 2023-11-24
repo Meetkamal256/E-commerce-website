@@ -1,6 +1,7 @@
 <?php
 include("partials/connect.php");
 include_once("functions/common_functions.php");
+session_start();
 ?>
 
 <!DOCTYPE html>

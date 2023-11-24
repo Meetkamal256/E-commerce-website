@@ -17,60 +17,60 @@ session_start();
 
 <style>
     @media(min-width: 939px) and (max-width: 1280px) {
-
+        
         footer {
             margin-bottom: 800px;
         }
-
+    
     }
-
+    
     @media(max-width: 939px) {
         #blog-container {
             min-height: 100vh;
         }
-
-
+        
+        
         #blog {
             padding: 150px 50px 0px 50px;
         }
-
+        
         #blog .blog-img img {
             height: 250px;
         }
-
+        
         #blog .blog-box h1 {
             font-size: 60px;
         }
-
+        
         footer {
             margin-bottom: 800px;
         }
     }
-
+    
     @media(max-width: 700px) {
         #blog {
             padding: 150px 20px;
         }
-
+        
         #blog .blog-box {
             flex-direction: column;
             align-items: flex-start;
         }
-
+        
         #blog .blog-img {
             width: 100%;
             margin-right: 40px;
         }
-
+        
         #blog .blog-details {
             width: 100%;
         }
-
+        
         #blog .blog-img img {
             width: 100%;
             height: 300px;
         }
-
+        
         #blog-details {
             width: 100%;
         }
