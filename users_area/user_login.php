@@ -4,7 +4,64 @@ include_once(__DIR__ . "/../functions/common_functions.php");
 @session_start();
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
+
+$username = $user_password = "";
+$errors = array('username' => "", 'user_password' => "");
+
+if (isset($_POST['user_login'])) {
+    // validate username
+    if (empty($_POST['username'])) {
+        $errors['username'] = 'Please provide a username';
+    } else {
+        $username = $_POST['username'];
+        // Check if the username exists in the database
+        $check_username_query = "SELECT * FROM user_table WHERE username = '$username'";
+        $check_username_result = mysqli_query($conn, $check_username_query);
+        $num_rows = mysqli_num_rows($check_username_result);
+        
+        if ($num_rows == 0) {
+            $errors['username'] = 'Invalid username';
+        }
+    }
+    
+    // validate password
+    if (empty($_POST['user_password'])) {
+        $errors['user_password'] = 'Please provide a password';
+    } else {
+        $user_password = $_POST['user_password'];
+    }
+    
+    // Check if there are errors before processing the form
+    if (empty($errors['username']) && empty($errors['user_password'])) {
+        $select_query = "SELECT * FROM user_table WHERE username = '$username'";
+        $result = mysqli_query($conn, $select_query);
+        $row_count = mysqli_num_rows($result);
+        
+        if ($row_count > 0) {
+            $row_data = mysqli_fetch_assoc($result); // Fetch the row data
+            if (!password_verify($user_password, $row_data['user_password'])) {
+                $errors['user_password'] = 'Password invalid';
+            } else {
+                // cart items
+                $user_ip = getIPAddress();
+                $select_query_cart = "SELECT * FROM cart_details WHERE ip_address = '$user_ip'";
+                $result_cart = mysqli_query($conn, $select_query_cart);
+                $row_count_cart = mysqli_num_rows($result_cart);
+                
+                $_SESSION['username'] = $username;
+                
+                if ($row_count == 1 && $row_count_cart == 0) {
+                    echo "<script>window.open('profile.php', '_self')</script>";
+                } else {
+                    echo "<script>window.open('payment.php', '_self')</script>";
+                }
+            }
+        }
+    }
+}
 ?>
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -15,32 +72,32 @@ ini_set('display_errors', 1);
     <title>User Login</title>
     <link rel="stylesheet" href="../styles.css" />
     <script src="https://kit.fontawesome.com/dacccb715c.js" crossorigin="anonymous"></script>
-
+    
     <style>
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
-
+        
         .container {
             max-width: 550px;
             margin: 20px auto;
-
+        
         }
-
+        
         h1 {
             text-align: center;
             color: #088178;
             font-size: 25px;
         }
-
+        
         label {
             display: block;
             margin-bottom: 10px;
             color: #088178;
         }
-
+        
         input[type='text'],
         input[type='password'],
         input[type='file'] {
@@ -49,17 +106,17 @@ ini_set('display_errors', 1);
             border: 1px solid #ccc;
             border-radius: 5px;
             margin-bottom: 15px;
-
+        
         }
-
+        
         input[type='text']:focus,
         input[type='password']:focus {
             outline: none;
             border: 2px solid lightblue;
         }
-
-
-
+        
+        
+        
         .reg-btn input {
             background-color: #088178;
             border: none;
@@ -68,32 +125,38 @@ ini_set('display_errors', 1);
             margin-bottom: 10px;
             cursor: pointer;
         }
-
+        
         .reg-btn input:hover {
             background-color: #041E42;
         }
-
+        
         .small {
             font-weight: bold;
             font-size: smaller;
             color: red;
         }
-
+        
+        .red-text {
+            color: red;
+            font-size: 13px;
+            margin-bottom: 5px;
+        }
+        
         /* Responsive styles */
-        @media (min-width: 576px) and (max-width: 1024px){
-            footer{
+        @media (min-width: 576px) and (max-width: 1024px) {
+            footer {
                 margin-bottom: 800px;
             }
-        } 
+        }
         
-        
+
         
         @media (max-width: 576px) {
             .container {
                 margin: 20px 30px;
             }
             
-            footer{
+            footer {
                 margin-bottom: 300px;
             }
         }
@@ -142,27 +205,30 @@ ini_set('display_errors', 1);
     </section>
     <div class="container">
         <!-- Username field  -->
-        <form action="" method="post">
+        <form action="" method="post" onsubmit="return validateLoginForm()">
             <h1>User Login</h1>
             <div>
                 <label for="username">Username</label>
-                <input type="text" id="username" name="username" class="form-control" placeholder="Enter Your Username" autocomplete="off" required="required">
+                <input type="text" id="username" name="username" class="form-control" placeholder="Enter Your Username" autocomplete="off" value="<?php echo $username ?>">
+                <div class="red-text" id="username_error"><?php echo $errors['username']; ?></div>
             </div>
-
-
+            
             <div>
                 <!-- Password Field -->
                 <label for="user_password">Password</label>
-                <input type="password" id="user_password" name="user_password" class="form-control" placeholder="Enter Your Password" autocomplete="off" required="required">
+                <input type="password" id="user_password" name="user_password" class="form-control" placeholder="Enter Your Password" autocomplete="off" value="<?php echo $user_password ?>">
+                <div class="red-text" id="user_password_error"><?php echo $errors['user_password']; ?></div>
             </div>
-            
             <div class="reg-btn">
                 <input type="submit" value="Login" name="user_login">
             </div>
-            <p>Don't have an account Register?<a href="user_registration.php" class="small"> Register</a></p>
+            <p>Don't have an account? <a href="user_registration.php" class="small">Register</a></p>
+            <p class="demoLogin">Demo account login details username: meetkamal256 and password: kamalm </p>
+            <a href="http://localhost/E-commerce-website/admin/admin_login.php">Admin area</a> 
         </form>
     </div>
-
+    
+    
     <footer>
         <div class="col">
             <a href="index.php" class="logo">LeisureWears...</a>
@@ -216,45 +282,35 @@ ini_set('display_errors', 1);
         </div>
     </footer>
     <script src="../script.js"></script>
-
-</body>
-
-</html>
-
-<!-- php code -->
-<?php
-if (isset($_POST['user_login'])) {
-    $username = $_POST['username'];
-    $user_password = $_POST['user_password'];
-    
-    $select_query = "SELECT * from user_table WHERE username = '$username'";
-    $result = mysqli_query($conn, $select_query);
-    $row_count = mysqli_num_rows($result);
-    $row_data = mysqli_fetch_assoc($result);
-    $user_ip = getIPAddress();
-    
-    // cart items
-    $select_query_cart = "SELECT * from cart_details WHERE ip_address = '$user_ip'";
-    $result_cart = mysqli_query($conn, $select_query_cart);
-    $row_count_cart = mysqli_num_rows($result_cart);
-    if ($row_count > 0) {
-        $_SESSION['username'] = $username;
-        if (password_verify($user_password, $row_data['user_password'])) {
-            // echo "<script>alert('Log in Successful')</script>";
-            if ($row_count == 1 and $row_count_cart == 0) {
-                $_SESSION['username'] = $username;
-                // echo "<script>alert('Log in Successful')</script>";
-                echo "<script>window.open('profile.php', '_self')</script>";
-            } else {
-                $_SESSION['username'] = $username;
-                // echo "<script>alert('Log in Successful')</script>";
-                echo "<script>window.open('payment.php', '_self')</script>";
+    <script>
+        function validateLoginForm(){
+            // retrieve all values from input field
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('user_password').value;
+            
+            // a variable to track form validity
+            var isValid = true; 
+            
+            // check for empty input fields
+            if(username.trim() == ""){
+                document.getElementById("username_error").innerHTML = "Please provide a username";
+                isValid = false;
+            }else{
+                document.getElementById("username_error").innerHTML = "";
             }
-        } else {
-            echo "<script>alert('Invalid Credentials')</script>";
+              
+              // check for empty input fields
+              if(password.trim() == ""){
+                document.getElementById("user_password_error").innerHTML = "Please provide a password";
+                isValid = false;
+            }else{
+                document.getElementById("user_password_error").innerHTML = "";
+            }
+            
+            return isValid;
+        
+        
         }
-    } else {
-        echo "<script>alert('Invalid Credentials')</script>";
-    }
-}
-?>
+    </script>
+</body>
+</html>

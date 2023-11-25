@@ -14,6 +14,13 @@ if (isset($_POST["admin_login"])) {
         $errors['admin_username'] = "Please provide your username";
     } else {
         $admin_username = $_POST["admin_username"];
+        // check if username exists in table
+        $check_query = "SELECT * from admin_table WHERE admin_username = '$admin_username'";
+        $execute_query = mysqli_query($conn, $check_query);
+        $num_rows = mysqli_num_rows($execute_query);
+        if($num_rows == 0){
+            $errors['admin_username'] = "Username not found";
+        } 
     }
     
     // validate password
@@ -21,6 +28,8 @@ if (isset($_POST["admin_login"])) {
         $errors['admin_password'] = "Please provide your password";
     } else {
         $admin_password = $_POST["admin_password"];
+        // check if password matches
+
     }
     
     
@@ -37,14 +46,12 @@ if (isset($_POST["admin_login"])) {
             // Verify password only if the row data is not null
             if ($row_data !== null && password_verify($admin_password, $row_data['admin_password'])) {
                 $_SESSION['admin_username'] = $admin_username;
-                echo "<script>alert('login successful')</script>";
+                // echo "<script>alert('login successful')</script>";
                 echo "<script>window.open('adminindex.php', '_self')</script>";
             } else {
                 $errors['admin_password'] = "Invalid password";
             }
-        } else {
-            $errors['admin_username'] = "Username not found";
-        }
+        } 
     } else {
         echo "Error: " . mysqli_error($conn);
     }
@@ -159,6 +166,11 @@ if (isset($_POST["admin_login"])) {
         margin-bottom: 3px;
     }
 
+    .right_section form p{
+            margin-top: 15px;
+            font-size: 15px;
+        }
+
     /* Responsive Styles */
 
     @media(max-width: 600px) {
@@ -167,16 +179,17 @@ if (isset($_POST["admin_login"])) {
             margin: 50px 30px 200px 30px;
             min-height: 100vh;
         }
-
+        
         form input[type="text"],
         form input[type="password"] {
             padding: 5px;
         }
-
+        
         form input[type="submit"] {
             padding: 7px;
-
+        
         }
+    
     }
 </style>
 
@@ -187,19 +200,45 @@ if (isset($_POST["admin_login"])) {
             <img src="../img/login2.jpg" alt="">
         </div>
         <div class="right_section">
-            <form action="" method="POST">
+            <form action="" method="POST" onsubmit="return validateAdminLoginForm()">
                 <label for="admin_username">Username</label>
                 <input type="text" name="admin_username" id="admin_username" placeholder="Username" value="<?php echo htmlspecialchars($admin_username) ?>">
-                <div class="red-text"><?php echo $errors["admin_username"]; ?></div>
+                <div class="red-text" id="admin_username_error"><?php echo $errors["admin_username"]; ?></div>
                 <label for="admin_password">Password</label>
                 <input type="password" name="admin_password" id="admin_password" placeholder="Password" value="<?php echo htmlspecialchars($admin_password) ?>">
-                <div class="red-text"><?php echo $errors["admin_password"]; ?></div>
+                <div class="red-text" id="admin_password_error"><?php echo $errors["admin_password"]; ?></div>
                 <a href="#"><small class="reset">Forgot Password?</small></a>
                 <input type="submit" value="Login" name="admin_login">
                 <small>Don't have an account?<a href="admin_registration.php">Register</a></small>
+                <p>Admin account login details- username: adminLogin256 and password: Admin256</p>
             </form>
         </div>
     </div>
+    <script>
+        function validateAdminLoginForm(){
+        // retrieve all values from input field
+        var username = document.getElementById("admin_username").value;
+        var password = document.getElementById("admin_password").value;
+        
+        var isValid = true;
+        
+        // check for empty fields
+        if(username.trim() == ""){
+            document.getElementById("admin_username_error").innerHTML = "Please provide your username";
+            isValid = false;
+        }else{
+            document.getElementById("admin_username_error").innerHTML = "";
+        }
+        
+        if(password.trim() == ""){
+            document.getElementById("admin_password_error").innerHTML = "Please provide your username";
+            isValid = false;
+        }else{
+            document.getElementById("admin_password_error").innerHTML = "";
+        }
+        return isValid;
+        
+        }
+    </script>
 </body>
-
 </html>

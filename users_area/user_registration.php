@@ -16,7 +16,7 @@ if (isset($_POST['user_register'])) {
     } else {
         $username = $_POST['username'];
     }
-
+    
     // validate email
     if (empty($_POST['user_email'])) {
         $errors['user_email'] = "An email address is required <br>";
@@ -26,14 +26,14 @@ if (isset($_POST['user_register'])) {
             $errors['user_email'] = "Email must be a valid address <br>";
         }
     }
-
+    
     // validate password
     if (empty($_POST['user_password'])) {
         $errors['user_password'] = "A password is required <br>";
     } else {
         $user_password = $_POST['user_password'];
     }
-
+    
     // validate confirm password
     if (empty($_POST['user_conf_password'])) {
         $errors['user_conf_password'] = "A password confirmation is required <br>";
@@ -43,7 +43,7 @@ if (isset($_POST['user_register'])) {
             $errors['user_conf_password'] = "Passwords do not match <br>";
         }
     }
-
+    
     // validate user_image
     $user_image_tmp = '';
     if ($_FILES['user_image']['error'] == UPLOAD_ERR_NO_FILE) {
@@ -192,14 +192,18 @@ if (isset($_POST['user_register'])) {
             margin-bottom: 5px;
         }
 
+        input:focus:invalid{
+            border: 1px solid red;
+        }
+        
         /* Responsive styles */
-
+        
         @media (min-width: 576px) and (max-width: 1024px) {
             footer {
                 margin-bottom: 800px;
             }
         }
-
+        
 
         @media (max-width: 576px) {
             .container {
@@ -259,7 +263,7 @@ if (isset($_POST['user_register'])) {
             <h1>User Registration</h1>
             <div>
                 <label for="username">Username</label>
-                <input type="text" id="username" name="username" class="form-control" placeholder="Enter Your Username" autocomplete="off" value="<?php echo $username ?>">
+                <input type="text" id="username" name="username" class="form-control" placeholder="Enter Your Username" autocomplete="off" value="<?php echo $username ?>" minlength="8" maxlength="15" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]+$" title="Username must be 8-15 characters containing at least one letter and one number">
                 <div class="red-text" id="username_error"><?php echo $errors['username'] ?></div>
             </div>
             <!-- Email field -->
@@ -277,7 +281,7 @@ if (isset($_POST['user_register'])) {
             <div>
                 <!-- Password Field -->
                 <label for="user_password">Password</label>
-                <input type="password" id="user_password" name="user_password" placeholder="Enter Your Password" autocomplete="off" value="<?php echo $user_password ?>">
+                <input type="password" id="user_password" name="user_password" placeholder="Enter Your Password" autocomplete="off" value="<?php echo $user_password ?>" minlength="8" maxlength="15" pattern="^(?=.*[A-Z])(?=.*\d).{8,12}$" title="Password must be 8-12 characters with at least one capital letter and one number">
                 <div class="red-text" id="user_password_error"><?php echo $errors['user_password'] ?></div>
             </div>
             <!-- Confirm Password Field -->

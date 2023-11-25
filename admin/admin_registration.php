@@ -206,15 +206,15 @@ if (isset($_POST["admin_register"])) {
             <img src="../img/register2.jpg" alt="reg">
         </div>
         <div class="right">
-            <form action="" method="POST" onsubmit="return validateForm()" autocomplete="off">
+            <form action="" method="POST" onsubmit="return validateAdminRegisterForm()" autocomplete="off">
                 <label for="username">Username</label>
-                <input type="text" name="admin_username" id="admin_username" placeholder="Username" value="<?php echo htmlspecialchars($admin_username) ?>">
+                <input type="text" name="admin_username" id="admin_username" placeholder="Username" value="<?php echo htmlspecialchars($admin_username) ?>" minlength="8" maxlength="15" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]+$" title="Username must be 8-15 characters containing at least one letter and one number">
                 <div class="red-text" id="usernameError"><?php echo $errors["admin_username"] ?></div>
                 <label for="admin_email">Email</label>
                 <input type="email" name="admin_email" id="admin_email" placeholder="Email" value="<?php echo htmlspecialchars($admin_email) ?>">
                 <div class="red-text" id="emailError"><?php echo $errors["admin_email"] ?></div>
                 <label for="password">Password</label>
-                <input type="password" name="admin_password" id="admin_password" placeholder="Password" value="<?php echo ($admin_password) ?>">
+                <input type="password" name="admin_password" id="admin_password" placeholder="Password" value="<?php echo ($admin_password) ?>" minlength="8" maxlength="15" pattern="^(?=.*[A-Z])(?=.*\d).{8,12}$" title="Password must be 8-12 characters with at least one capital letter and one number">
                 <div class="red-text" id="passwordError"><?php echo $errors["admin_password"] ?></div>
                 <label for="conf_password">Confirm Password</label>
                 <input type="password" name="admin_conf_password" id="admin_conf_password" placeholder="Confirm Password" value="<?php echo ($admin_conf_password) ?>">
@@ -225,7 +225,7 @@ if (isset($_POST["admin_register"])) {
         </div>
     </div>
     <script>
-        function validateForm() {
+        function validateAdminRegisterForm() {
             var username = document.getElementById('admin_username').value;
             var email = document.getElementById('admin_email').value;
             var password = document.getElementById('admin_password').value;
