@@ -197,7 +197,7 @@ if (isset($_POST["admin_login"])) {
     <h1>Admin Login</h1>
     <div id="admin_login_container">
         <div class="left_section">
-            <img src="../img/login2.jpg" alt="">
+            <img src="admin_images/login2.jpg" alt="">
         </div>
         <div class="right_section">
             <form action="" method="POST" onsubmit="return validateAdminLoginForm()">
@@ -231,7 +231,7 @@ if (isset($_POST["admin_login"])) {
         }
         
         if(password.trim() == ""){
-            document.getElementById("admin_password_error").innerHTML = "Please provide your username";
+            document.getElementById("admin_password_error").innerHTML = "Please provide your password";
             isValid = false;
         }else{
             document.getElementById("admin_password_error").innerHTML = "";

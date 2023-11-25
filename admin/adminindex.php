@@ -9,6 +9,15 @@ if (!isset($_SESSION['admin_username'])) {
     exit();
 }
 
+$admin_username = $_SESSION['admin_username'];
+
+
+$select_query = "SELECT * from admin_table WHERE admin_username='$admin_username'";
+$execute = mysqli_query($conn, $select_query);
+$row_data = mysqli_fetch_assoc($execute);
+$admin_username = $row_data['admin_username'];
+$admin_image = $row_data['admin_image'];
+
 ?>
 
 <!DOCTYPE html>
@@ -120,9 +129,10 @@ if (!isset($_SESSION['admin_username'])) {
 
     @media(min-width: 576px) and (max-width: 768px) {
 
-        h1{
+        h1 {
             font-size: 23px;
         }
+
         .button-link {
             display: inline-block;
             padding: 5px 20px;
@@ -132,19 +142,20 @@ if (!isset($_SESSION['admin_username'])) {
 
     @media(min-width: 375px) and (max-width: 575px) {
 
-        h1{
+        h1 {
             font-size: 22px;
         }
+
         .button-link {
             display: inline-block;
             padding: 5px 15px;
             font-size: 14px;
         }
     }
-    
-    @media(max-width: 374px){
 
-        h1{
+    @media(max-width: 374px) {
+
+        h1 {
             font-size: 20px;
         }
 
@@ -164,7 +175,13 @@ if (!isset($_SESSION['admin_username'])) {
             </div>
             <div>
                 <ul>
-                    <li><a href="#">Welcome Guest</a></li>
+                    <?php
+                    if (!isset($_SESSION['admin_username'])) {
+                        echo "<li><a href='#'>Welcome Guest</a></li>";
+                    } else {
+                        echo "<li><a href='#'>Welcome " . $_SESSION['admin_username'] . "</a></li>";
+                    }
+                    ?>
                 </ul>
             </div>
         </header>
@@ -172,8 +189,8 @@ if (!isset($_SESSION['admin_username'])) {
 
         <div class="admin_dashboard">
             <div class="image-container">
-                <img src="../img/profile.jpg" alt="">
-                <p>Admin Name</p>
+                <img src="../product_images/<?php echo $admin_image ?>" alt="">
+                <p><?php echo $admin_username ?></p>
             </div>
             <div class="buttons">
                 <a href="adminindex.php?insert_products" class="button-link">Insert Products</a>
@@ -218,7 +235,7 @@ if (!isset($_SESSION['admin_username'])) {
             if (isset($_GET['delete_orders'])) {
                 include('delete_orders.php');
             }
-              if (isset($_GET['all_payment'])) {
+            if (isset($_GET['all_payment'])) {
                 include('all_payment.php');
             }
             if (isset($_GET['delete_payment'])) {
@@ -234,4 +251,5 @@ if (!isset($_SESSION['admin_username'])) {
         </div>
     </div>
 </body>
+
 </html>

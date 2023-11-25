@@ -3,8 +3,8 @@ include("../partials/connect.php");
 error_reporting(E_ALL);
 ini_set("display_errors", 1);
 
-$admin_username = $admin_email = $admin_password = $admin_conf_password = "";
-$errors = array('admin_username' => "", 'admin_email' => "", 'admin_password' => "", 'admin_conf_password' => "");
+$admin_username = $admin_email = $admin_image = $admin_password = $admin_conf_password = "";
+$errors = array('admin_username' => "", 'admin_email' => "", 'admin_image' => "", 'admin_password' => "", 'admin_conf_password' => "");
 
 if (isset($_POST["admin_register"])) {
     // validate username
@@ -26,14 +26,28 @@ if (isset($_POST["admin_register"])) {
             $errors["admin_email"] = "Email must be a valid address";
         }
     }
-    
+
+    // validate admin_image
+    $admin_image_tmp = '';
+    if ($_FILES['admin_image']['error'] == UPLOAD_ERR_NO_FILE) {
+        $errors['admin_image'] = "An image is required <br>";
+    } else {
+        $admin_image = $_FILES['admin_image']['name'];
+        $admin_image_tmp = $_FILES['admin_image']['tmp_name'];
+
+        // move uploaded file
+        if (!move_uploaded_file($admin_image_tmp, "../product_images/$admin_image")) {
+            $errors['admin_image'] = "Failed to move uploaded file <br>";
+        }
+    }
+
     // validate password
     if (empty($_POST["admin_password"])) {
         $errors["admin_password"] = "A password is required <br/>";
     } else {
         $admin_password = $_POST["admin_password"];
     }
-    
+
     // validate confirm password
     if (empty($_POST["admin_conf_password"])) {
         $errors["admin_conf_password"] = "A password confirmation is required<br/>";
@@ -47,7 +61,7 @@ if (isset($_POST["admin_register"])) {
             $admin_password = mysqli_real_escape_string($conn, $admin_password);
             // hash password
             $hash_password = password_hash($admin_password, PASSWORD_DEFAULT);
-            
+
             // select query
             $select_query = "SELECT * FROM admin_table WHERE admin_username = '$admin_username' OR admin_email = '$admin_email'";
             $result = mysqli_query($conn, $select_query);
@@ -57,10 +71,10 @@ if (isset($_POST["admin_register"])) {
                 echo "<script>window.location.href='admin_registration.php';</script>";
                 exit();
             }
-            
+
             // insert query
-            $insert_admin = "INSERT INTO admin_table (admin_username, admin_email, admin_password)
-            VALUES('$admin_username', '$admin_email', '$hash_password')";
+            $insert_admin = "INSERT INTO admin_table (admin_username, admin_email, admin_image,admin_password)
+            VALUES('$admin_username', '$admin_email', '$admin_image', '$hash_password')";
             $result_insert = mysqli_query($conn, $insert_admin);
             if ($result_insert) {
                 echo "<script>alert('Registration successful')</script>";
@@ -89,7 +103,7 @@ if (isset($_POST["admin_register"])) {
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
             font-family: 'Arial', sans-serif;
         }
@@ -106,45 +120,47 @@ if (isset($_POST["admin_register"])) {
             color: #ffff;
             font-size: 25px;
         }
-        
+
         .left {
             flex-basis: 50%;
-        
+
         }
-        
+
         .left img {
             width: 100%;
             min-height: 100%;
             display: block;
         }
-        
+
         .right {
             flex-basis: 50%;
             padding: 20px;
         }
-        
+
         form label {
             margin-bottom: 5px;
             display: block;
             font-size: 14px;
         }
-        
+
         form input[type="text"],
         form input[type="email"],
-        form input[type="password"] {
+        form input[type="password"],
+        form input[type="file"] {
             width: 100%;
             padding: 8px;
             margin-bottom: 10px;
             border-radius: 5px;
             border: 1px solid lightgrey;
         }
-        
+
         form input[type="text"]:focus,
         form input[type="email"]:focus,
-        form input[type="password"]:focus {
+        form input[type="password"]:focus,
+        form input[type="file"]:focus {
             outline: none;
         }
-        
+
         form input[type="submit"] {
             background-color: #333;
             color: #fff;
@@ -156,42 +172,42 @@ if (isset($_POST["admin_register"])) {
             margin-bottom: 7px;
             border-radius: 5px;
         }
-        
+
         form input[type="submit"]:hover {
             background-color: blue;
         }
-        
+
         small a {
             color: red;
         }
-        
+
         .red-text {
             color: red;
             font-size: 12px;
             margin-bottom: 3px;
         }
-        
-        
+
+
         /* Responsive design */
-        
+
         @media (max-width: 600px) {
             #registration_container {
                 flex-direction: column;
                 margin: 50px 30px 700px 30px;
             }
-            
+
             h1 {
                 font-size: 22px;
             }
-            
-            
+
+
             form input[type="text"],
             form input[type="email"],
             form input[type="password"] {
                 padding: 5px;
-            
+
             }
-            
+
             form input[type="submit"] {
                 padding: 7px;
             }
@@ -206,13 +222,15 @@ if (isset($_POST["admin_register"])) {
             <img src="../img/register2.jpg" alt="reg">
         </div>
         <div class="right">
-            <form action="" method="POST" onsubmit="return validateAdminRegisterForm()" autocomplete="off">
+            <form action="" method="POST" onsubmit="return validateAdminRegisterForm()" autocomplete="off" enctype="multipart/form-data">
                 <label for="username">Username</label>
                 <input type="text" name="admin_username" id="admin_username" placeholder="Username" value="<?php echo htmlspecialchars($admin_username) ?>" minlength="8" maxlength="15" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]+$" title="Username must be 8-15 characters containing at least one letter and one number">
                 <div class="red-text" id="usernameError"><?php echo $errors["admin_username"] ?></div>
                 <label for="admin_email">Email</label>
                 <input type="email" name="admin_email" id="admin_email" placeholder="Email" value="<?php echo htmlspecialchars($admin_email) ?>">
                 <div class="red-text" id="emailError"><?php echo $errors["admin_email"] ?></div>
+                <input type="file" name="admin_image" id="admin_image" placeholder="Email" value="<?php echo htmlspecialchars($admin_image) ?>">
+                <div class="red-text" id="admin_image_error"><?php echo $errors["admin_image"] ?></div>
                 <label for="password">Password</label>
                 <input type="password" name="admin_password" id="admin_password" placeholder="Password" value="<?php echo ($admin_password) ?>" minlength="8" maxlength="15" pattern="^(?=.*[A-Z])(?=.*\d).{8,12}$" title="Password must be 8-12 characters with at least one capital letter and one number">
                 <div class="red-text" id="passwordError"><?php echo $errors["admin_password"] ?></div>
@@ -225,14 +243,18 @@ if (isset($_POST["admin_register"])) {
         </div>
     </div>
     <script>
+        var allowedExtensions = /(\.jpg|\.jpeg|\.png)$/i; // Allow only jpg, jpeg, and png
+        var maxSizeInBytes = 3 * 1024 * 1024;
+        
         function validateAdminRegisterForm() {
             var username = document.getElementById('admin_username').value;
             var email = document.getElementById('admin_email').value;
             var password = document.getElementById('admin_password').value;
+            var adminImage = document.getElementById('admin_image').value;
             var confPassword = document.getElementById('admin_conf_password').value;
-            
+
             var isValid = true;
-            
+
             // Validate Username
             if (username.trim() === "") {
                 document.getElementById('usernameError').innerHTML = "Please provide your username";
@@ -240,7 +262,7 @@ if (isset($_POST["admin_register"])) {
             } else {
                 document.getElementById('usernameError').innerHTML = "";
             }
-            
+
             // Validate Email
             if (email.trim() === "") {
                 document.getElementById('emailError').innerHTML = "Please provide your email address";
@@ -251,7 +273,7 @@ if (isset($_POST["admin_register"])) {
             } else {
                 document.getElementById('emailError').innerHTML = "";
             }
-            
+
             // Validate Password
             if (password.trim() === "") {
                 document.getElementById('passwordError').innerHTML = "please provide your password";
@@ -259,7 +281,7 @@ if (isset($_POST["admin_register"])) {
             } else {
                 document.getElementById('passwordError').innerHTML = "";
             }
-            
+
             // Validate Confirm Password
             if (confPassword.trim() === "") {
                 document.getElementById('confPasswordError').innerHTML = "Please confirm your password";
@@ -270,10 +292,24 @@ if (isset($_POST["admin_register"])) {
             } else {
                 document.getElementById('confPasswordError').innerHTML = "";
             }
-            
+
+            // validate image
+            if (adminImage.trim() == '') {
+                document.getElementById('admin_image_error').innerHTML = "An image is required";
+                isValid = false;
+            } else if (document.getElementById("admin_image").files.length > 0 && document.getElementById("admin_image").files[0].size > maxSizeInBytes) {
+                document.getElementById('admin_image_error').innerHTML = "Please select an image file smaller than 3MB";
+                isValid = false;
+            } else if (!userImage.match(allowedExtensions)) {
+                document.getElementById('admin_image_error').innerHTML = "Please select a valid image file (jpg, jpeg, png)";
+                isValid = false;
+            } else {
+                document.getElementById('admin_image_error').innerHTML = "";
+            }
+
             return isValid;
         }
-        
+
         function isValidEmail(email) {
             var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             return emailRegex.test(email);

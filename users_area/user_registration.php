@@ -51,13 +51,13 @@ if (isset($_POST['user_register'])) {
     } else {
         $user_image = $_FILES['user_image']['name'];
         $user_image_tmp = $_FILES['user_image']['tmp_name'];
-
+        
         // move uploaded file
         if (!move_uploaded_file($user_image_tmp, "../product_images/$user_image")) {
             $errors['user_image'] = "Failed to move uploaded file <br>";
         }
     }
-
+    
     // validate address
     if (empty($_POST['user_address'])) {
         $errors['user_address'] = "An address is required <br>";
