@@ -53,7 +53,7 @@ if (isset($_POST['user_register'])) {
         $user_image_tmp = $_FILES['user_image']['tmp_name'];
         
         // move uploaded file
-        if (!move_uploaded_file($user_image_tmp, "../product_images/$user_image")) {
+        if (!move_uploaded_file($user_image_tmp, "user_images/$user_image")) {
             $errors['user_image'] = "Failed to move uploaded file <br>";
         }
     }
@@ -64,15 +64,15 @@ if (isset($_POST['user_register'])) {
     } else {
         $user_address = $_POST['user_address'];
     }
-
+    
     // validate contact
     if (empty($_POST['user_contact'])) {
         $errors['user_contact'] = "A mobile number is required <br>";
     } else {
         $user_contact = $_POST['user_contact'];
     }
-
-
+    
+    
     // check if there are no errors before inserting into the database
     if (empty(array_filter($errors))) {
         $username = mysqli_real_escape_string($conn, $username);
@@ -84,12 +84,12 @@ if (isset($_POST['user_register'])) {
         $user_image = mysqli_real_escape_string($conn, $user_image);
 
         move_uploaded_file($user_image_tmp, "../product_images/$user_image");
-
+        
         // insert query
         $insert_query = "INSERT INTO user_table (username, user_email, user_password, user_image, user_ip, user_address, user_mobile)
             VALUES('$username', '$user_email', '$hash_password', '$user_image', '$user_ip', '$user_address', '$user_contact')";
         $sql_execute = mysqli_query($conn, $insert_query);
-
+        
         if ($sql_execute) {
             // selecting cart items
             $select_cart_items = "SELECT * from cart_details WHERE ip_address = '$user_ip'";

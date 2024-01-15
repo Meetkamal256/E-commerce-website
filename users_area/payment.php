@@ -1,13 +1,35 @@
 <?php
 include("../partials/connect.php");
 include_once("../functions/common_functions.php");
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
-session_start();
 
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
 
+$user_id = null;
 
+if (isset($_SESSION['user_id'])) {
+    $user_id = $_SESSION['user_id'];
+} else {
+    // If the user is not logged in, consider redirecting to the login page
+    header("Location: user_login.php");
+    exit(); // Stop further execution
+}
+
+// Use a more robust method to get user details based on user_id
+if ($user_id) {
+    $get_user_query = "SELECT * FROM user_table WHERE user_id = $user_id";
+    $result_user = mysqli_query($conn, $get_user_query);
+
+    if ($result_user && $row = mysqli_fetch_assoc($result_user)) {
+        // User details found, do something with $row if needed
+    } else {
+        // Error retrieving user details
+        echo "Error retrieving user details: " . mysqli_error($conn);
+    }
+}
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -25,61 +47,61 @@ session_start();
         padding: 0;
         box-sizing: border-box;
     }
-    
+
     #container {
         margin: 0 0px 0px 100px;
     }
-    
+
     h1 {
         text-align: center;
         color: #041E42;
         font-size: 25px;
         margin-top: 50px;
-    
+
     }
-    
+
     h2 {
         font-size: 25px;
     }
-    
-    
-    
+
+
+
     .payment {
         display: flex;
         align-items: center;
     }
-    
+
     .img-container {
         width: 450px;
         margin-top: 50px;
     }
-    
+
     img {
         width: 100%;
         /* margin: auto; */
-    
+
     }
-    
+
     .pay-offline {
         margin-left: 40px;
     }
-    
-    
+
+
     /* Responsive styles */
-    
+
     @media (max-width: 576px) {
         #container {
             margin: 0 0px 0px 20px;
         }
-        
+
         .img-container {
             width: 350px;
         }
-        
+
         .pay-offline {
             margin-left: 20px;
         }
-    
+
     }
 </style>
 
@@ -123,16 +145,6 @@ session_start();
             <i class="fas fa-outdent" id="menu-open"></i>
         </div>
     </section>
-    <?php
-    
-    $user_ip = getIpAddress();
-    $get_user = "SELECT * from user_table WHERE user_ip = '$user_ip'";
-    $result = mysqli_query($conn, $get_user);
-    $row = mysqli_fetch_assoc($result);
-    $user_id = $row['user_id'];
-    echo $user_id;
-    ?>
-    
     <h1>Payment Options</h1>
     <div id="container">
         <div class="payment">
@@ -140,14 +152,14 @@ session_start();
                 <img src="../img/payment.jpg" alt="">
             </div>
             <div class="pay-offline">
-                <a href="order.php?user_id=<?php echo $user_id ?>">
+                <a href="order.php?user_id=<?php echo $user_id; ?>">
                     <h2>Pay Offline</h2>
                 </a>
             </div>
         </div>
     </div>
-    <?php include_once("../partials/footer.php"); ?> 
+    <?php include_once("../partials/footer.php"); ?>
     <script src="../script.js"></script>
 </body>
 
-</html>
+</html>u

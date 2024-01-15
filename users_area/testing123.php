@@ -15,7 +15,7 @@ if (isset($_POST['user_register'])) { // check if the register button is clicked
     } else {
         $username = $_POST['username'];
     }
-
+    
     // validate email
     if (empty($_POST['user_email'])) {
         $errors['user_email'] = "An email address is required <br>";
@@ -25,14 +25,14 @@ if (isset($_POST['user_register'])) { // check if the register button is clicked
             $errors['user_email'] = "Email must be a valid address <br>";
         }
     }
-
+    
     // validate password
     if (empty($_POST['user_password'])) {
         $errors['user_password'] = "A password is required <br>";
     } else {
         $user_password = $_POST['user_password'];
     }
-
+    
     // validate confirm password
     if (empty($_POST['user_conf_password'])) {
         $errors['user_conf_password'] = "A password confirmation is required <br>";
@@ -42,7 +42,7 @@ if (isset($_POST['user_register'])) { // check if the register button is clicked
             $errors['user_conf_password'] = "Passwords do not match <br>";
         }
     }
-
+    
     // validate user_image
     $user_image_tmp = '';
     if ($_FILES['user_image']['error'] == UPLOAD_ERR_NO_FILE) {
@@ -50,13 +50,13 @@ if (isset($_POST['user_register'])) { // check if the register button is clicked
     } else {
         $user_image = $_FILES['user_image']['name'];
         $user_image_tmp = $_FILES['user_image']['tmp_name'];
-
+        
         // move uploaded file
         if (!move_uploaded_file($user_image_tmp, "../product_images/$user_image")) {
             $errors['user_image'] = "Failed to move uploaded file <br>";
         }
     }
-
+    
     // validate address
     if (empty($_POST['user_address'])) {
         $errors['user_address'] = "An address is required <br>";

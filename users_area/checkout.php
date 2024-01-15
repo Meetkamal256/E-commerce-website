@@ -1,7 +1,12 @@
 <?php
 include("partials/connect.php");
 include_once("functions/common_functions.php");
-session_start();
+// Check if a session is not already active
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+
+  
+}
 ?>
 
 <!DOCTYPE html>

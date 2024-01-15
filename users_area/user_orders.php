@@ -117,6 +117,7 @@
     $result = mysqli_query($conn, $get_user);
     $row_fetch = mysqli_fetch_assoc($result);
     $user_id = $row_fetch['user_id'];
+    // echo $user_id
     ?>
     <div id="order_table">
         <h3>All my orders</h3>

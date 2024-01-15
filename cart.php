@@ -141,8 +141,8 @@ include_once("functions/common_functions.php");
   
   
   <section id="page-header" class="about-header">
-    <h2>#LetsTalk</h2>
-    <p>LEAVE A MESSAGE, We love to hear from you!</p>
+    <!-- <h2>#LetsTalk</h2>
+    <p>LEAVE A MESSAGE, We love to hear from you!</p> -->
   </section>
   
   <?php
@@ -278,7 +278,7 @@ include_once("functions/common_functions.php");
         </div>";
     }
     ?>
-
+  
   </section>
 
   <?php include("partials/footer.php"); ?>

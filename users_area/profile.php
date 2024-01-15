@@ -1,7 +1,10 @@
 <?php
 include("../partials/connect.php");
 include_once("../functions/common_functions.php");
-session_start();
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+
 
 ?>
 
@@ -217,8 +220,5 @@ session_start();
     
     
     <script src="../script.js"></script>
-
-
 </body>
-
 </html>

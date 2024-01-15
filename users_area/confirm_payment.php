@@ -7,17 +7,17 @@ ini_set("display_errors", 1);
 session_start();
 if (isset($_GET['order_id'])) {
     $order_id = $_GET['order_id'];
-    
+
     $select_query = "SELECT * from user_orders WHERE order_id = $order_id";
     $result = mysqli_query($conn, $select_query);
     $row_fetch = mysqli_fetch_assoc($result);
     $invoice_number = $row_fetch['invoice_number'];
     $amount_due = $row_fetch['amount_due'];
-    
+
     if (isset($_POST['comfirm_payment'])) {
         $invoice_number = $_POST['invoice_number'];
         $amount = (int) preg_replace('/[^\d]/', '', $_POST['amount']);  // Remove non-numeric characters and cast to integer
-        
+
         $payment_mode = $_POST['payment_mode'];
         $insert_query = "INSERT INTO user_payment (order_id, invoice_number, amount, payment_mode) VALUES($order_id, $invoice_number, $amount, '$payment_mode')";
         $result = mysqli_query($conn, $insert_query);
@@ -46,28 +46,28 @@ if (isset($_GET['order_id'])) {
         justify-content: center;
         align-items: center;
     }
-    
+
     #container h1 {
         color: #ffff;
     }
-    
+
     label {
         color: #ffff;
         text-align: center;
     }
-    
+
     select {
         width: 107%;
         padding: 7px;
         margin-bottom: 15px;
     }
-    
+
     input[type='text'] {
         width: 100%;
         padding: 7px;
         margin-bottom: 15px;
     }
-    
+
     input[type='submit'] {
         background-color: blue;
         color: #ffff;
@@ -75,11 +75,11 @@ if (isset($_GET['order_id'])) {
         padding: 7px 15px;
         cursor: pointer;
     }
-    
+
     input[type='submit']:hover {
         background-color: lightskyblue;
     }
-    
+
     .payment {
         display: flex;
         justify-content: center;

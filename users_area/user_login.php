@@ -49,6 +49,7 @@ if (isset($_POST['user_login'])) {
                 $row_count_cart = mysqli_num_rows($result_cart);
                 
                 $_SESSION['username'] = $username;
+                $_SESSION['user_id'] = $row_data['user_id'];
                 
                 if ($row_count == 1 && $row_count_cart == 0) {
                     echo "<script>window.open('profile.php', '_self')</script>";
@@ -223,15 +224,15 @@ if (isset($_POST['user_login'])) {
                 <input type="submit" value="Login" name="user_login">
             </div>
             <p>Don't have an account? <a href="user_registration.php" class="small">Register</a></p>
-            <p class="demoLogin">Demo account login details username: meetkamal256 and password: kamalm </p>
-            <a href="http://localhost/E-commerce-website/admin/admin_login.php">Admin area</a> 
+            <p class="demoLogin">Demo account login details username: meetkamal256 and password: Kamal256 </p>
+            <a href="https://leisurewears.infinityfreeapp.com/admin/admin_login.php">Admin area</a> 
         </form>
     </div>
     
     
     <footer>
         <div class="col">
-            <a href="index.php" class="logo">LeisureWears...</a>
+            <a href="../index.php" class="logo">LeisureWears...</a>
             <h4>Contact</h4>
             <p> <strong>Address: </strong> 562 Wellington Road Street 32 San Francisco </p>
             <p><strong>Phone:</strong> +012222 365/(+91) 0123456789</p>
